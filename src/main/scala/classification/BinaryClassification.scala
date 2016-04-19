@@ -17,39 +17,33 @@ import scala.io.Source
   */
 object BinaryClassification extends App{
 
-
-
   val conf = new SparkConf().setMaster("local").setAppName("StopWordRemove")
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
-//  val hiveContext = new HiveContext(sc)
+  //  val hiveContext = new HiveContext(sc)
   import sqlContext.implicits._
-
 
   // DataFrame type 数据集导入
   //  val src = Source.fromFile("/users/li/Intellij/Native-Byes/nativebyes/wordseg_881156.txt").getLines().toArray
 
   // 总数据集获取未平衡
-//  case class RawDataRecord( category: String ,labels: Double ,text: String)
-//
-//  val src = Source.fromFile("/Users/li/Downloads/traningset/HGHQ.txt").getLines().toArray.map{
-//    line =>
-//      val data = line.split("\t")
-//      RawDataRecord(data(1),data(0).toDouble,data(2))
-//  }
-
+  //  case class RawDataRecord( category: String ,labels: Double ,text: String)
+  //
+  //  val src = Source.fromFile("/Users/li/Downloads/traningset/HGHQ.txt").getLines().toArray.map{
+  //    line =>
+  //      val data = line.split("\t")
+  //      RawDataRecord(data(1),data(0).toDouble,data(2))
+  //  }
 
   //  //  平衡数据集获取
-    case class RawDataRecord(labels: Double ,text: String)
-    val src = Source.fromFile("/Users/li/Downloads/trainingSets/保险").getLines().toArray.map{
-      line =>
-        val data = line.split("\t")
-        RawDataRecord(data(0).toDouble, data(1))
-    }
-
+  case class RawDataRecord(labels: Double ,text: String)
+  val src = Source.fromFile("/Users/li/Downloads/trainingSets/保险").getLines().toArray.map{
+    line =>
+      val data = line.split("\t")
+      RawDataRecord(data(0).toDouble, data(1))
+  }
 
   val srcDF = sqlContext.createDataFrame(src)
-
 
   // RDD type
   //    val srcRDD = sc.textFile("/users/li/Intellij/Native-Byes/nativebyes/wordseg_881156.txt").map {
@@ -111,7 +105,6 @@ object BinaryClassification extends App{
   // rescaledData.select($"category", $"features").foreach(println)
   //  rescaledData.select($"labels",$"features").show()
 
-
   // 转换成Bayes的输入格式
   var trainDataRdd = rescaledData.select($"labels",$"features").map {
     case Row(label: Double, features: Vector) =>
@@ -120,38 +113,34 @@ object BinaryClassification extends App{
   // println("output4：")
   // trainDataRdd.take(1).foreach(println)
 
-
   /** NativeBayes训练模型 */
   val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
 
   /** SVM训练模型 */
-//   var numIterations = 100
-//   val model = SVMWithSGD.train(trainDataRdd , numIterations)
+  //   var numIterations = 100
+  //   val model = SVMWithSGD.train(trainDataRdd , numIterations)
 
   /** RandomForest训练模型 */
-//    val numClasses = 2
-//      val categoricalFeaturesInfo = Map[Int, Int]()
-//    val numTrees = 3
-//    val featureSubsetStrategy = "auto"
-//    val impurity = "gini"
-//    val maxDepth = 4
-//    val maxBins = 32
-//    val model = RandomForest.trainClassifier(trainDataRdd, numClasses, categoricalFeaturesInfo,numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
-
+  //    val numClasses = 2
+  //      val categoricalFeaturesInfo = Map[Int, Int]()
+  //    val numTrees = 3
+  //    val featureSubsetStrategy = "auto"
+  //    val impurity = "gini"
+  //    val maxDepth = 4
+  //    val maxBins = 32
+  //    val model = RandomForest.trainClassifier(trainDataRdd, numClasses, categoricalFeaturesInfo,numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
 
   /** GradientBoostedTrees训练模型 */
-//    // Train a GradientBoostedTrees model.
-//    // The defaultParams for Classification use LogLoss by default.
-//    val boostingStrategy = BoostingStrategy.defaultParams("Classification")
-//    boostingStrategy.numIterations = 3 // Note: Use more iterations in practice.
-//    boostingStrategy.treeStrategy.numClasses = 2
-//    boostingStrategy.treeStrategy.maxDepth = 5
-//    // Empty categoricalFeaturesInfo indicates all features are continuous.
-//    boostingStrategy.treeStrategy.categoricalFeaturesInfo = Map[Int, Int]()
-//
-//    val model = GradientBoostedTrees.train(trainDataRdd, boostingStrategy)
-
-
+  //    // Train a GradientBoostedTrees model.
+  //    // The defaultParams for Classification use LogLoss by default.
+  //    val boostingStrategy = BoostingStrategy.defaultParams("Classification")
+  //    boostingStrategy.numIterations = 3 // Note: Use more iterations in practice.
+  //    boostingStrategy.treeStrategy.numClasses = 2
+  //    boostingStrategy.treeStrategy.maxDepth = 5
+  //    // Empty categoricalFeaturesInfo indicates all features are continuous.
+  //    boostingStrategy.treeStrategy.categoricalFeaturesInfo = Map[Int, Int]()
+  //
+  //    val model = GradientBoostedTrees.train(trainDataRdd, boostingStrategy)
 
   //测试数据集，做同样的特征表示及格式转换
   //  var testwordsData = tokenizer.transform(testDF)
@@ -174,7 +163,6 @@ object BinaryClassification extends App{
       LabeledPoint(label, Vectors.dense(features.toArray))
   }
 
-
   //对测试数据集使用训练模型进行分类预测
 
   //  朴素贝叶斯分类预测
@@ -188,7 +176,6 @@ object BinaryClassification extends App{
     (predictionpointlabel, point.label)
   }
   //testpredictionAndLabel.foreach(println)
-
 
   /** 准确度统计分析 */
 
