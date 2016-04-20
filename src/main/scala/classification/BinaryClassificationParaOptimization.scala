@@ -42,7 +42,7 @@ object BinaryClassificationParaOptimization {
     * @param stopWords 停用词
     * @return 返回一个元素为String的Array
     */
-  def removeStopWords(content:Array[(String)], stopWords:Array[(String)]): Array[(String)] ={
+  def removeStopWords(content:Array[String], stopWords:Array[String]): Array[String] ={
     if(content != null){
       var res = content.toBuffer
       stopWords.foreach{
