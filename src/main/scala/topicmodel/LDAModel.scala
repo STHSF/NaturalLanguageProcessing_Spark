@@ -21,7 +21,8 @@ object LDAModel extends App{
   val tokenized: RDD[Array[String]] =
     corpus.map(_.toLowerCase.split("\\s")).map(_.filter(_.length > 3).filter(_.forall(java.lang.Character.isLetter)))
 
-  tokenized.foreach(println)
+  tokenized.collect().foreach(println)
+
   // Choose the vocabulary.
   //   termCounts: Sorted list of (term, termCount) pairs
   val termCounts: Array[(String, Long)] =

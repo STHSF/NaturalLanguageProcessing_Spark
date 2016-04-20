@@ -1,7 +1,9 @@
 package topicmodel
 
+import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.mllib.feature
 import org.apache.spark.mllib.feature.IDF
+import org.apache.spark.mllib.linalg.{Vectors, Vector}
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkContext, SparkConf}
@@ -83,35 +85,68 @@ object LDATest {
     val setStopWordPath = "/Users/li/kunyan/DataSet/stop_words_CN"
 
     // 读取数据
-    val documents = sc.textFile(setTextPath).map(_.split("\t")(2)).collect()
+    val documents = sc.textFile(setTextPath).map(_.split("\t")(2))
+
     // 读取停用词
     val stopWords = sc.textFile(setStopWordPath).collect()
 
-    val stopwordsremoved = documents.map{
+    val stopWordsRemoved : RDD[Array[String]]= documents.map{
       line =>{
         val item = line.split(",")
-        removeStopWords(item,stopWords).mkString(",")
+        removeStopWords(item,stopWords)
       }
     }
+    
+    val termCounts: Array[(String, Long)] = stopWordsRemoved.flatMap(_.map(_ -> 1L)).reduceByKey(_ + _).collect().sortBy(-_._2)
 
-    val termCounts = stopwordsremoved.flatMap(_.map(_ -> 1L)).reduce(_._2 + _._2).collect().
+    //    termCounts.foreach(println)
 
-    println(termCounts)
+    // vocabArray: Chosen vocab (removing common terms)
+    val numStopwords = 2
+    val vocabArray: Array[String] =
+      termCounts.takeRight(termCounts.length - numStopwords).map(_._1)
 
+    // vocab: Map term -> term index
+    val vocab: Map[String, Int] = vocabArray.zipWithIndex.toMap
+    vocab.foreach(println)
 
     //  把所有单词组成一个集合,并分配一个id号的map
-
-
     // ba把文档doc变成一个稀疏向量,[ID,词频]
+    //  val corpus = stopWordsRemoved.zipWithIndex.map(_.swap)
 
+    // Convert documents into term count vectors
+    val document: RDD[(Long, Vector)] =
+      stopWordsRemoved.zipWithIndex.map {
+        case (tokens, id) =>
+          val counts = new scala.collection.mutable.HashMap[Int, Double]()
+          tokens.foreach { term =>
+            if (vocab.contains(term)) {
+              val idx = vocab(term)
+              counts(idx) = counts.getOrElse(idx, 0.0) + 1.0
+            }
+          }
+          (id, Vectors.sparse(vocab.size, counts.toSeq))
+      }
 
+    //    document.foreach(println)
 
-  val corpus = stopwordsremoved.zipWithIndex.map(_.swap)
+    // Set LDA parameters
+    val numTopics = 3
+    val lda = new LDA().setK(numTopics).setMaxIterations(8)
 
-    corpus.foreach(println)
+    val ldaModel = lda.run(document)
+    //  val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
 
-
-
+    // Print topics, showing top-weighted 10 terms for each topic.
+    val topicIndices = ldaModel.describeTopics(maxTermsPerTopic = 10)
+    topicIndices.foreach { case (terms, termWeights) =>
+      println("TOPIC:")
+      terms.zip(termWeights).foreach { case (term, weight) =>
+        println(s"${vocabArray(term.toInt)}\t$weight")
+      }
+      println()
+    }
+    //
 
 
   }
