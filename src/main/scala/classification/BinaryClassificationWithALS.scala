@@ -17,7 +17,7 @@ object BinaryClassificationWithALS {
   val conf = new SparkConf().setMaster("local").setAppName("StopWordRemove")
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
-  val hivecontext = new  HiveContext(sc)
+//  val hivecontext = new  HiveContext(sc)
   import sqlContext.implicits._
 
 

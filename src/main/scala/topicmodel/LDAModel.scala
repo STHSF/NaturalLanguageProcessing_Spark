@@ -1,23 +1,25 @@
-package topicmodel
-
-import org.apache.spark.mllib.clustering.LDA
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkContext, SparkConf}
-
-import scala.collection.mutable
-
+package com.kunyandata.nlpsuit.topicmodel
 
 /**
-  * Created by li on 16/4/19.
+  * Created by li on 2016/4/28.
   */
+
+import org.apache.spark.mllib.clustering.LDA
+import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
+
+import scala.collection.mutable
+//import org.apache.spark.mllib.clustering.LDA
+import org.apache.spark.mllib.linalg.{Vector, Vectors}
+//import org.apache.spark.rdd.RDD
+
 object LDAModel extends App{
-  val conf = new SparkConf().setAppName("LDA").setMaster("local")
+
+  val conf = new SparkConf().setAppName("TopicModel").setMaster("local")
   val sc = new SparkContext(conf)
 
   // Load documents from text files, 1 document per file
-  val corpus: RDD[String] = sc.wholeTextFiles("docs/*.md").map(_._2)
+  val corpus: RDD[String] = sc.wholeTextFiles("/Users/li/kunyan/docs/*.md").map(_._2)
 
   // Split each document into a sequence of terms (words)
   val tokenized: RDD[Seq[String]] =
@@ -28,13 +30,14 @@ object LDAModel extends App{
   val termCounts: Array[(String, Long)] =
     tokenized.flatMap(_.map(_ -> 1L)).reduceByKey(_ + _).collect().sortBy(-_._2)
 
-  //   vocabArray: Chosen vocab (removing common terms)
+  // vocabArray: Chosen vocab (removing common terms)
   val numStopwords = 20
   val vocabArray: Array[String] =
     termCounts.takeRight(termCounts.length - numStopwords).map(_._1)
 
-  //   vocab: Map term -> term index
+  // vocab: Map term -> term index
   val vocab: Map[String, Int] = vocabArray.zipWithIndex.toMap
+  vocab.foreach(println)
 
   // Convert documents into term count vectors
   val documents: RDD[(Long, Vector)] =
@@ -49,12 +52,14 @@ object LDAModel extends App{
       (id, Vectors.sparse(vocab.size, counts.toSeq))
     }
 
+  documents.foreach(println)
+
   // Set LDA parameters
-  val numTopics = 10
-  val lda = new LDA().setK(numTopics).setMaxIterations(10)
+  val numTopics = 3
+  val lda = new LDA().setK(numTopics).setMaxIterations(8)
 
   val ldaModel = lda.run(documents)
-  val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
+//  val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
 
   // Print topics, showing top-weighted 10 terms for each topic.
   val topicIndices = ldaModel.describeTopics(maxTermsPerTopic = 10)
@@ -65,6 +70,5 @@ object LDAModel extends App{
     }
     println()
   }
-
-
+  //
 }
