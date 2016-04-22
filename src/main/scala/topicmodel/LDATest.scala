@@ -87,7 +87,7 @@ object LDATest {
     // 读取数据
     val documents = sc.textFile(setTextPath).map(_.split("\t")(2))
 
-    // 读取停用词
+    // 读取停用词,需要再添加一些,token,steming等
     val stopWords = sc.textFile(setStopWordPath).collect()
 
     val stopWordsRemoved : RDD[Array[String]]= documents.map{
@@ -96,11 +96,11 @@ object LDATest {
         removeStopWords(item,stopWords)
       }
     }
-    
-    val termCounts: Array[(String, Long)] = stopWordsRemoved.flatMap(_.map(_ -> 1L)).reduceByKey(_ + _).collect().sortBy(-_._2)
 
-    //    termCounts.foreach(println)
+    val termCounts: Array[(String, Long)] =
+      stopWordsRemoved.flatMap(_.map(_ -> 1L)).reduceByKey(_ + _).collect().sortBy(-_._2)
 
+    // termCounts.foreach(println)
     // vocabArray: Chosen vocab (removing common terms)
     val numStopwords = 2
     val vocabArray: Array[String] =
