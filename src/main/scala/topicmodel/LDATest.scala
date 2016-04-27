@@ -110,9 +110,9 @@ object LDATest {
     val vocab: Map[String, Int] = vocabArray.zipWithIndex.toMap
     vocab.foreach(println)
 
-    //  把所有单词组成一个集合,并分配一个id号的map
-    // ba把文档doc变成一个稀疏向量,[ID,词频]
-    //  val corpus = stopWordsRemoved.zipWithIndex.map(_.swap)
+    // 把所有单词组成一个集合,并分配一个id号的map
+    // 把文档doc变成一个稀疏向量,[ID,词频]
+    // val corpus = stopWordsRemoved.zipWithIndex.map(_.swap)
 
     // Convert documents into term count vectors
     val document: RDD[(Long, Vector)] =
