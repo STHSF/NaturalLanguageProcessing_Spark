@@ -22,8 +22,6 @@ object Test {
     val sqlContext = new SQLContext(sc)
 
 
-
-
     // Input data: Each row is a bag of words from a sentence or document.
     val documentDF = sqlContext.createDataFrame(Seq(
       "Hi I heard about Spark".split(" "),

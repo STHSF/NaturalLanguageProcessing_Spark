@@ -16,7 +16,6 @@ object LDATest {
   val conf = new SparkConf().setAppName("lda").setMaster("local")
   val sc = new SparkContext(conf)
 
-
   /**
     * 去除分词结果中的标点符号和停用词
     *
@@ -146,12 +145,5 @@ object LDATest {
       }
       println()
     }
-    //
-
-
   }
-
-
-
-
 }
