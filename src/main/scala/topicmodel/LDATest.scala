@@ -1,5 +1,3 @@
-package topicmodel
-
 import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.mllib.feature
 import org.apache.spark.mllib.feature.IDF
@@ -126,15 +124,13 @@ object LDATest {
           }
           (id, Vectors.sparse(vocab.size, counts.toSeq))
       }
-
     //    document.foreach(println)
 
     // Set LDA parameters
     val numTopics = 3
     val lda = new LDA().setK(numTopics).setMaxIterations(8)
-
     val ldaModel = lda.run(document)
-    //  val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
+//    val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
 
     // Print topics, showing top-weighted 10 terms for each topic.
     val topicIndices = ldaModel.describeTopics(maxTermsPerTopic = 10)
