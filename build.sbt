@@ -20,6 +20,9 @@ libraryDependencies += "org.apache.spark" % "spark-mllib_2.10" % "1.5.2"
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "3.1.14"
 
+libraryDependencies += "org.graphstream" % "gs-core" % "1.1.2"
+
+libraryDependencies += "org.apache.spark" % "spark-graphx_2.10" % "1.6.1"
 
 
 

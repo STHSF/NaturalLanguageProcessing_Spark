@@ -1093,9 +1093,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 4460ms :: artifacts dl 83ms
+[debug] :: resolution report :: resolve 2999ms :: artifacts dl 37ms
 [debug] 	report for default#classification$sbt_2.10;1.0 default produced in /Users/li/kunyan/classification/target/resolution-cache/reports/default-classification$sbt_2.10-default.xml
-[debug] 	resolve done (4460ms resolve - 83ms download)
+[debug] 	resolve done (2999ms resolve - 37ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#classification$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1637,6 +1637,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 386ms :: artifacts dl 92ms
+[debug] :: resolution report :: resolve 229ms :: artifacts dl 65ms
 [debug] 	report for default#classification$sources_2.10;1.0 default produced in /Users/li/kunyan/classification/target/resolution-cache/reports/default-classification$sources_2.10-default.xml
-[debug] 	resolve done (386ms resolve - 92ms download)
+[debug] 	resolve done (229ms resolve - 65ms download)

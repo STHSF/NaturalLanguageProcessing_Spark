@@ -127,7 +127,7 @@ object LDATest {
     //    document.foreach(println)
 
     // Set LDA parameters
-    val numTopics = 3
+    val numTopics = 5
     val lda = new LDA().setK(numTopics).setMaxIterations(8)
     val ldaModel = lda.run(document)
 //    val avgLogLikelihood = ldaModel.logLikelihood / documents.count()
