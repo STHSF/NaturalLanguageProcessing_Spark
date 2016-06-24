@@ -26,7 +26,10 @@ object TextRankTest {
 
     // 输出提取的关键词
     val keywordExtractor = new KeywordExtractor("url",textGraph , 5)
-    keywordExtractor.extractKeywords(doc).foreach(println)
+    keywordExtractor.extractKeywords(doc).foreach(
+      node =>
+        println(" 关键词: "+node._1," 得分: "+node._2)
+    )
     println((1 to 30).map(i => "=").mkString)
 
     //  获取每个关键词节点的度
