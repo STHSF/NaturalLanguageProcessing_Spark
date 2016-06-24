@@ -114,6 +114,6 @@ class KeywordExtractor(val url: String, val graph: SingleGraph, val num: Int) {
         }
     }
     // 对节点权重进行倒序排序，从而得到最重要的num个单词，作为候选关键词。
-    scoreMap.toList.sortWith(_._2 > _._2).slice(0, num).map(_._1)
+    scoreMap.toList.sortWith(_._2 > _._2).slice(0, num)
   }
 }
