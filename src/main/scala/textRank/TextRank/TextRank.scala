@@ -1,10 +1,7 @@
 package com.kunyandata.nlpsuit
 
 import org.graphstream.graph.Edge
-import org.graphstream.graph.Edge
 import org.graphstream.graph.Node
-import org.graphstream.graph.Node
-import org.graphstream.graph.implementations.SingleGraph
 import org.graphstream.graph.implementations.SingleGraph
 
 import scala.collection.mutable

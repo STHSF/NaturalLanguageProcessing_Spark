@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: org.graphstream:gs-core:1.1.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.graphstream/gs-core/jars/gs-core-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.graphstream/gs-core/srcs/gs-core-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
