@@ -1,5 +1,6 @@
 package textRank.TextRank
 
+import org.apache.spark.{SparkConf, SparkContext}
 import org.graphstream.graph.implementations.SingleGraph
 import org.graphstream.graph.{Edge, Node}
 
@@ -14,6 +15,7 @@ object KeywordExtractor {
 
   /**
     * 构建候选关键词图
+    *
     * @param graphName 图名字
     * @param window 窗口大小
     * @param segWord 分词结果
@@ -86,6 +88,7 @@ object KeywordExtractor {
 
   /**
     * 关键词提取, 输出个文章提取的关键词, 无向图名称为文章的url
+    *
     * @param graph 关键词节点图
     * @param keywordNum 关键词个数
     * @param iterator textRank迭代次数
@@ -147,4 +150,23 @@ object KeywordExtractor {
     result
   }
 
+}
+
+object textRank extends  App {
+
+  val conf = new SparkConf().setAppName("textrank").setMaster("local")
+  val sc = new SparkContext(conf)
+
+  val file = sc.textFile("/Users/li/kunyan/DataSet/textRankTestData/textRankTest2.txt")
+  val doc = new ListBuffer[(String)]
+  file.foreach {
+    word =>
+      val list = word.split(",").foreach(x => doc.+=(x))
+  }
+
+  val keyWordList = KeywordExtractor.run("url", 5, doc, 3, 100, 0.85f)
+
+  keyWordList.foreach(
+    x => println(x._1, x._2)
+  )
 }
