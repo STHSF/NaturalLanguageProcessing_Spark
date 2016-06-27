@@ -7,10 +7,10 @@
 		revision="1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160623153756"/>
+		date="20160624110324"/>
 	<dependencies>
 		<module organisation="org.scalactic" name="scalactic_2.10">
-			<revision name="2.2.5" status="release" pubdate="20150514173800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="162">
+			<revision name="2.2.5" status="release" pubdate="20150514173800" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="161">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="2964" time="0" location="/Users/li/.ivy2/cache/org.scalactic/scalactic_2.10/ivy-2.2.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scalactic/scalactic_2.10/2.2.5/scalactic_2.10-2.2.5.pom"/>
 				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="2.2.5" rev-constraint-default="2.2.5" rev-constraint-dynamic="2.2.5" callerrev="1.0"/>
@@ -22,7 +22,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scalatest" name="scalatest_2.10">
-			<revision name="2.2.5" status="release" pubdate="20150514173700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="165">
+			<revision name="2.2.5" status="release" pubdate="20150514173700" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="164">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="4690" time="0" location="/Users/li/.ivy2/cache/org.scalatest/scalatest_2.10/ivy-2.2.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scalatest/scalatest_2.10/2.2.5/scalatest_2.10-2.2.5.pom"/>
 				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="2.2.5" rev-constraint-default="2.2.5" rev-constraint-dynamic="2.2.5" callerrev="1.0"/>
@@ -34,7 +34,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.10.5" status="release" pubdate="20150227095400" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.5/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="164">
+			<revision name="2.10.5" status="release" pubdate="20150227095400" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.5/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="163">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2647" time="0" location="/Users/li/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.10.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-reflect/2.10.5/scala-reflect-2.10.5.pom"/>
 				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.5" rev-constraint-default="2.10.5" rev-constraint-dynamic="2.10.5" callerrev="2.2.5"/>
@@ -85,123 +85,8 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="org.graphstream" name="gs-core">
-			<revision name="1.1.2" status="release" pubdate="20120924221343" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="158">
-				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
-				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html    "/>
-				<metadata-artifact status="no" details="" size="3619" time="0" location="/Users/li/.ivy2/cache/org.graphstream/gs-core/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/gs-core/1.1.2/gs-core-1.1.2.pom"/>
-				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="gs-core" type="jar" ext="jar" status="no" details="" size="809912" time="0" location="/Users/li/.ivy2/cache/org.graphstream/gs-core/jars/gs-core-1.1.2.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/gs-core/1.1.2/gs-core-1.1.2.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.graphstream" name="pherd">
-			<revision name="1.0" status="release" pubdate="20110517165741" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="160">
-				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
-				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html       "/>
-				<metadata-artifact status="no" details="" size="3051" time="0" location="/Users/li/.ivy2/cache/org.graphstream/pherd/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/pherd/1.0/pherd-1.0.pom"/>
-				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.1.2"/>
-				<artifacts>
-					<artifact name="pherd" type="jar" ext="jar" status="no" details="" size="46227" time="0" location="/Users/li/.ivy2/cache/org.graphstream/pherd/jars/pherd-1.0.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/pherd/1.0/pherd-1.0.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.graphstream" name="mbox2">
-			<revision name="1.0" status="release" pubdate="20110517165724" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="161">
-				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
-				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html       "/>
-				<metadata-artifact status="no" details="" size="3113" time="0" location="/Users/li/.ivy2/cache/org.graphstream/mbox2/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/mbox2/1.0/mbox2-1.0.pom"/>
-				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.1.2"/>
-				<caller organisation="org.graphstream" name="pherd" conf="compile, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="mbox2" type="jar" ext="jar" status="no" details="" size="23238" time="0" location="/Users/li/.ivy2/cache/org.graphstream/mbox2/jars/mbox2-1.0.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/mbox2/1.0/mbox2-1.0.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="junit" name="junit">
-			<revision name="4.3.1" status="release" pubdate="20070515053407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="159">
-				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
-				<metadata-artifact status="no" details="" size="2583" time="0" location="/Users/li/.ivy2/cache/junit/junit/ivy-4.3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit/4.3.1/junit-4.3.1.pom"/>
-				<caller organisation="jline" name="jline" conf="compile, runtime" rev="3.8.1" rev-constraint-default="3.8.1" rev-constraint-dynamic="3.8.1" callerrev="0.9.94"/>
-				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="4.3.1" rev-constraint-default="4.3.1" rev-constraint-dynamic="4.3.1" callerrev="1.1.2"/>
-				<artifacts>
-					<artifact name="junit" type="jar" ext="jar" status="no" details="" size="106547" time="0" location="/Users/li/.ivy2/cache/junit/junit/jars/junit-4.3.1.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/junit/junit/4.3.1/junit-4.3.1.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-			<revision name="3.8.1" status="release" pubdate="20080831194525" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
-				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
-				<metadata-artifact status="no" details="" size="2457" time="0" location="/Users/li/.ivy2/cache/junit/junit/ivy-3.8.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/junit/junit/3.8.1/junit-3.8.1.pom"/>
-				<evicted-by rev="4.3.1"/>
-				<caller organisation="jline" name="jline" conf="compile, runtime" rev="3.8.1" rev-constraint-default="3.8.1" rev-constraint-dynamic="3.8.1" callerrev="0.9.94"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="mysql" name="mysql-connector-java">
-			<revision name="3.1.14" status="release" pubdate="20080831194842" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/usingmysql/java/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="157">
-				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl.txt"/>
-				<metadata-artifact status="no" details="" size="2387" time="0" location="/Users/li/.ivy2/cache/mysql/mysql-connector-java/ivy-3.1.14.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/mysql/mysql-connector-java/3.1.14/mysql-connector-java-3.1.14.pom"/>
-				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="3.1.14" rev-constraint-default="3.1.14" rev-constraint-dynamic="3.1.14" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="459094" time="0" location="/Users/li/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-3.1.14.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/mysql/mysql-connector-java/3.1.14/mysql-connector-java-3.1.14.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.apache.spark" name="spark-graphx_2.10">
-			<revision name="1.6.1" status="release" pubdate="20160311073128" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master, compile(*), runtime(*), master(compile)" position="137">
-				<metadata-artifact status="no" details="" size="70349" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-graphx_2.10/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/spark/spark-graphx_2.10/1.6.1/spark-graphx_2.10-1.6.1.pom"/>
-				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="spark-graphx_2.10" type="jar" ext="jar" status="no" details="" size="653914" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-graphx_2.10/jars/spark-graphx_2.10-1.6.1.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/spark/spark-graphx_2.10/1.6.1/spark-graphx_2.10-1.6.1.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-			<revision name="1.5.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master, default(compile)" position="-1">
-				<evicted-by rev="1.6.1"/>
-				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="1.0"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.apache.spark" name="spark-core_2.10">
-			<revision name="1.6.1" status="release" pubdate="20160310104957" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
-				<metadata-artifact status="no" details="" size="80734" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-core_2.10/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/spark/spark-core_2.10/1.6.1/spark-core_2.10-1.6.1.pom"/>
-				<evicted-by rev="1.5.2"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="1.6.1"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.5.2" status="release" pubdate="20151111022235" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, compile(*), runtime, runtime(*), master(compile), master" position="53">
-				<metadata-artifact status="no" details="" size="77558" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-core_2.10/ivy-1.5.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/spark/spark-core_2.10/1.5.2/spark-core_2.10-1.5.2.pom"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="1.6.1"/>
-				<caller organisation="org.apache.spark" name="spark-streaming_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="org.apache.spark" name="spark-sql_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="org.apache.spark" name="spark-catalyst_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
-				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.0"/>
-				<artifacts>
-					<artifact name="spark-core_2.10" type="jar" ext="jar" status="no" details="" size="11126852" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.5.2.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/spark/spark-core_2.10/1.5.2/spark-core_2.10-1.5.2.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.10.5" status="release" pubdate="20150227095400" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.5/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master(compile), master, default(compile), default" position="163">
+			<revision name="2.10.5" status="release" pubdate="20150227095400" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.5/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, master(*), runtime, compile(*), runtime(*), master(compile), master" position="162">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
 				<metadata-artifact status="no" details="" size="2487" time="0" location="/Users/li/.ivy2/cache/org.scala-lang/scala-library/ivy-2.10.5.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scala-lang/scala-library/2.10.5/scala-library-2.10.5.pom"/>
 				<caller organisation="org.scalatest" name="scalatest_2.10" conf="default, compile, runtime, master" rev="2.10.5" rev-constraint-default="2.10.5" rev-constraint-dynamic="2.10.5" callerrev="2.2.5"/>
@@ -283,15 +168,75 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="org.apache.xbean" name="xbean-asm5-shaded">
-			<revision name="4.4" status="release" pubdate="20151006073701" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="156">
-				<license name="Unknown License" url="http://asm.ow2.org/license.html"/>
-				<license name="Unknown License" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="no" details="" size="11989" time="0" location="/Users/li/.ivy2/cache/org.apache.xbean/xbean-asm5-shaded/ivy-4.4.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/xbean/xbean-asm5-shaded/4.4/xbean-asm5-shaded-4.4.pom"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="4.4" rev-constraint-default="4.4" rev-constraint-dynamic="4.4" callerrev="1.6.1"/>
+		<module organisation="org.graphstream" name="gs-core">
+			<revision name="1.1.2" status="release" pubdate="20120924221343" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="157">
+				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
+				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html    "/>
+				<metadata-artifact status="no" details="" size="3619" time="0" location="/Users/li/.ivy2/cache/org.graphstream/gs-core/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/gs-core/1.1.2/gs-core-1.1.2.pom"/>
+				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="xbean-asm5-shaded" type="bundle" ext="jar" status="no" details="" size="144660" time="0" location="/Users/li/.ivy2/cache/org.apache.xbean/xbean-asm5-shaded/bundles/xbean-asm5-shaded-4.4.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/xbean/xbean-asm5-shaded/4.4/xbean-asm5-shaded-4.4.jar"/>
+					<artifact name="gs-core" type="jar" ext="jar" status="no" details="" size="809912" time="0" location="/Users/li/.ivy2/cache/org.graphstream/gs-core/jars/gs-core-1.1.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/gs-core/1.1.2/gs-core-1.1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.graphstream" name="pherd">
+			<revision name="1.0" status="release" pubdate="20110517165741" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="159">
+				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
+				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html       "/>
+				<metadata-artifact status="no" details="" size="3051" time="0" location="/Users/li/.ivy2/cache/org.graphstream/pherd/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/pherd/1.0/pherd-1.0.pom"/>
+				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.1.2"/>
+				<artifacts>
+					<artifact name="pherd" type="jar" ext="jar" status="no" details="" size="46227" time="0" location="/Users/li/.ivy2/cache/org.graphstream/pherd/jars/pherd-1.0.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/pherd/1.0/pherd-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.graphstream" name="mbox2">
+			<revision name="1.0" status="release" pubdate="20110517165724" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="160">
+				<license name="LGPL3" url="http://www.gnu.org/copyleft/lesser.html"/>
+				<license name="Cecill-C" url="http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html       "/>
+				<metadata-artifact status="no" details="" size="3113" time="0" location="/Users/li/.ivy2/cache/org.graphstream/mbox2/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/graphstream/mbox2/1.0/mbox2-1.0.pom"/>
+				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.1.2"/>
+				<caller organisation="org.graphstream" name="pherd" conf="compile, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mbox2" type="jar" ext="jar" status="no" details="" size="23238" time="0" location="/Users/li/.ivy2/cache/org.graphstream/mbox2/jars/mbox2-1.0.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/graphstream/mbox2/1.0/mbox2-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit">
+			<revision name="4.3.1" status="release" pubdate="20070515053407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="158">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2583" time="0" location="/Users/li/.ivy2/cache/junit/junit/ivy-4.3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit/4.3.1/junit-4.3.1.pom"/>
+				<caller organisation="jline" name="jline" conf="compile, runtime" rev="3.8.1" rev-constraint-default="3.8.1" rev-constraint-dynamic="3.8.1" callerrev="0.9.94"/>
+				<caller organisation="org.graphstream" name="gs-core" conf="default, compile, runtime, master" rev="4.3.1" rev-constraint-default="4.3.1" rev-constraint-dynamic="4.3.1" callerrev="1.1.2"/>
+				<artifacts>
+					<artifact name="junit" type="jar" ext="jar" status="no" details="" size="106547" time="0" location="/Users/li/.ivy2/cache/junit/junit/jars/junit-4.3.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/junit/junit/4.3.1/junit-4.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="3.8.1" status="release" pubdate="20080831194525" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="-1">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2457" time="0" location="/Users/li/.ivy2/cache/junit/junit/ivy-3.8.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/junit/junit/3.8.1/junit-3.8.1.pom"/>
+				<evicted-by rev="4.3.1"/>
+				<caller organisation="jline" name="jline" conf="compile, runtime" rev="3.8.1" rev-constraint-default="3.8.1" rev-constraint-dynamic="3.8.1" callerrev="0.9.94"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="3.1.14" status="release" pubdate="20080831194842" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/usingmysql/java/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="156">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl.txt"/>
+				<metadata-artifact status="no" details="" size="2387" time="0" location="/Users/li/.ivy2/cache/mysql/mysql-connector-java/ivy-3.1.14.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/mysql/mysql-connector-java/3.1.14/mysql-connector-java-3.1.14.pom"/>
+				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="3.1.14" rev-constraint-default="3.1.14" rev-constraint-dynamic="3.1.14" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="459094" time="0" location="/Users/li/.ivy2/cache/mysql/mysql-connector-java/jars/mysql-connector-java-3.1.14.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/mysql/mysql-connector-java/3.1.14/mysql-connector-java-3.1.14.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -436,7 +381,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scalanlp" name="breeze_2.10">
-			<revision name="0.11.2" status="release" pubdate="20150327011600" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="138">
+			<revision name="0.11.2" status="release" pubdate="20150327011600" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="140">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="4577" time="0" location="/Users/li/.ivy2/cache/org.scalanlp/breeze_2.10/ivy-0.11.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scalanlp/breeze_2.10/0.11.2/breeze_2.10-0.11.2.pom"/>
 				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="0.11.2" rev-constraint-default="0.11.2" rev-constraint-dynamic="0.11.2" callerrev="1.5.2"/>
@@ -519,26 +464,38 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="com.github.fommil.netlib" name="core">
-			<revision name="1.1.2" status="release" pubdate="20131126195400" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="140">
-				<metadata-artifact status="no" details="" size="4819" time="0" location="/Users/li/.ivy2/cache/com.github.fommil.netlib/core/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/core/1.1.2/core-1.1.2.pom"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="1.6.1"/>
-				<caller organisation="org.scalanlp" name="breeze_2.10" conf="compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="0.11.2"/>
-				<artifacts>
-					<artifact name="core" type="jar" ext="jar" status="no" details="" size="164422" time="0" location="/Users/li/.ivy2/cache/com.github.fommil.netlib/core/jars/core-1.1.2.jar">
-						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/core/1.1.2/core-1.1.2.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
 		<module organisation="org.scalanlp" name="breeze-macros_2.10">
-			<revision name="0.11.2" status="release" pubdate="20150327011100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="139">
+			<revision name="0.11.2" status="release" pubdate="20150327011100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalanlp.org/" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="141">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3178" time="0" location="/Users/li/.ivy2/cache/org.scalanlp/breeze-macros_2.10/ivy-0.11.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/scalanlp/breeze-macros_2.10/0.11.2/breeze-macros_2.10-0.11.2.pom"/>
 				<caller organisation="org.scalanlp" name="breeze_2.10" conf="compile, runtime" rev="0.11.2" rev-constraint-default="0.11.2" rev-constraint-dynamic="0.11.2" callerrev="0.11.2"/>
 				<artifacts>
 					<artifact name="breeze-macros_2.10" type="jar" ext="jar" status="no" details="" size="118301" time="0" location="/Users/li/.ivy2/cache/org.scalanlp/breeze-macros_2.10/jars/breeze-macros_2.10-0.11.2.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/scalanlp/breeze-macros_2.10/0.11.2/breeze-macros_2.10-0.11.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.spark" name="spark-graphx_2.10">
+			<revision name="1.5.2" status="release" pubdate="20151104043420" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, compile(*), runtime(*), master(compile), master" position="137">
+				<metadata-artifact status="no" details="" size="66827" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-graphx_2.10/ivy-1.5.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/spark/spark-graphx_2.10/1.5.2/spark-graphx_2.10-1.5.2.pom"/>
+				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spark-graphx_2.10" type="jar" ext="jar" status="no" details="" size="653616" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-graphx_2.10/jars/spark-graphx_2.10-1.5.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/spark/spark-graphx_2.10/1.5.2/spark-graphx_2.10-1.5.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.fommil.netlib" name="core">
+			<revision name="1.1.2" status="release" pubdate="20131126195400" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="138">
+				<metadata-artifact status="no" details="" size="4819" time="0" location="/Users/li/.ivy2/cache/com.github.fommil.netlib/core/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/com/github/fommil/netlib/core/1.1.2/core-1.1.2.pom"/>
+				<caller organisation="org.scalanlp" name="breeze_2.10" conf="compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="0.11.2"/>
+				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="1.5.2"/>
+				<artifacts>
+					<artifact name="core" type="jar" ext="jar" status="no" details="" size="164422" time="0" location="/Users/li/.ivy2/cache/com.github.fommil.netlib/core/jars/core-1.1.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/com/github/fommil/netlib/core/1.1.2/core-1.1.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -675,6 +632,22 @@
 				<artifacts>
 					<artifact name="spark-streaming_2.10" type="jar" ext="jar" status="no" details="" size="1800587" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-streaming_2.10/jars/spark-streaming_2.10-1.5.2.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/spark/spark-streaming_2.10/1.5.2/spark-streaming_2.10-1.5.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.spark" name="spark-core_2.10">
+			<revision name="1.5.2" status="release" pubdate="20151111022235" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, compile(*), runtime, runtime(*), master(compile), master" position="53">
+				<metadata-artifact status="no" details="" size="77558" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-core_2.10/ivy-1.5.2.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/apache/spark/spark-core_2.10/1.5.2/spark-core_2.10-1.5.2.pom"/>
+				<caller organisation="org.apache.spark" name="spark-streaming_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<caller organisation="org.apache.spark" name="spark-sql_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<caller organisation="org.apache.spark" name="spark-catalyst_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<caller organisation="default" name="classification_2.10" conf="test, compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.0"/>
+				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="1.5.2"/>
+				<artifacts>
+					<artifact name="spark-core_2.10" type="jar" ext="jar" status="no" details="" size="11126852" time="0" location="/Users/li/.ivy2/cache/org.apache.spark/spark-core_2.10/jars/spark-core_2.10-1.5.2.jar">
+						<origin-location is-local="false" location="https://jcenter.bintray.com/org/apache/spark/spark-core_2.10/1.5.2/spark-core_2.10-1.5.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -967,12 +940,12 @@
 			</revision>
 		</module>
 		<module organisation="net.sourceforge.f2j" name="arpack_combined_all">
-			<revision name="0.1" status="release" pubdate="20110829233548" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://f2j.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="141">
+			<revision name="0.1" status="release" pubdate="20110829233548" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://f2j.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, runtime, compile(*), runtime(*), master(compile), master" position="139">
 				<license name="The BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
 				<metadata-artifact status="no" details="" size="2441" time="0" location="/Users/li/.ivy2/cache/net.sourceforge.f2j/arpack_combined_all/ivy-0.1.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.pom"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="0.1" rev-constraint-default="0.1" rev-constraint-dynamic="0.1" callerrev="1.6.1"/>
 				<caller organisation="org.scalanlp" name="breeze_2.10" conf="compile, runtime" rev="0.1" rev-constraint-default="0.1" rev-constraint-dynamic="0.1" callerrev="0.11.2"/>
 				<caller organisation="com.github.fommil.netlib" name="core" conf="compile, runtime" rev="0.1" rev-constraint-default="0.1" rev-constraint-dynamic="0.1" callerrev="1.1.2"/>
+				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="0.1" rev-constraint-default="0.1" rev-constraint-dynamic="0.1" callerrev="1.5.2"/>
 				<artifacts>
 					<artifact name="arpack_combined_all" type="jar" ext="jar" extra-classifier="javadoc" status="no" details="" size="5976137" time="0" location="/Users/li/.ivy2/cache/net.sourceforge.f2j/arpack_combined_all/jars/arpack_combined_all-0.1-javadoc.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1-javadoc.jar"/>
@@ -1268,7 +1241,6 @@
 				<license name="The Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2849" time="0" location="/Users/li/.ivy2/cache/org.spark-project.spark/unused/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://jcenter.bintray.com/org/spark-project/spark/unused/1.0.0/unused-1.0.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-launcher_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
-				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.6.1"/>
 				<caller organisation="org.apache.spark" name="spark-network-shuffle_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
 				<caller organisation="org.apache.spark" name="spark-network-common_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
 				<caller organisation="org.apache.spark" name="spark-streaming_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
@@ -1277,6 +1249,7 @@
 				<caller organisation="org.apache.spark" name="spark-mllib_2.10" conf="default, compile, runtime, master" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
 				<caller organisation="org.apache.spark" name="spark-catalyst_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
+				<caller organisation="org.apache.spark" name="spark-graphx_2.10" conf="compile, runtime" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.5.2"/>
 				<artifacts>
 					<artifact name="unused" type="jar" ext="jar" status="no" details="" size="2777" time="0" location="/Users/li/.ivy2/cache/org.spark-project.spark/unused/jars/unused-1.0.0.jar">
 						<origin-location is-local="false" location="https://jcenter.bintray.com/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar"/>
