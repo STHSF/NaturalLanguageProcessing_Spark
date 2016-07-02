@@ -152,7 +152,10 @@ object KeywordExtractor {
 
 }
 
-object textRank extends  App {
+/**
+  * 测试用例
+  */
+object test extends  App {
 
   val conf = new SparkConf().setAppName("textrank").setMaster("local")
   val sc = new SparkContext(conf)
