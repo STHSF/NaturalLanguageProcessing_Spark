@@ -316,10 +316,6 @@ object HotWordsTest extends App {
 
   }
 
-
-
-
-
   val data = sc.parallelize(List(a, b, c))
   val data2 = sc.parallelize(List(d, e, f))
   val data3 = sc.parallelize(List(g, h, k))
