@@ -11,7 +11,6 @@ object HotDegreeCalculate {
 
   /**
     * 使用贝叶斯平均法计算热词候选词的热度
-    *
     * @param hotWords 当前热词候选词热度
     * @param preHotWords 前期热词的热度
     * @return 热词候选词和计算出的热度
@@ -63,7 +62,7 @@ object HotDegreeCalculate {
   }
 
   /**
-    * 牛顿冷却定律,
+    * 牛顿冷却定律, 使用冷却系数的相反数来反应一个词的热度上升趋势
     * @param hotWords 当前热词候选词
     * @param preHotWords 前一段时间热词候选词
     * @param timeRange 时间间隔
