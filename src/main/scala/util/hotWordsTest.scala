@@ -1,5 +1,6 @@
 package com.kunyan.scheduler
 
+import hotdegreecalculate.HotDegreeCalculate
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -247,8 +248,7 @@ object HotWordsTest extends App {
   }
 
 
-  val a1 = List(("程序", 3), ("程序员", 4), ("测试", 2))
-  val a2 = List(("测试", 2), ("程序", 4), ("银行", 10))
+
 
 
   /**
@@ -332,39 +332,39 @@ object HotWordsTest extends App {
     result.toArray
   }
 
-  /**
-    * 排序算法主程序入口
-    * @param hotWords 当前热词
-    * @param preHotWords 前段时间的热词
-    * @param timeRange 时间间隔
-    * @param alpha 贝叶斯平均的权重, 一般0.7
-    * @param beta 牛顿冷却算法的权重, 一般0.3
-    * @return 热词候选词和计算出的热度
-    * @author Li Yu
-    */
-  def run(hotWords: RDD[(String, Int)],
-          preHotWords: RDD[(String, Int)],
-          timeRange: Int,
-          alpha: Double,
-          beta: Double): Array[(String, Float)] ={
-
-    val result = mutable.HashMap[String, Float]()
-
-    val bayesianAverageResult = bayesianAverage(hotWords, preHotWords).toMap
-
-    val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange).toMap
-
-    bayesianAverageResult.foreach {
-      line => {
-        val key = line._1
-        val value = line._2
-        val temp = (alpha * value) + beta * newtonCoolingResult.get(key).get
-        result.put(key, temp.toFloat)
-      }
-    }
-
-    result.toArray
-  }
+//  /**
+//    * 排序算法主程序入口
+//    * @param hotWords 当前热词
+//    * @param preHotWords 前段时间的热词
+//    * @param timeRange 时间间隔
+//    * @param alpha 贝叶斯平均的权重, 一般0.7
+//    * @param beta 牛顿冷却算法的权重, 一般0.3
+//    * @return 热词候选词和计算出的热度
+//    * @author Li Yu
+//    */
+//  def run(hotWords: RDD[(String, Int)],
+//          preHotWords: RDD[(String, Int)],
+//          timeRange: Int,
+//          alpha: Double,
+//          beta: Double): Array[(String, Float)] ={
+//
+//    val result = mutable.HashMap[String, Float]()
+//
+//    val bayesianAverageResult = bayesianAverage(hotWords, preHotWords).toMap
+//
+//    val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange).toMap
+//
+//    bayesianAverageResult.foreach {
+//      line => {
+//        val key = line._1
+//        val value = line._2
+//        val temp = (alpha * value) + (beta * newtonCoolingResult.get(key).get)
+//        result.put(key, temp.toFloat)
+//      }
+//    }
+//
+//    result.toArray
+//  }
 
 
 
@@ -379,6 +379,8 @@ object HotWordsTest extends App {
   val data2 = sc.parallelize(List(d, e, f))
   val data3 = sc.parallelize(List(g, h, k))
 
+  val a1 = List(("程序", 3), ("程序员", 4), ("测试", 2))
+  val a2 = List(("测试", 2), ("程序", 4), ("银行", 10))
   val data4 = sc.parallelize(a1)
   val data5 = sc.parallelize(a2)
 
@@ -394,18 +396,19 @@ object HotWordsTest extends App {
 //  result3._2.foreach(x => println("industry" + x._1, x._2, x._3))
 //  result3._3.foreach(x => println("section" + x._1, x._2, x._3))
 
-  val result5 = bayesianAverage(data4, data5)
-  result5.foreach(x => println("re55: " + x))
+//  val result5 = bayesianAverage(data4, data5)
+//  result5.foreach(x => println("re55: " + x))
+//
+//  println("length1: " + result5.length)
+//
+//  val result6 = newtonCooling(data4, data5, 1)
+//  result6.foreach(x => println("res66: " + x))
+//  println("length2: " + result6.length)
 
-  println("length1: " + result5.length)
+//  val result7 = run(data4, data5, 1, 0.7, 0.3)
+  val result8 = HotDegreeCalculate.run(data4, data5, 1, 0.7, 0.3)
 
-  val result6 = newtonCooling(data4, data5, 1)
-  result6.foreach(x => println("res66: " + x))
-  println("length2: " + result6.length)
-
-  val result7 = run(data4, data5, 1, 0.7, 0.8)
-
-  result7.foreach(x => println("res:" + x))
+  result8.foreach(x => println("res:" + x))
 
 
 }

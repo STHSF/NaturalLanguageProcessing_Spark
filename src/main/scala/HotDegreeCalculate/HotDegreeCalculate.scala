@@ -1,4 +1,4 @@
-package HotDegreeCalculate
+package hotdegreecalculate
 
 import org.apache.spark.rdd.RDD
 
@@ -80,15 +80,15 @@ object HotDegreeCalculate {
 
     val newtonCoolingResult = new mutable.HashMap[String, Float]
 
-    hotWords.map{
+    wordLibArray.map{
       line => {
         val keywords = line._1
         val atp = line._2
         val btp = wordLibArray.get(keywords).get - atp
         val item = math.log((atp + 1) / (btp + 1) / timeRange).toFloat
         newtonCoolingResult.put(keywords, item)
-        }
       }
+    }
 
     newtonCoolingResult
   }
@@ -110,7 +110,7 @@ object HotDegreeCalculate {
 
     val result = mutable.HashMap[String, Float]()
 
-    val bayesianAverageResult = bayesianAverage(hotWords, preHotWords).toMap
+    val bayesianAverageResult = bayesianAverage(hotWords, preHotWords)
 
     val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange).toMap
 
