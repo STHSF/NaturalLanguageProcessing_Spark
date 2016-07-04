@@ -4,7 +4,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable
-import scala.collection.mutable.{ListBuffer, ArrayBuffer}
+import scala.collection.mutable.ArrayBuffer
 
 /**
   * Created by li on 16/6/29.
@@ -111,83 +111,83 @@ object HotWordsTest extends App {
 
 
 
-  def entityWordsGet(propertyTable: RDD[(String, String)]): (RDD[(Seq[String], (String, Int))],
-    RDD[(Seq[String], (String, Int))],
-    RDD[(Seq[String], (String, Int))]) = {
-
-    val entity = propertyTable.map {
-      line => {
-        val url = line._1
-        val stockTemp = line._2.split(" ")(0)
-        val industryTemp = line._2.split(" ")(1)
-        val sectionTemp = line._2.split(" ")(2)
-        ((stockTemp, industryTemp, sectionTemp ), url)
-
-      }
-    }
-
-    val stockUrl = entity.map(x => (x._1._1, x._2)).groupByKey()
-    val industryUrl = entity.map(x => (x._1._2, x._2)).groupByKey()
-    val sectionUrl = entity.map(x => (x._1._3, x._2)).groupByKey()
-
-    val stockUrlCount = stockUrl.map(line =>{
-      val urlList = line._2.toSeq
-      val stockProperty = line._1
-      val df = line._2.size
-      (urlList, (stockProperty , df))
-    })
-
-    val sectionUrlCount = sectionUrl.map(line =>{
-      (line._2.toSeq, (line._1, line._2.size))
-    })
-
-    val industryUrlCount = industryUrl.map(line =>{
-      (line._2.toSeq, (line._1, line._2.size))
-    })
-
-    val stockUrlList = stockUrlCount.flatMap(
-      line =>{
-        val list = new ListBuffer[(String, (String, Int))]
-
-        line._1.foreach(x => {
-
-          list.+=((x,line._2))
-        })
-
-        list
-      }
-    ).collect()
-
-    val industryUrlList = industryUrlCount.flatMap(
-      line =>{
-        val list = new ListBuffer[(String, (String, Int))]
-
-        line._1.foreach(x => {
-
-          list.+=((x,line._2))
-        })
-
-        list
-      }
-    ).collect()
-
-    val sectionUrlList = sectionUrlCount.flatMap(
-      line =>{
-        val list = new ListBuffer[(String, (String, Int))]
-
-        line._1.foreach(x => {
-
-          list.+=((x,line._2))
-        })
-
-        list
-      }
-    ).collect()
-
-    val propertyLibList = stockUrlList.++:(industryUrlList).++:(sectionUrlList).toMap
-
-    (stockUrlCount, industryUrlCount, sectionUrlCount)
-  }
+//  def entityWordsGet(propertyTable: RDD[(String, String)]): (RDD[(Seq[String], (String, Int))],
+//    RDD[(Seq[String], (String, Int))],
+//    RDD[(Seq[String], (String, Int))]) = {
+//
+//    val entity = propertyTable.map {
+//      line => {
+//        val url = line._1
+//        val stockTemp = line._2.split(" ")(0)
+//        val industryTemp = line._2.split(" ")(1)
+//        val sectionTemp = line._2.split(" ")(2)
+//        ((stockTemp, industryTemp, sectionTemp ), url)
+//
+//      }
+//    }
+//
+//    val stockUrl = entity.map(x => (x._1._1, x._2)).groupByKey()
+//    val industryUrl = entity.map(x => (x._1._2, x._2)).groupByKey()
+//    val sectionUrl = entity.map(x => (x._1._3, x._2)).groupByKey()
+//
+//    val stockUrlCount = stockUrl.map(line =>{
+//      val urlList = line._2.toSeq
+//      val stockProperty = line._1
+//      val df = line._2.size
+//      (urlList, (stockProperty , df))
+//    })
+//
+//    val sectionUrlCount = sectionUrl.map(line =>{
+//      (line._2.toSeq, (line._1, line._2.size))
+//    })
+//
+//    val industryUrlCount = industryUrl.map(line =>{
+//      (line._2.toSeq, (line._1, line._2.size))
+//    })
+//
+//    val stockUrlList = stockUrlCount.flatMap(
+//      line =>{
+//        val list = new ListBuffer[(String, (String, Int))]
+//
+//        line._1.foreach(x => {
+//
+//          list.+=((x,line._2))
+//        })
+//
+//        list
+//      }
+//    ).collect()
+//
+//    val industryUrlList = industryUrlCount.flatMap(
+//      line =>{
+//        val list = new ListBuffer[(String, (String, Int))]
+//
+//        line._1.foreach(x => {
+//
+//          list.+=((x,line._2))
+//        })
+//
+//        list
+//      }
+//    ).collect()
+//
+//    val sectionUrlList = sectionUrlCount.flatMap(
+//      line =>{
+//        val list = new ListBuffer[(String, (String, Int))]
+//
+//        line._1.foreach(x => {
+//
+//          list.+=((x,line._2))
+//        })
+//
+//        list
+//      }
+//    ).collect()
+//
+//    val propertyLibList = stockUrlList.++:(industryUrlList).++:(sectionUrlList).toMap
+//
+//    (stockUrlCount, industryUrlCount, sectionUrlCount)
+//  }
 
 
 
@@ -308,13 +308,72 @@ object HotWordsTest extends App {
   }
 
 
+  def newtonCooling(hotWords: RDD[(String, Int)],
+                    preHotWords: RDD[(String, Int)],
+                    timeRange: Int): Array[(String, Float)] ={
 
+    val wordLib = hotWords.++(preHotWords)
 
-  def fileProcessing(sc: SparkContext, dir: String): Array[(String, (String, Int))] = {
+    //TpSum: 词频和
+    val wordLibArray = wordLib.reduceByKey(_ + _).collect().toMap
 
+    val result = new mutable.HashMap[String, Float]
 
+    wordLibArray.map{
+      line => {
+        val keywords = line._1
+        val atp = line._2
+        val btp = wordLibArray.get(keywords).get - atp
+        val item = math.log((atp + 1) / (btp + 1) / timeRange).toFloat
+        result.put(keywords, item)
+      }
+    }
 
+    result.toArray
   }
+
+  /**
+    * 排序算法主程序入口
+    * @param hotWords 当前热词
+    * @param preHotWords 前段时间的热词
+    * @param timeRange 时间间隔
+    * @param alpha 贝叶斯平均的权重, 一般0.7
+    * @param beta 牛顿冷却算法的权重, 一般0.3
+    * @return 热词候选词和计算出的热度
+    * @author Li Yu
+    */
+  def run(hotWords: RDD[(String, Int)],
+          preHotWords: RDD[(String, Int)],
+          timeRange: Int,
+          alpha: Double,
+          beta: Double): Array[(String, Float)] ={
+
+    val result = mutable.HashMap[String, Float]()
+
+    val bayesianAverageResult = bayesianAverage(hotWords, preHotWords).toMap
+
+    val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange).toMap
+
+    bayesianAverageResult.foreach {
+      line => {
+        val key = line._1
+        val value = line._2
+        val temp = (alpha * value) + beta * newtonCoolingResult.get(key).get
+        result.put(key, temp.toFloat)
+      }
+    }
+
+    result.toArray
+  }
+
+
+
+
+//  def fileProcessing(sc: SparkContext, dir: String): Array[(String, (String, Int))] = {
+//
+//
+//
+//  }
 
   val data = sc.parallelize(List(a, b, c))
   val data2 = sc.parallelize(List(d, e, f))
@@ -327,7 +386,7 @@ object HotWordsTest extends App {
 //  val reslut1 = getWordRank(sc, data, data2)
 //
 //  // 实体词词频
-  val result2 =  entityWordsGet(data3)
+//  val result2 =  entityWordsGet(data3)
 //
 //  // 实体词事件词揉合
 //  val result3 = entityWordsUnionEventWords(result2, reslut1)
@@ -336,6 +395,17 @@ object HotWordsTest extends App {
 //  result3._3.foreach(x => println("section" + x._1, x._2, x._3))
 
   val result5 = bayesianAverage(data4, data5)
+  result5.foreach(x => println("re55: " + x))
+
+  println("length1: " + result5.length)
+
+  val result6 = newtonCooling(data4, data5, 1)
+  result6.foreach(x => println("res66: " + x))
+  println("length2: " + result6.length)
+
+  val result7 = run(data4, data5, 1, 0.7, 0.8)
+
+  result7.foreach(x => println("res:" + x))
 
 
 }
