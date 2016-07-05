@@ -1,5 +1,6 @@
 [debug] Other repositories:
 [debug] Default repositories:
+[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#classification$sbt_2.10;1.0
 [debug] 	confs: [default]
@@ -10,7 +11,6 @@
 [debug] == resolving dependencies default#classification$sbt_2.10;1.0->org.scala-sbt#sbt;0.13.8 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.8 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {default=[default(compile)]}
-[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8
 [debug] 	found org.scala-sbt#sbt;0.13.8 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
@@ -1094,9 +1094,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 4179ms :: artifacts dl 70ms
+[debug] :: resolution report :: resolve 4438ms :: artifacts dl 70ms
 [debug] 	report for default#classification$sbt_2.10;1.0 default produced in /Users/li/kunyan/classification/target/resolution-cache/reports/default-classification$sbt_2.10-default.xml
-[debug] 	resolve done (4179ms resolve - 70ms download)
+[debug] 	resolve done (4438ms resolve - 70ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#classification$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1638,6 +1638,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 905ms :: artifacts dl 87ms
+[debug] :: resolution report :: resolve 383ms :: artifacts dl 239ms
 [debug] 	report for default#classification$sources_2.10;1.0 default produced in /Users/li/kunyan/classification/target/resolution-cache/reports/default-classification$sources_2.10-default.xml
-[debug] 	resolve done (905ms resolve - 87ms download)
+[debug] 	resolve done (383ms resolve - 239ms download)

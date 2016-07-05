@@ -1,6 +1,6 @@
 package com.kunyan.scheduler
 
-import hotdegreecalculate.HotDegreeCalculate
+import hotdegreecalculate.FileRead
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -15,15 +15,16 @@ object HotWordsTest extends App {
   val conf = new SparkConf().setAppName("test").setMaster("local")
   val sc = new SparkContext(conf)
 
-  val a = ("url1", List("程序员","专业"))
-  val b = ("url2", List("专业","代码"))
-  val c = ("url3", List("方面","代码"))
+  val a = ("t1", Array("程序员","专业"))
+  val b = ("t2", Array("代码", "方面"))
+//  val c = ("t3", Array("方面","代码"))
 
-
-  val d = ("url1", "程序,专业,方面,程序员")
-  val e = ("url2", "专业,代码,程序")
+  val d = ("url1", "程序,程序员,专业")
+  val e = ("url2", "代码,程序")
   val f = ("url3", "专业,代码,方面,专业")
 
+  val dArray = Array(d, e, f) //文档集
+  val cArray = Array(a, b) //社区集
 
 
   val g = ("url1", "银行 代码 金融")
@@ -375,14 +376,19 @@ object HotWordsTest extends App {
 //
 //  }
 
-  val data = sc.parallelize(List(a, b, c))
+//  val data = sc.parallelize(List(a, b, c))
   val data2 = sc.parallelize(List(d, e, f))
   val data3 = sc.parallelize(List(g, h, k))
 
-  val a1 = List(("程序", 3), ("程序员", 4), ("测试", 2))
+  val a1 = List(("程序", 1), ("程序员", 4), ("测试", 2), ("代码", 3))
   val a2 = List(("测试", 2), ("程序", 4), ("银行", 10))
   val data4 = sc.parallelize(a1)
   val data5 = sc.parallelize(a2)
+
+  val a3 = List(("六合彩", 1106), ("直播", 469), ("男同志", 3410), ("李宇春", 442), ("无耻", 2713), ("俞思远", 149), ("演唱会", 741), ("好男儿", 0), ("董文华", 2246), ("婚纱", 653), ("太正宵", 1), ("敢死队", 119))
+  val a4 = List(("六合彩", 1702), ("直播", 769), ("男同志", 3925), ("李宇春", 649), ("无耻", 2939), ("俞思远", 331), ("演唱会", 749), ("好男儿", 441), ("董文华", 4672), ("婚纱", 1650), ("太正宵", 5), ("敢死队", 75))
+  val data6 = sc.parallelize(a3)
+  val data7 = sc.parallelize(a4)
 
 //  // 事件词词频
 //  val reslut1 = getWordRank(sc, data, data2)
@@ -406,9 +412,13 @@ object HotWordsTest extends App {
 //  println("length2: " + result6.length)
 
 //  val result7 = run(data4, data5, 1, 0.7, 0.3)
-  val result8 = HotDegreeCalculate.run(data4, data5, 1, 0.7, 0.3)
+//  val result8 = HotDegreeCalculate.run(data7, data6, 1, 0.7, 0.3)
+//
+//  result8.foreach(x => println("res:" + x))
 
-  result8.foreach(x => println("res:" + x))
+
+  val reslut9 = FileRead.fileRead(dArray, cArray)
+  reslut9.foreach(x => println(x))
 
 
 }

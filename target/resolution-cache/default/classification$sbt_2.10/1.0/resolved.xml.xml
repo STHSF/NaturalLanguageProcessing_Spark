@@ -4,7 +4,7 @@
 		module="classification$sbt_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160624110320"
+		publication="20160705152639"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

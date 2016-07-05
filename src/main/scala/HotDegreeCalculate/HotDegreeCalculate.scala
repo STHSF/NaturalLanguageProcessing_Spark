@@ -78,15 +78,30 @@ object HotDegreeCalculate {
     //TpSum: 词频和
     val wordLibArray = wordLib.reduceByKey(_ + _).collect().toMap
 
+    val hotWordsMap = hotWords.collect().toMap
+
     val newtonCoolingResult = new mutable.HashMap[String, Float]
 
     wordLibArray.map{
       line => {
+
         val keywords = line._1
-        val atp = line._2
-        val btp = wordLibArray.get(keywords).get - atp
-        val item = math.log((atp + 1) / (btp + 1) / timeRange).toFloat
-        newtonCoolingResult.put(keywords, item)
+        val tpSum = line._2
+
+        if (hotWordsMap.keySet.contains(keywords)) {
+
+          val atp = hotWordsMap.get(keywords).get.toFloat
+          val btp = tpSum - atp
+          val item = math.log((atp + 1) / (btp + 1) / timeRange)
+          newtonCoolingResult.put(keywords, item.toFloat)
+
+        } else {
+
+          val btp = tpSum
+          val item = math.log((0f + 1) / (btp + 1) / timeRange).toFloat
+          newtonCoolingResult.put(keywords, item)
+
+        }
       }
     }
 
@@ -112,18 +127,18 @@ object HotDegreeCalculate {
 
     val bayesianAverageResult = bayesianAverage(hotWords, preHotWords)
 
-    val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange).toMap
+    val newtonCoolingResult = newtonCooling(hotWords, preHotWords, timeRange)
 
     bayesianAverageResult.foreach {
       line => {
         val key = line._1
         val value = line._2
-        val temp = (alpha * value) + beta * newtonCoolingResult.get(key).get
+        val temp = (alpha * value) + beta * newtonCoolingResult.toMap.get(key).get
         result.put(key, temp.toFloat)
       }
     }
 
-    result.toArray
+    result.toArray.sortWith(_._2 > _._2)
   }
 
 }
