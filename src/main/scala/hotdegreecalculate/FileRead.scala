@@ -24,19 +24,21 @@ object FileRead {
 
     communityWordList.foreach {
       line => {
+
         val item = new ListBuffer[String]
         val communityId  = line._1
         val communityWords  = line._2
+
         fileList.foreach { file => {
 
             val fileId = file._1
             val fileWordsList= file._2.split(",").distinct
+
             communityWords.foreach { word => {
 
                 if (fileWordsList.contains(word)) item.append(fileId)
               }
 
-                item.toArray().foreach(x => println(x))
                 communityList.put(communityId, item.toArray().distinct.length)
             }
           }

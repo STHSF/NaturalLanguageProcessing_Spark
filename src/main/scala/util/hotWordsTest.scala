@@ -15,16 +15,16 @@ object HotWordsTest extends App {
   val conf = new SparkConf().setAppName("test").setMaster("local")
   val sc = new SparkContext(conf)
 
-  val a = ("t1", Array("程序员","专业"))
-  val b = ("t2", Array("代码", "方面"))
-//  val c = ("t3", Array("方面","代码"))
+  val a = ("t1", Array("程序员","专业", "调试"))
+  val b = ("t2", Array("测试", "方面"))
+  val c = ("t3", Array("方面","代码"))
 
   val d = ("url1", "程序,程序员,专业")
   val e = ("url2", "代码,程序")
   val f = ("url3", "专业,代码,方面,专业")
 
   val dArray = Array(d, e, f) //文档集
-  val cArray = Array(a, b) //社区集
+  val cArray = Array(a, b, c) //社区集
 
 
   val g = ("url1", "银行 代码 金融")
