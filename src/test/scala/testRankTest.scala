@@ -1,5 +1,5 @@
 
-import textrank.textRank
+import textrank.TextRank
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -16,7 +16,7 @@ object testRankTest {
     val text = Source.fromURL(getClass.getResource(s"/text/${2}.txt")).getLines().mkString("\n")
     text.split(",").foreach(x => doc.+=(x))
 
-    val keyWordList = textRank.run("url", 5, doc, 3, 100, 0.85f)
+    val keyWordList = TextRank.run("url", 5, doc, 3, 100, 0.85f)
 
     keyWordList.foreach {
       word => {

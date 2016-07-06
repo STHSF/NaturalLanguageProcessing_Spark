@@ -85,7 +85,7 @@ object DataTransform {
   }
 
 
-  def main(args: Array[String]){
+  def main(args: Array [String]){
 
     val url1 = "/users/li/Downloads/segTrainingSet"
     val url2 = "/users/li/Downloads/trainglabel3.txt"

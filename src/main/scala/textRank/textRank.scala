@@ -5,7 +5,7 @@ import scala.collection.mutable.ListBuffer
 /**
   * Created by li on 16/6/24.
   */
-object textRank {
+object TextRank {
   /**
     *
     * @param graphName 图标识

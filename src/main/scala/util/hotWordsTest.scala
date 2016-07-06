@@ -1,6 +1,6 @@
 package com.kunyan.scheduler
 
-import hotdegreecalculate.FileRead
+import hotdegreecalculate.{HotDegreeCalculate, WordFrequencyStatistics}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -376,7 +376,7 @@ object HotWordsTest extends App {
 //
 //  }
 
-//  val data = sc.parallelize(List(a, b, c))
+  val data = sc.parallelize(List(a, b, c))
   val data2 = sc.parallelize(List(d, e, f))
   val data3 = sc.parallelize(List(g, h, k))
 
@@ -412,13 +412,13 @@ object HotWordsTest extends App {
 //  println("length2: " + result6.length)
 
 //  val result7 = run(data4, data5, 1, 0.7, 0.3)
-//  val result8 = HotDegreeCalculate.run(data7, data6, 1, 0.7, 0.3)
-//
-//  result8.foreach(x => println("res:" + x))
+  val result8 = HotDegreeCalculate.run(data7, data6, 1, 0.7, 0.3)
+
+  result8.foreach(x => println("result8:" + x))
 
 
-  val reslut9 = FileRead.fileRead(dArray, cArray)
-  reslut9.foreach(x => println(x))
+  val reslut9 = WordFrequencyStatistics.wordFrequencyStatistics(dArray, cArray)
+  reslut9.foreach(x => println("result9" + x))
 
 
 }
