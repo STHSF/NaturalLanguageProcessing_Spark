@@ -1,5 +1,5 @@
 import org.graphstream.graph.Node
-import text.{ConstructTextGraph, PropertyExtractor}
+import textrank.{PropertyExtractor, ConstructTextGraph}
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source

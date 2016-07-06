@@ -1,5 +1,6 @@
 
-import text.TextRank
+
+import textrank.TextRank
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
