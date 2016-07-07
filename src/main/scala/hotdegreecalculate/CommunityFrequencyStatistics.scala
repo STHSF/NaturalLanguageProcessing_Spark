@@ -7,7 +7,7 @@ import scala.collection.mutable
 /**
   * Created by li on 16/7/5.
   */
-object WordFrequencyStatistics {
+object CommunityFrequencyStatistics {
 
 
   /**
@@ -17,7 +17,7 @@ object WordFrequencyStatistics {
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
     */
-  def wordFrequencyStatistics(fileList: Array[(String, String)], communityWordList: Array[(String, Array[String])]):
+  def communityFrequencyStatistics(fileList: Array[(String, String)], communityWordList: Array[(String, Array[String])]):
   Array[(String, Int)] = {
 
     val communityList = new mutable.HashMap[String, Int]

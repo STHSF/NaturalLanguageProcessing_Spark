@@ -1,6 +1,6 @@
 package com.kunyan.scheduler
 
-import hotdegreecalculate.{HotDegreeCalculate, WordFrequencyStatistics}
+import hotdegreecalculate.{HotDegreeCalculate, CommunityFrequencyStatistics}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -390,13 +390,13 @@ object HotWordsTest extends App {
   val data6 = sc.parallelize(a3)
   val data7 = sc.parallelize(a4)
 
-//  // 事件词词频
+  // 事件词词频
 //  val reslut1 = getWordRank(sc, data, data2)
-//
-//  // 实体词词频
+
+  // 实体词词频
 //  val result2 =  entityWordsGet(data3)
-//
-//  // 实体词事件词揉合
+
+  // 实体词事件词揉合
 //  val result3 = entityWordsUnionEventWords(result2, reslut1)
 //  result3._1.foreach(x => println("stock" + x._1, x._2, x._3))
 //  result3._2.foreach(x => println("industry" + x._1, x._2, x._3))
@@ -404,9 +404,8 @@ object HotWordsTest extends App {
 
 //  val result5 = bayesianAverage(data4, data5)
 //  result5.foreach(x => println("re55: " + x))
-//
 //  println("length1: " + result5.length)
-//
+
 //  val result6 = newtonCooling(data4, data5, 1)
 //  result6.foreach(x => println("res66: " + x))
 //  println("length2: " + result6.length)
@@ -417,7 +416,7 @@ object HotWordsTest extends App {
   result8.foreach(x => println("result8:" + x))
 
 
-  val reslut9 = WordFrequencyStatistics.wordFrequencyStatistics(dArray, cArray)
+  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
   reslut9.foreach(x => println("result9" + x))
 
 
