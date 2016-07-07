@@ -1,4 +1,4 @@
-package MeachineLearning.topicmodel
+package ml.topicmodel
 
 import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.{SparkConf, SparkContext}

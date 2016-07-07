@@ -1,4 +1,4 @@
-package MeachineLearning.classification
+package ml.classification
 
 import org.apache.spark.mllib.feature.PCA
 import org.apache.spark.mllib.linalg.Vectors

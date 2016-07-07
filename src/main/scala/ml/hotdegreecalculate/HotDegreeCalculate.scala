@@ -1,4 +1,4 @@
-package MeachineLearning.hotdegreecalculate
+package ml.hotdegreecalculate
 
 import org.apache.spark.rdd.RDD
 

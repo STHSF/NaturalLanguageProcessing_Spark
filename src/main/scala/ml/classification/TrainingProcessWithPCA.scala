@@ -1,4 +1,4 @@
-package MeachineLearning.classification
+package ml.classification
 
 import java.io._
 
