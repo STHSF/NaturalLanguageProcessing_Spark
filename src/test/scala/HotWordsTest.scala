@@ -17,9 +17,9 @@ object HotWordsTest extends App {
   val b = ("t2", Array("测试", "方面"))
   val c = ("t3", Array("方面","代码"))
 
-  val d = ("url1", "程序,程序员,专业")
-  val e = ("url2", "代码,程序")
-  val f = ("url3", "专业,代码,方面,专业")
+  val d = ("url1", Array("程序", "程序员", "专业"))
+  val e = ("url2", Array("代码", "程序"))
+  val f = ("url3", Array("专业", "代码", "方面", "专业"))
 
   val dArray = Array(d, e, f) //文档集
   val cArray = Array(a, b, c) //社区集
@@ -245,10 +245,6 @@ object HotWordsTest extends App {
 
     (stockWords.toSeq, industryWords.toSeq, sectionWords.toSeq)
   }
-
-
-
-
 
   /**
     *

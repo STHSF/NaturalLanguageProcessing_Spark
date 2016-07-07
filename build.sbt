@@ -24,6 +24,13 @@ libraryDependencies += "org.graphstream" % "gs-core" % "1.1.2"
 
 libraryDependencies += "org.apache.spark" % "spark-graphx_2.10" % "1.5.2"
 
+libraryDependencies ++= Seq(
+  "org.apache.hbase" % "hbase" % "0.98.2-hadoop2",
+  "org.apache.hbase" % "hbase-client" % "0.98.2-hadoop2",
+  "org.apache.hbase" % "hbase-common" % "0.98.2-hadoop2",
+  "org.apache.hbase" % "hbase-server" % "0.98.2-hadoop2"
+)
+
 
 
 assemblyMergeStrategy in assembly := {
