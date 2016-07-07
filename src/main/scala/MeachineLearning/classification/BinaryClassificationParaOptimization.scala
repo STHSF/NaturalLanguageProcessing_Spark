@@ -1,3 +1,5 @@
+package MeachineLearning.classification
+
 import java.io.{FileWriter, BufferedWriter, File}
 
 import org.apache.spark.mllib.classification.NaiveBayes

@@ -1,3 +1,5 @@
+package MeachineLearning.classification
+
 import org.apache.spark.ml.feature.{HashingTF, IDF, StopWordsRemover, Tokenizer}
 import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.feature.PCA

@@ -1,3 +1,5 @@
+package MeachineLearning.classification
+
 import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.feature._

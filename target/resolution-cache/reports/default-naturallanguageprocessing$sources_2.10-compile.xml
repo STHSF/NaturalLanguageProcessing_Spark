@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160707170258"/>
+		date="20160707192331"/>
 	<dependencies>
 		<module organisation="org.graphstream" name="gs-core">
 			<revision name="1.1.2" status="release" pubdate="20120924221343" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://graphstream-project.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="152">

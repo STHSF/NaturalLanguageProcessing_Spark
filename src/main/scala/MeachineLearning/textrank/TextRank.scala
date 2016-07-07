@@ -1,4 +1,6 @@
-import textrank.{PropertyExtractor, ConstructTextGraph}
+package MeachineLearning.textrank
+
+import meachinelearning.textrank.{PropertyExtractor, ConstructTextGraph}
 
 import scala.collection.mutable.ListBuffer
 

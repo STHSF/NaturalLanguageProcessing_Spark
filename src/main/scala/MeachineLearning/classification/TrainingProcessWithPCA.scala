@@ -1,3 +1,5 @@
+package MeachineLearning.classification
+
 import java.io._
 
 import org.apache.hadoop.conf.Configuration

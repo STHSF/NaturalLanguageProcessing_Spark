@@ -1,3 +1,5 @@
+package MeachineLearning.classification
+
 import org.apache.spark.mllib.feature.PCA
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.{LinearRegressionWithSGD, LabeledPoint}
