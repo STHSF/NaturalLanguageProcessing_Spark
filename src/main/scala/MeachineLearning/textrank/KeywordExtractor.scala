@@ -1,3 +1,5 @@
+package MeachineLearning.textrank
+
 import org.apache.spark.{SparkConf, SparkContext}
 import org.graphstream.graph.implementations.SingleGraph
 import org.graphstream.graph.{Edge, Node}

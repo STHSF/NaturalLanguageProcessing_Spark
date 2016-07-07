@@ -1,3 +1,5 @@
+package MeachineLearning.topicmodel
+
 import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.mllib.feature
 import org.apache.spark.mllib.feature.IDF

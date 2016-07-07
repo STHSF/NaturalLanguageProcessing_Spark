@@ -1,3 +1,5 @@
+package MeachineLearning.hotdegreecalculate
+
 import com.sun.tools.javac.util.ListBuffer
 
 import scala.collection.mutable

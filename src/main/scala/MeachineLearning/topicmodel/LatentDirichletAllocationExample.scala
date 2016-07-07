@@ -1,3 +1,5 @@
+package MeachineLearning.topicmodel
+
 import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.linalg.Vectors

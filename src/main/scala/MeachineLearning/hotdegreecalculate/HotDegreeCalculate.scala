@@ -1,3 +1,5 @@
+package MeachineLearning.hotdegreecalculate
+
 import org.apache.spark.rdd.RDD
 
 import scala.collection.mutable

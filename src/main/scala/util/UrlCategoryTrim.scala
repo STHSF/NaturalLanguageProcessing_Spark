@@ -1,3 +1,5 @@
+package util
+
 import java.io.{BufferedWriter, File, FileWriter}
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -9,7 +11,7 @@ import scala.io.Source
   * Created by li on 16/4/6.
   * 所输入的数据中有的一个url会对应多个catagory,将具有相同URL的catagory单独分隔开,变成一一对应的值
   */
-object UrlCatagoryTrim extends App {
+object UrlCategoryTrim extends App {
 
   val conf = new SparkConf().setAppName("urlCatagoryTrim").setMaster("local")
   val sc = new SparkContext(conf)
@@ -25,7 +27,7 @@ object UrlCatagoryTrim extends App {
 
 
   // 判断如果catagory中有多个的将其分开并与url对应
-  def splitCatagory(tuple:(String,String)):ListBuffer[(String)] ={
+  def splitCategory(tuple:(String,String)):ListBuffer[(String)] ={
     val listBuffer = new ListBuffer[(String)]
     val cata = tuple._1.split(",")
     if(cata.length < 1){
@@ -44,7 +46,7 @@ object UrlCatagoryTrim extends App {
   val fileWriter = new FileWriter(dataFile)
   val bufferWriter = new BufferedWriter(fileWriter)
 
-  data.flatMap(splitCatagory).foreach(
+  data.flatMap(splitCategory).foreach(
     line =>
       bufferWriter.write(line + "\n")
   )

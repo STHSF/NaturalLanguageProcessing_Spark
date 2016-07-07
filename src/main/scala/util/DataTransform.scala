@@ -1,3 +1,5 @@
+package util
+
 import java.io.{BufferedWriter, File, FileWriter}
 
 import org.apache.spark.rdd.RDD
