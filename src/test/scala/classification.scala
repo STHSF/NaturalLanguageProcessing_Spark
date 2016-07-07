@@ -1,5 +1,8 @@
 import java.io.{BufferedWriter, File, FileWriter}
 
+import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.rdd.RDD
+
 
 /**
   * Created by li on 16/3/31.

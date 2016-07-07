@@ -1,3 +1,7 @@
+import MeachineLearning.hotdegreecalculate.{CommunityFrequencyStatistics, HotDegreeCalculate}
+import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
+
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 

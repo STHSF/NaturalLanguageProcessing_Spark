@@ -1,4 +1,6 @@
-
+import org.apache.spark.ml.feature.Word2Vec
+import org.apache.spark.sql.SQLContext
+import org.apache.spark.{SparkContext, SparkConf}
 
 
 /**
