@@ -1,4 +1,4 @@
-import ml.hotdegreecalculate.{CommunityFrequencyStatistics, HotDegreeCalculate}
+import meachinelearning.hotdegreecalculate.{CommunityFrequencyStatistics, HotDegreeCalculate}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 

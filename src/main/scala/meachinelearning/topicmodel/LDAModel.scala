@@ -1,4 +1,4 @@
-package ml.topicmodel
+package meachinelearning.topicmodel
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}

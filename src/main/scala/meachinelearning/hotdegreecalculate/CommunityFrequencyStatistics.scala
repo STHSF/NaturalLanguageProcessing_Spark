@@ -1,4 +1,4 @@
-package ml.hotdegreecalculate
+package meachinelearning.hotdegreecalculate
 
 import com.sun.tools.javac.util.ListBuffer
 

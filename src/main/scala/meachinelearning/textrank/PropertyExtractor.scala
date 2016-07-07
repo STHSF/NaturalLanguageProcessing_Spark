@@ -1,4 +1,4 @@
-package ml.textrank
+package meachinelearning.textrank
 
 import org.graphstream.graph.implementations.SingleGraph
 import org.graphstream.graph.{Edge, Node}

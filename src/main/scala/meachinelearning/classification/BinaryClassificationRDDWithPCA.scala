@@ -1,4 +1,4 @@
-package ml.classification
+package meachinelearning.classification
 
 import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.evaluation.MulticlassMetrics

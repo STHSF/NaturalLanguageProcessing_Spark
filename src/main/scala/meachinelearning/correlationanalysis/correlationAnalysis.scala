@@ -1,4 +1,4 @@
-package ml.correlationanalysis
+package meachinelearning.correlationanalysis
 
 /**
   * Created by li on 16/7/5.

@@ -1,4 +1,4 @@
-package ml.textrank
+package meachinelearning.textrank
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.graphstream.graph.implementations.SingleGraph

@@ -1,4 +1,4 @@
-package ml.textrank
+package meachinelearning.textrank
 
 import scala.collection.mutable.ListBuffer
 

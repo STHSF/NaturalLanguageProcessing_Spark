@@ -1,4 +1,4 @@
-package ml.classification
+package meachinelearning.classification
 
 import org.apache.spark.ml.feature.{HashingTF, IDF, StopWordsRemover, Tokenizer}
 import org.apache.spark.mllib.classification.NaiveBayes

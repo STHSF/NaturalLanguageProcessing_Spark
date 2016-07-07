@@ -9,7 +9,7 @@ import org.apache.spark.rdd.RDD
   */
 object classification {
 
-  val conf = new SparkConf().setAppName("ml/classification").setMaster("local")
+  val conf = new SparkConf().setAppName("meachinelearning/classification").setMaster("local")
   val sc = new SparkContext(conf)
 
 

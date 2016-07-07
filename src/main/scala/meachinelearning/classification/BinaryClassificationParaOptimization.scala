@@ -1,4 +1,4 @@
-package ml.classification
+package meachinelearning.classification
 
 import java.io.{FileWriter, BufferedWriter, File}
 

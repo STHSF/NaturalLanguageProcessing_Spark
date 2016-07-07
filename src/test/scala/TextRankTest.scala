@@ -1,4 +1,4 @@
-import ml.textrank.{PropertyExtractor, ConstructTextGraph}
+import meachinelearning.textrank.{PropertyExtractor, ConstructTextGraph}
 import org.graphstream.graph.Node
 
 import scala.collection.mutable.ListBuffer
