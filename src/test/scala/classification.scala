@@ -1,15 +1,12 @@
 import java.io.{BufferedWriter, File, FileWriter}
 
-import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
-
 
 /**
   * Created by li on 16/3/31.
   */
 object classification {
 
-  val conf = new SparkConf().setAppName("classification").setMaster("local")
+  val conf = new SparkConf().setAppName("MeachineLearning/classification").setMaster("local")
   val sc = new SparkContext(conf)
 
 

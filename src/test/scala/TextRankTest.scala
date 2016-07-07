@@ -1,6 +1,3 @@
-import org.graphstream.graph.Node
-import textrank.{PropertyExtractor, ConstructTextGraph}
-
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 

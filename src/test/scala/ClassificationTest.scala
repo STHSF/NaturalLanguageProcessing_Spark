@@ -1,7 +1,5 @@
 import java.io.{BufferedWriter, File, FileWriter}
 
-import org.apache.spark.{SparkConf, SparkContext}
-
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
