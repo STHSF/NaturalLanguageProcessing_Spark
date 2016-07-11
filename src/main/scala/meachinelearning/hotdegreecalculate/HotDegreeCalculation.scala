@@ -2,7 +2,7 @@ package meachinelearning.hotdegreecalculate
 
 import java.io.{File, PrintWriter}
 
-import _root_.util.TimeUtil
+import util.TimeUtil
 
 import scala.collection.mutable
 import scala.io.Source
@@ -33,19 +33,20 @@ object HotDegreeCalculation {
         val communityId  = line._1
         val communityWords  = line._2
 
-        fileList.foreach { file => {
+        fileList.foreach {
+          file => {
 
-          val fileId = file._1
-          val fileWordsList= file._2.distinct
+            val fileId = file._1
+            val fileWordsList = file._2.distinct
 
-          communityWords.foreach { word => {
+            communityWords.foreach { word => {
 
-            if (fileWordsList.contains(word)) item.append(fileId)
+              if (fileWordsList.contains(word)) item.append(fileId)
+            }
+
+              communityList.put(communityId, item.distinct.length)
+            }
           }
-
-            communityList.put(communityId, item.distinct.length)
-          }
-        }
         }
       }
     }
@@ -219,7 +220,7 @@ object HotDegreeCalculation {
   /**
     * 排序算法主程序入口
     *
-    * @param dir 当前热词
+    * @param dir 当前社区热度的保存路径, 以及读取前一小时的社区热度的读取路径
     * @param fileList 当前采集的文本文档
     * @param communityWordList 社区id 以及社区中包含的关键词
     * @param timeRange 时间间隔 默认为 1

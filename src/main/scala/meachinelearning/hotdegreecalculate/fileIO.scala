@@ -9,6 +9,7 @@ import scala.io.Source
 
 /**
   * Created by li on 16/7/11.
+  * 计算社区热度的过程中,分别将计算的结果保存到本地的文件系统中, 以及从本地文件中读取前一小时的数据
   */
 object fileIO {
 

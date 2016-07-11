@@ -6,6 +6,7 @@ import scala.collection.mutable
 
 /**
   * Created by li on 16/7/5.
+  * 计算社区热度的功能模块, 揉合了社区热词的热度计算,
   */
 object CommunityFrequencyStatistics {
 

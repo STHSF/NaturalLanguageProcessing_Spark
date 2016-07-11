@@ -1,4 +1,4 @@
-import meachinelearning.hotdegreecalculate.{HotDegreeCalculation, HotDegreeCalculate}
+import meachinelearning.hotdegreecalculate.CommunityFrequencyStatistics
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -403,21 +403,21 @@ object HotWordsTest extends App {
 //  println("length2: " + result6.length)
 
 //  val result7 = run(data4, data5, 1, 0.7, 0.3)
-  val result8 = HotDegreeCalculate.run(data7, data6, 1, 0.7, 0.3)
-
-  result8.foreach(x => println("result8:" + x))
-
-  val dir = "/Users/li/kunyan/NaturalLanguageProcessing/src/test/resources/"
+//  val result8 = HotDegreeCalculate.run(data7, data6, 1, 0.7, 0.3)
+//
+//  result8.foreach(x => println("result8:" + x))
+//
+//  val dir = "/Users/li/kunyan/NaturalLanguageProcessing/src/test/resources/"
 //  fileIO.saveAsTextFile(dir, result8)
 //
 //  val res = fileIO.readFromFile(dir)
 //  res.foreach(x => println(x))
 
 //
-//  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
-//  reslut9.foreach(x => println("result9" + x))
+  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
+  reslut9.foreach(x => println("result9" + x))
 
 
-  HotDegreeCalculation()
+//  HotDegreeCalculation()
 
 }
