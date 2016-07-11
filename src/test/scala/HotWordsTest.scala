@@ -1,4 +1,4 @@
-import meachinelearning.hotdegreecalculate.{CommunityFrequencyStatistics, HotDegreeCalculate}
+import meachinelearning.hotdegreecalculate.{HotDegreeCalculation, HotDegreeCalculate}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -81,11 +81,11 @@ object HotWordsTest extends App {
         (url, filteredWords)
     }.cache()
 
-    val wordf = bb.flatMap(_._2).reduceByKey(_ + _).collect()
-    val broadcastWordf = sc.broadcast(wordf)
+    val wordDf = bb.flatMap(_._2).reduceByKey(_ + _).collect()
+    val broadcastWordDf = sc.broadcast(wordDf)
 
     val eventWordsRepositoryMap = mutable.HashMap[String, Int]()
-    broadcastWordf.value.foreach{
+    broadcastWordDf.value.foreach{
       line => {
         val words = line._1
         val df = line._2
@@ -189,9 +189,6 @@ object HotWordsTest extends App {
 //    (stockUrlCount, industryUrlCount, sectionUrlCount)
 //  }
 
-
-
-
   def entityWordsUnionEventWords(entityWords: (RDD[(String, Iterable[String], Int)],
     RDD[(String, Iterable[String], Int)],
     RDD[(String, Iterable[String], Int)]),
@@ -264,6 +261,7 @@ object HotWordsTest extends App {
 
     //TpSum: 词频和
     val wordLibArray = wordLib.reduceByKey(_ + _).collect()
+
 
     //TpAvg:词频和的平均
     val tpSum = wordLibArray.map(_._2).sum
@@ -374,15 +372,15 @@ object HotWordsTest extends App {
   val data2 = sc.parallelize(List(d, e, f))
   val data3 = sc.parallelize(List(g, h, k))
 
-  val a1 = List(("程序", 1), ("程序员", 4), ("测试", 2), ("代码", 3))
-  val a2 = List(("测试", 2), ("程序", 4), ("银行", 10))
+  val a1 = List(("程序", 1.0), ("程序员", 4.0), ("测试", 2), ("代码", 3), ("程序", 4))
+  val a2 = List(("测试", 2.0), ("程序", 4.0), ("银行", 10))
   val data4 = sc.parallelize(a1)
   val data5 = sc.parallelize(a2)
 
-  val a3 = List(("六合彩", 1106), ("直播", 469), ("男同志", 3410), ("李宇春", 442), ("无耻", 2713), ("俞思远", 149), ("演唱会", 741), ("好男儿", 0), ("董文华", 2246), ("婚纱", 653), ("太正宵", 1), ("敢死队", 119))
-  val a4 = List(("六合彩", 1702), ("直播", 769), ("男同志", 3925), ("李宇春", 649), ("无耻", 2939), ("俞思远", 331), ("演唱会", 749), ("好男儿", 441), ("董文华", 4672), ("婚纱", 1650), ("太正宵", 5), ("敢死队", 75))
-  val data6 = sc.parallelize(a3)
-  val data7 = sc.parallelize(a4)
+  val a3 = List(("六合彩", 1106.0), ("直播", 469.0), ("男同志", 3410.0), ("李宇春", 442.0), ("无耻", 2713.0), ("俞思远", 149.0), ("演唱会", 741.0), ("好男儿", 0.0), ("董文华", 2246.0), ("婚纱", 653.0), ("太正宵", 1.0), ("敢死队", 119.0))
+  val a4 = List(("六合彩", 1702.0), ("直播", 769.0), ("男同志", 3925.0), ("李宇春", 649.0), ("无耻", 2939.0), ("俞思远", 331.0), ("演唱会", 749.0), ("好男儿", 441.0), ("董文华", 4672.0), ("婚纱", 1650.0), ("太正宵", 5.0), ("敢死队", 75.0))
+  val data6 = (a3).toArray
+  val data7 = (a4).toArray
 
   // 事件词词频
 //  val reslut1 = getWordRank(sc, data, data2)
@@ -409,9 +407,17 @@ object HotWordsTest extends App {
 
   result8.foreach(x => println("result8:" + x))
 
+  val dir = "/Users/li/kunyan/NaturalLanguageProcessing/src/test/resources/"
+//  fileIO.saveAsTextFile(dir, result8)
+//
+//  val res = fileIO.readFromFile(dir)
+//  res.foreach(x => println(x))
 
-  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
-  reslut9.foreach(x => println("result9" + x))
+//
+//  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
+//  reslut9.foreach(x => println("result9" + x))
 
+
+  HotDegreeCalculation()
 
 }

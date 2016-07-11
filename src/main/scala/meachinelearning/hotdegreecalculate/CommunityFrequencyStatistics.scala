@@ -18,9 +18,9 @@ object CommunityFrequencyStatistics {
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
     */
   def communityFrequencyStatistics(fileList: Array[(String, Array[String])],
-                                   communityWordList: Array[(String, Array[String])]): Array[(String, Int)] = {
+                                   communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
 
-    val communityList = new mutable.HashMap[String, Int]
+    val communityList = new mutable.HashMap[String, Double]
 
     communityWordList.foreach {
       line => {
