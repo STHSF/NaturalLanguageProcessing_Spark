@@ -47,9 +47,9 @@ object CommunityFrequencyStatistics {
       community => {
         val communityID = community._1
         val communityWords = community._2
-        val res = fileList.filter(x => filterFunc(communityWords, x))
+        val temp = fileList.filter(content => filterFunc(communityWords, content)).count().toDouble
 
-        communityList.+=((communityID, res.count().toDouble))
+        communityList.+=((communityID, temp))
       }
     }
 

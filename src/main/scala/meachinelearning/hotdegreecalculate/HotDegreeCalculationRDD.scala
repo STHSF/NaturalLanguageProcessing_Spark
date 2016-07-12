@@ -9,10 +9,9 @@ import scala.collection.mutable
 import scala.io.Source
 
 /**
-  * Created by li on 16/7/11.
-  * 计算社区的热度
+  * Created by li on 16/7/12.
   */
-object HotDegreeCalculation {
+object HotDegreeCalculationRDD {
 
   /**
     * 筛选出出现了社区内词的所有文章
