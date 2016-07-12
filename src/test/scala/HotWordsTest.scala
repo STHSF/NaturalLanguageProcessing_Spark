@@ -13,15 +13,27 @@ object HotWordsTest extends App {
   val conf = new SparkConf().setAppName("test").setMaster("local")
   val sc = new SparkContext(conf)
 
-  val a = ("t1", Array("程序员","专业", "调试"))
+  val a = ("t1", Array("程序员","专业"))
   val b = ("t2", Array("测试", "方面"))
   val c = ("t3", Array("方面","代码"))
 
-  val d = ("url1", Array("程序", "程序员", "专业"))
-  val e = ("url2", Array("代码", "程序"))
-  val f = ("url3", Array("专业", "代码", "方面", "专业"))
+//  val d = ("url1", Array("程序", "程序员", "专业"))
+//  val e = ("url2", Array("代码", "程序"))
+//  val f = ("url3", Array("专业", "代码", "方面", "专业"))
+//  val g1 = ("url4", Array("专业", "代码", "专业"))
+//  val h1 = ("url2", Array("代码", "程序", "程序员"))
 
-  val dArray = Array(d, e, f) //文档集
+
+  val d = Array("程序", "程序员", "专业")
+  val e = Array("代码", "程序")
+  val f = Array("专业", "代码", "方面")
+  val g1 = Array("专业", "代码", "专业")
+  val h1 = Array("代码", "程序")
+
+
+  val dArray = Array(d, e, f, g1, h1) //文档集
+  val aArray = sc.parallelize(dArray)
+
   val cArray = Array(a, b, c) //社区集
 
 
@@ -407,17 +419,19 @@ object HotWordsTest extends App {
 //
 //  result8.foreach(x => println("result8:" + x))
 //
-//  val dir = "/Users/li/kunyan/NaturalLanguageProcessing/src/test/resources/"
+  val dir = "/Users/li/kunyan/NaturalLanguageProcessing/src/test/resources/"
 //  fileIO.saveAsTextFile(dir, result8)
 //
 //  val res = fileIO.readFromFile(dir)
 //  res.foreach(x => println(x))
 
 //
-  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(dArray, cArray)
+  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatistics(aArray, cArray)
   reslut9.foreach(x => println("result9" + x))
 
 
 //  HotDegreeCalculation()
+
+//  HotDegreeCalculation.run(dir, aArray, cArray, 1, 0.7, 0.3)
 
 }

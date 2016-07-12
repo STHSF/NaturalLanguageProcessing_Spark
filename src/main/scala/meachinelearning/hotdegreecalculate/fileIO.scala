@@ -37,23 +37,29 @@ object fileIO {
 
   /**
     * 读取当前时间前一个小时的数据,读取本地文件中的结果.
- *
+    *
     * @param dir 数据保存的目录
     * @return
     */
   def readFromFile(dir: String): Array[(String, Double)] ={
 
     val date = TimeUtil.getPreHourStr
-
-    val temp = Source.fromFile(dir + "%s".format(date) + ".txt" )
-
     val res = new mutable.ArrayBuffer[(String, Double)]
-    temp.getLines().foreach(
-      line =>{
-        val temp = line.split("\t")
-        res.+=((temp(0), temp(1).toDouble))
+
+    if (Source.fromFile(dir + "%s".format(date) + ".txt" ) != null) {
+      val temp = Source.fromFile(dir + "%s".format(date) + ".txt" )
+
+      temp.getLines().foreach{
+        line =>{
+          val temp = line.split("\t")
+          res.+=((temp(0), temp(1).toDouble))
+        }
       }
-    )
+    } else {
+
+      res.+=(("init", 0.0))
+    }
+
     res.toArray
   }
 

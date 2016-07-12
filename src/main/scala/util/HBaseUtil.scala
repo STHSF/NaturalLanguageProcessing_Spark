@@ -16,7 +16,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
   * Created by li on 16/7/7.
   */
-object hBaseUtil {
+object HBaseUtil {
 
 
   /**

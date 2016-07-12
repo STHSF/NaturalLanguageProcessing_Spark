@@ -2,6 +2,7 @@ package meachinelearning.hotdegreecalculate
 
 import java.io.{File, PrintWriter}
 
+import org.apache.spark.rdd.RDD
 import util.TimeUtil
 
 import scala.collection.mutable
@@ -9,8 +10,30 @@ import scala.io.Source
 
 /**
   * Created by li on 16/7/11.
+  * 计算社区的热度
   */
 object HotDegreeCalculation {
+
+  /**
+    * 筛选出出现了社区内词的所有文章
+    *
+    * @param communityWords 社区中的词
+    * @param textWords 新闻
+    * @return Boolean 新闻中存在社区中的词返回true
+    */
+  def filterFunc(communityWords: Array[String],
+                 textWords: Array[String]): Boolean = {
+
+    communityWords.foreach {
+      word => {
+        if (textWords.contains(word)) {
+          return true
+        }
+      }
+    }
+
+    false
+  }
 
   /**
     * 统计当前文档库中, 包含社区中提取的关键词的文档数,重复的根据文本ID(url)合并,
@@ -19,35 +42,19 @@ object HotDegreeCalculation {
     * @param fileList 当前文档
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
-    * @author Li Yu
     */
-  def communityFrequencyStatistics(fileList: Array[(String, Array[String])],
+  def communityFrequencyStatistics(fileList: RDD[Array[String]],
                                    communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
 
-    val communityList = new mutable.HashMap[String, Double]
+    val communityList = new mutable.ArrayBuffer[(String, Double)]
 
     communityWordList.foreach {
-      line => {
+      community => {
+        val communityID = community._1
+        val communityWords = community._2
+        val temp = fileList.filter(x => filterFunc(communityWords, x)).count().toDouble
 
-        val item = new mutable.ArrayBuffer[String]
-        val communityId  = line._1
-        val communityWords  = line._2
-
-        fileList.foreach {
-          file => {
-
-            val fileId = file._1
-            val fileWordsList = file._2.distinct
-
-            communityWords.foreach { word => {
-
-              if (fileWordsList.contains(word)) item.append(fileId)
-            }
-
-              communityList.put(communityId, item.distinct.length)
-            }
-          }
-        }
+        communityList.+=((communityID, temp))
       }
     }
 
@@ -204,17 +211,28 @@ object HotDegreeCalculation {
 
     val date = TimeUtil.getPreHourStr
 
-    val temp = Source.fromFile(dir + "%s".format(date) + ".txt" )
+    val result = new mutable.ArrayBuffer[(String, Double)]
 
-    val res = new mutable.ArrayBuffer[(String, Double)]
-    temp.getLines().foreach(
-      line =>{
-        val temp = line.split("\t")
-        res.+=((temp(0), temp(1).toDouble))
+    val file = new File(dir + "%s".format(date) + ".txt" )
+
+    if (file.exists()) {
+
+      val temp = Source.fromFile(file)
+
+      temp.getLines().foreach {
+        line =>{
+          val temp = line.split("\t")
+          result.+=((temp(0), temp(1).toDouble))
+        }
       }
-    )
 
-    res.toArray
+    } else {
+
+      // 如果文件不存在, 初始化前一小时的数组
+      result.+=(("null", 0.0))
+    }
+
+    result.toArray
   }
 
   /**
@@ -230,7 +248,7 @@ object HotDegreeCalculation {
     * @author Li Yu
     */
   def run(dir: String,
-          fileList: Array[(String, Array[String])],
+          fileList: RDD[Array[String]],
           communityWordList: Array[(String, Array[String])],
           timeRange: Int, alpha: Double, beta: Double): Unit ={
 
@@ -253,10 +271,13 @@ object HotDegreeCalculation {
         result.put(key, temp)
       }
     }
-    val res = result.toArray.sortWith(_._2 > _._2)
+
+    // 添加了一个过滤操作, 过滤掉热度值小于零的社区, 热度值小于零表示随着时间的推移社区没有了
+    val item = result.toArray.filter(_._2 > 0.0).sortWith(_._2 > _._2)
 
     // 将最终的热度结果保存到本地文件系统中
-    saveAsTextFile(dir, res)
+    // 可能会存在的bug,随着时间的增长,社区数会不断增加.
+    saveAsTextFile(dir, item)
   }
 
 }

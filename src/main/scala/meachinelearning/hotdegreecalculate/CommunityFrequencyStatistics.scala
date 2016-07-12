@@ -1,6 +1,6 @@
 package meachinelearning.hotdegreecalculate
 
-import com.sun.tools.javac.util.ListBuffer
+import org.apache.spark.rdd.RDD
 
 import scala.collection.mutable
 
@@ -10,6 +10,26 @@ import scala.collection.mutable
   */
 object CommunityFrequencyStatistics {
 
+
+  /**
+    * 筛选出出现了社区内词的所有文章
+    *
+    * @param communityWords 社区中的词
+    * @param textWords 新闻
+    * @return Boolean 新闻中存在社区中的词返回true
+    */
+  def filterFunc(communityWords: Array[String],
+                 textWords: Array[String]): Boolean = {
+
+    communityWords.foreach(word => {
+      if (textWords.contains(word)) {
+        return true
+      }
+    })
+
+    false
+  }
+
   /**
     * 统计当前文档库中, 包含社区中提取的关键词的文档数,重复的根据文本ID(url)合并,
     * 特别针对社区(事件)词, 一个社区中包含若干个词, 并且词变化后对应的社区却没有变化.
@@ -17,6 +37,34 @@ object CommunityFrequencyStatistics {
     * @param fileList 当前文档
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
+    */
+  def communityFrequencyStatisticsRDD(fileList: RDD[Array[String]],
+                                  communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
+
+    val communityList = new mutable.HashMap[String, Double]
+
+    communityWordList.foreach {
+      community => {
+        val communityID = community._1
+        val communityWords = community._2
+        val res = fileList.filter(x => filterFunc(communityWords, x))
+
+        communityList.+=((communityID, res.count().toDouble))
+      }
+    }
+
+    communityList.toArray
+  }
+
+
+  /**
+    * 统计当前文档库中, 包含社区中提取的关键词的文档数,重复的根据文本ID(url)合并,
+    * 特别针对社区(事件)词, 一个社区中包含若干个词, 并且词变化后对应的社区却没有变化.
+    *
+    * @param fileList 当前文档
+    * @param communityWordList textRank提取的每个社区的关键词
+    * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
+    * @author Li Yu
     */
   def communityFrequencyStatistics(fileList: Array[(String, Array[String])],
                                    communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
@@ -26,21 +74,22 @@ object CommunityFrequencyStatistics {
     communityWordList.foreach {
       line => {
 
-        val item = new ListBuffer[String]
+        val item = new mutable.ArrayBuffer[String]
         val communityId  = line._1
         val communityWords  = line._2
 
-        fileList.foreach { file => {
+        fileList.foreach {
+          file => {
 
             val fileId = file._1
-            val fileWordsList= file._2.distinct
+            val fileWordsList = file._2.distinct
 
             communityWords.foreach { word => {
 
-                if (fileWordsList.contains(word)) item.append(fileId)
-              }
+              if (fileWordsList.contains(word)) item.append(fileId)
+            }
 
-                communityList.put(communityId, item.toArray().distinct.length)
+              communityList.put(communityId, item.distinct.length)
             }
           }
         }
@@ -51,3 +100,5 @@ object CommunityFrequencyStatistics {
   }
 
 }
+
+
