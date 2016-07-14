@@ -94,7 +94,7 @@ object word2Vec {
 
     input.foreach{
       line =>{
-        if ( )
+//        if ( )
         val temp = model.transform(line)
         result.put(line, temp)
       }

@@ -47,8 +47,17 @@ import java.util.{Calendar, Date}
   }
 
 
-  def
+  /**
+    * 获取本周的开始时间
+    */
+  def Null(){
 
+  }
+
+  /**
+    * 获取本月的开始时间
+    * http://blog.csdn.net/springlustre/article/details/47273353
+    */
 
 
 

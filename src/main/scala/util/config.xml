@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <mysql>
+        <url>jdbc:mysql://localhost:3306/data_copy?useSSl=false</url>
+        <username>root</username>
+        <password>yl199101033</password>
+
+    </mysql>
+
+    <hbase>
+        <rootDir>hdfs://222.73.34.99:9000/hbase</rootDir>
+        <ip>server0,server1,server2,server3</ip>
+    </hbase>
+
+</xml>

@@ -1,17 +1,20 @@
 package util
 
-import java.io.{IOException, FileNotFoundException}
+import java.io.{FileNotFoundException, IOException}
 import java.text.SimpleDateFormat
 import java.util.Date
 
 import com.ibm.icu.text.CharsetDetector
+import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.HBaseConfiguration
 import org.apache.hadoop.hbase.client.Scan
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil
 import org.apache.hadoop.hbase.protobuf.generated.ClientProtos
-import org.apache.hadoop.hbase.util.{Bytes, Base64}
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.hadoop.hbase.util.{Base64, Bytes}
+import org.apache.spark.SparkContext
+
+import scala.xml.{Elem, XML}
 
 /**
   * Created by li on 16/7/7.
@@ -21,9 +24,9 @@ object HBaseUtil {
 
   /**
     * 识别字符编码
+    *
     * @param html 地址编码
     * @return 字符编码
-    * @author wc
     */
   def judgeChaser(html: Array[Byte]): String = {
 
@@ -60,18 +63,49 @@ object HBaseUtil {
   }
 
 
-  def main(args: Array[String]) {
+  /**
+    * 获取xml格式的配置文件
+    *
+    * @param dir 配置文件所在的文件目录
+    * @return
+    */
+  def readConfigFile(dir: String): Elem = {
 
-    val conf = new SparkConf().setAppName("getConnect2HBase").setMaster("local")
-    val sc = new SparkContext(conf)
+    val configFile = XML.loadFile(dir)
+
+    configFile
+  }
+
+  /**
+    * 获取hbase配置内容,并且初始化hbase配置
+    * @param configFile hbase配置文件
+    * @return
+    */
+  def getHBaseConfigure(configFile: Elem): Configuration = {
+
+    val rootDir = (configFile \ "hbase" \ "rootDir").text
+    val ip = (configFile \ "hbase" \ "ip").text
 
     // 初始化配置
     val configuration = HBaseConfiguration.create()
-//    configuration.set("hbase.zookeeper.property.cilentport", "2181") //设置zookeeper client 端口configuration
-//    configuration.set("hbase.zookeeper.quorum", "localhost") //设置zookeeper quorum
-//    configuration.set("hbasemaster", "localhost:60000") //设置hbase master
-    configuration.set("hbase.rootdir", "hdfs://222.73.34.99:9000/hbase")
-    configuration.set("hbase.zookeeper.quorum", "server0,server1,server2,server3")
+    //    configuration.set("hbase.zookeeper.property.cilentport", "2181") //设置zookeeper client 端口configuration
+    //    configuration.set("hbase.zookeeper.quorum", "localhost") //设置zookeeper quorum
+    //    configuration.set("hbasemaster", "localhost:60000") //设置hbase master
+    configuration.set("hbase.rootdir", rootDir)
+    configuration.set("hbase.zookeeper.quorum", ip)
+
+    configuration
+  }
+
+  /**
+    * 获取hbase中的内容
+    * @param sc SparkContext
+    * @param dir 配置文件所在的文件夹
+    */
+  def readFromHBase(sc: SparkContext, dir: String) {
+
+    val configFile = readConfigFile(dir)
+    val configuration = getHBaseConfigure(configFile)
 
     // 读取hbase中的文件
     try {
@@ -81,11 +115,14 @@ object HBaseUtil {
       configuration.set(TableInputFormat.SCAN, setTimeRange())
 
       // 使用Hadoop api来创建一个RDD
-      val hBaseRDD = sc.newAPIHadoopRDD(configuration, classOf[TableInputFormat],
+      val hBaseRDD = sc.newAPIHadoopRDD(configuration,
+        classOf[TableInputFormat],
         classOf[org.apache.hadoop.hbase.io.ImmutableBytesWritable],
         classOf[org.apache.hadoop.hbase.client.Result])
 
-      // 对hBaseRDD操作
+      /**
+        * todo 对hBaseRDD操作
+        */
       println(hBaseRDD.count())
 
       val news = hBaseRDD.map( x => {
@@ -101,19 +138,22 @@ object HBaseUtil {
       }).cache()
 
       news.foreach(x => println(x))
-
 //      hBaseRDD.saveAsTextFile("")
 
     } catch {
-      case e: FileNotFoundException => {
-        println("Missing file exception")
-      }
-      case e: IOException => {
-        println("IO Exception")
-      }
+
+      case e: FileNotFoundException => println("Missing file exception")
+      case e: IOException => println("IO Exception")
+
     } finally {
+
       println{"Exiting finally ......"}
+
     }
+  }
+
+  def write2HBase: Unit ={
+
   }
 
 }

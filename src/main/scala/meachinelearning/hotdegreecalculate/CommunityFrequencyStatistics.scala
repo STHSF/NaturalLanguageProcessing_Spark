@@ -17,15 +17,21 @@ object CommunityFrequencyStatistics {
     * @param communityWords 社区中的词
     * @param textWords 新闻
     * @return Boolean 新闻中存在社区中的词返回true
+    * @author Li Yu
+    * @note rowNum: 11
     */
   def filterFunc(communityWords: Array[String],
                  textWords: Array[String]): Boolean = {
 
-    communityWords.foreach(word => {
-      if (textWords.contains(word)) {
-        return true
+    communityWords.foreach {
+      word => {
+
+        if (textWords.contains(word)) {
+
+          return true
+        }
       }
-    })
+    }
 
     false
   }
@@ -37,6 +43,8 @@ object CommunityFrequencyStatistics {
     * @param fileList 当前文档
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
+    * @author Li Yu
+    * @note rowNum: 13
     */
   def communityFrequencyStatisticsRDD(fileList: RDD[Array[String]],
                                   communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
@@ -45,6 +53,7 @@ object CommunityFrequencyStatistics {
 
     communityWordList.foreach {
       community => {
+
         val communityID = community._1
         val communityWords = community._2
         val temp = fileList.filter(content => filterFunc(communityWords, content)).count().toDouble
@@ -65,6 +74,7 @@ object CommunityFrequencyStatistics {
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
     * @author Li Yu
+    * @note rowNum: 22
     */
   def communityFrequencyStatistics(fileList: Array[(String, Array[String])],
                                    communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
