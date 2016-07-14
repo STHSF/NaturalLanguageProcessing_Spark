@@ -39,6 +39,7 @@ object MySQLUtil {
     //设置驱动
     Class.forName("com.mysql.jdbc.Driver")
 
+    //初始化
     val conn = DriverManager.getConnection(url, userName, password)
 
     conn
