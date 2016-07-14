@@ -35,4 +35,22 @@ import java.util.{Calendar, Date}
     sdf.format(date)
   }
 
+  /**
+    * 获取今天的日期
+    * @return
+    */
+  def getNowDate(): String = {
+    val now: Date = new Date()
+    val  dateFormat: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd")
+    val res = dateFormat.format( now )
+    res
+  }
+
+
+  def
+
+
+
+
+
 }

@@ -1,4 +1,3 @@
-import meachinelearning.hotdegreecalculate.{HotDegreeCalculation, CommunityFrequencyStatistics}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -426,12 +425,19 @@ object HotWordsTest extends App {
 //  res.foreach(x => println(x))
 
 //
-  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatisticsRDD(aArray, cArray)
-  reslut9.foreach(x => println("result9" + x))
+//  val reslut9 = CommunityFrequencyStatistics.communityFrequencyStatisticsRDD(aArray, cArray)
+//  reslut9.foreach(x => println("result9" + x))
 
 
 //  HotDegreeCalculation()
 
-  HotDegreeCalculation.run(dir, aArray, cArray, 1, 0.7, 0.3)
+//  HotDegreeCalculation.run(dir, aArray, cArray, 1, 0.7, 0.3)
+
+  val arr = sc.parallelize(Array(1, 2, 3 , 4, 5))
+  val result = arr.flatMap(x => Array(x + 1)).cache()
+  val resu = arr.map(x => Array(x + 1)).collect()
+  result.foreach(println)
+
+  resu.foreach(println)
 
 }
