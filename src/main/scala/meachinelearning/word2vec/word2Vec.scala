@@ -5,7 +5,6 @@ import java.io.{File, PrintWriter}
 import org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext, mllib}
-import util.TimeUtil
 
 import scala.collection.mutable
 
@@ -30,11 +29,14 @@ object word2Vec {
 
   /**
     * 训练语料库向量模型
-    * 有一些参数在1.5.2中没有例如setWindowSize()
+    * 有一些参数在1.5.2中没有, 例如setWindowSize()
     *
     * @param sc SparkContext
     * @param dir Word2VecModel 模型的保存位置
     * @param input 语料库
+    * @param seed 搜索深度
+    * @param vectorSize 生成的向量长度
+    * @param minCount 包含改词的最少文档总数
     * @return
     * @author Li Yu
     */
@@ -53,19 +55,18 @@ object word2Vec {
 
   /**
     * 将Word2VecModel计算的词向量保存下来
+    *
     * @param sc SparkContext
-    * @param dir Word2VecModel 模型的保存位置
+    * @param dir Word2VecModel模型的保存位置
+    * @param modelName 待保存的词向量名
     */
-  def saveVocabularyVectors(sc: SparkContext, dir: String): Unit = {
+  def saveVocabularyVectors(sc: SparkContext, dir: String, modelName: String): Unit = {
 
     val model = Word2VecModel.load(sc, dir)
 
     val vectors = model.getVectors.toArray
 
-    val day = TimeUtil.getDay
-    val hour = TimeUtil.getCurrentHour
-
-    val writer = new PrintWriter(new File(dir +"%s".format(day) + "-" + "%s".format(hour) + ".txt"))
+    val writer = new PrintWriter(new File(dir +"%s".format(modelName) + ".txt"))
 
     for (line <- vectors) {
 
@@ -80,12 +81,11 @@ object word2Vec {
     * 构建词向量
     *
     * @param sc SparkContext
-    * @param dir Word2VecModel 模型的保存位置
+    * @param dir Word2VecModel模型的保存位置
     * @param input 待构建词库
     * @return
     * @author Li Yu
     */
-
   def createW2VMatrix(sc: SparkContext, dir: String, input: Array[String]): Array[(String, mllib.linalg.Vector)] = {
 
     val model = Word2VecModel.load(sc, dir)
@@ -104,6 +104,10 @@ object word2Vec {
   }
 
 
+  /**
+    *
+    * @param args
+    */
   def main(args: Array[String]) {
 
     val conf = new SparkConf().setAppName("word2vec").setMaster("local")
