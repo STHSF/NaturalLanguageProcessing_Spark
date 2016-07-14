@@ -4,6 +4,11 @@ import java.math.BigInteger
 import java.text.SimpleDateFormat
 import java.util.{Calendar, Date}
 
+import org.apache.hadoop.hbase.client.Scan
+import org.apache.hadoop.hbase.protobuf.ProtobufUtil
+import org.apache.hadoop.hbase.protobuf.generated.ClientProtos
+import org.apache.hadoop.hbase.util.Base64
+
 /**
   * Created by C.J.YOU on 2016/1/13.
   * 格式化时间的工具类
@@ -37,6 +42,7 @@ import java.util.{Calendar, Date}
 
   /**
     * 获取今天的日期
+    *
     * @return
     */
   def getNowDate(): String = {
@@ -60,6 +66,30 @@ import java.util.{Calendar, Date}
     */
 
 
+  /**
+    * 设置时间范围
+    *
+    * @return 时间范围
+    * @author yangshuai
+    */
+  def setTimeRange(): String = {
+
+    val scan = new Scan()
+    val date = new Date(new Date().getTime - 1 * 60 * 60 * 1000)
+    val format = new SimpleDateFormat("yyyy-MM-dd HH")
+    val time = format.format(date)
+    val time1 = format.format(new Date().getTime)
+    val startTime = time + "-00-00"
+    val stopTime = time1 + "-00-00"
+    val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss")
+    val startRow: Long = sdf.parse(startTime).getTime
+    val stopRow: Long = sdf.parse(stopTime).getTime
+
+    scan.setTimeRange(startRow, stopRow)
+    val proto: ClientProtos.Scan = ProtobufUtil.toScan(scan)
+
+    Base64.encodeBytes(proto.toByteArray)
+  }
 
 
 }
