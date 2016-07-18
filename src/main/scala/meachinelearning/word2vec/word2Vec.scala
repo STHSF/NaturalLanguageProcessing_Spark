@@ -1,9 +1,11 @@
+package meachinelearning.word2vec
+
 import java.io.{File, PrintWriter}
 
 import org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-import util.{LoggerUtil, TimeUtil}
+import util.{DirectoryUtil, LoggerUtil, TimeUtil}
 
 import scala.collection.mutable
 
@@ -78,9 +80,15 @@ object Word2Vec {
       .fit(input)
     LoggerUtil.warn("模型训练完毕 》》》》》》》》》》》》》")
 
-    model.save(sc, dir)
-    LoggerUtil.warn("模型保存完毕 》》》》》》》》》》》》》")
+    val dirFile = new File(dir)
 
+    if (DirectoryUtil.deleteDir(dirFile)) {
+
+      model.save(sc, dir)
+
+    }
+
+    LoggerUtil.warn("模型保存完毕 》》》》》》》》》》》》》")
   }
 
   /**
@@ -182,16 +190,16 @@ object Word2Vec {
     */
   def main(args: Array[String]) {
 
-    val conf = new SparkConf().setAppName("word2vec")
+    val conf = new SparkConf().setAppName("word2vec").setMaster("local")
     val sc = new SparkContext(conf)
 
     // 从hdfs上获取数据
-    // val input =sc.textFile("/Users/li/Downloads/part-00000")
-    val input =sc.textFile(args(0))
+     val input =sc.textFile("/Users/li/Downloads/part-00000")
+//    val input =sc.textFile(args(0))
     LoggerUtil.warn("读取hdfs上的数据结束 》》》》》》》》》》》》》")
 
     // 导入标点符号
-    val punctuation = sc.textFile("/Users/li/kunyan/DataSet/punctuation.txt").collect()
+    val punctuation = sc.textFile("/Users/li/kunyan/DataSet/punctuations.txt").collect()
 
     //去异常值, 去标点符号
     val inputData = formatTransform(input, punctuation)
@@ -200,13 +208,16 @@ object Word2Vec {
     val hour = TimeUtil.getCurrentHour
     val day = TimeUtil.getDay
 
-    val dir = args(1) + "%s".format(day) + "-" + "%s".format(hour) + "-word2VectorModel"
-    // val dir = "/Users/li/kunyan/DataSet/word2vec/result/" + "%s".format(day) + "-" + "%s".format(hour) + "-word2VectorModel"
+//    val dir = args(1) + "%s".format(day) + "-" + "%s".format(hour) + "-word2VectorModel"
+     val dir = "/Users/li/kunyan/DataSet/word2vec/result/" + "%s".format(day) + "-" + "%s".format(hour) + "-word2VectorModel"
 
     // 创建词向量模型
-    val r1 = args(2).toLong
-    val r2 = args(3).toInt
-    val r3 = args(4).toInt
+//    val r1 = args(2).toLong
+//    val r2 = args(3).toInt
+//    val r3 = args(4).toInt
+    val r1 = 10
+    val r2 = 100
+    val r3 = 50
     word2VectorModel(sc, dir, inputData, r1, r2, r3)
     LoggerUtil.warn("词典构建结束 》》》》》》》》》》》》》")
 
@@ -217,6 +228,7 @@ object Word2Vec {
     saveVocabularyVectors(model, dir, day)
     LoggerUtil.warn("词向量保存成功 》》》》》》》》》》》》》")
 
+    sc.stop()
     println("-----------程序结束--------------")
 
   }
