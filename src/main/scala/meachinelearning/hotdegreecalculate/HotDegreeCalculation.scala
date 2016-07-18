@@ -46,13 +46,12 @@ object HotDegreeCalculation {
 
     communityWordList.foreach { community => {
 
-        val communityID = community._1
-        val communityWords = community._2
-        val temp = articleList.filter(content => filterFunc(communityWords, content)).count().toDouble
+      val communityID = community._1
+      val communityWords = community._2
+      val temp = articleList.filter(content => filterFunc(communityWords, content)).count().toDouble
 
-        communityList.+=((communityID, temp))
-      }
-    }
+      communityList.+=((communityID, temp))
+    }}
 
     communityList.toArray
   }
@@ -70,12 +69,12 @@ object HotDegreeCalculation {
 
     val communityList = new mutable.ArrayBuffer[(String, Double)]
 
-    communityWordList.foreach{ community => {
+    communityWordList.foreach { community => {
 
       val communityId = community._1
       val communityWords = community._2
 
-      val temp = articleList.filter(content => filterFunc(communityWords, content._1)).map(x => x._2).sum()
+      val temp = articleList.filter(content => filterFunc(communityWords, content._1)).map(_._2).sum()
 
       communityList.+=((communityId, temp))
     }}

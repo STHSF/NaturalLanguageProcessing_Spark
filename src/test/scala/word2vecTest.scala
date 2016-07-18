@@ -1,3 +1,4 @@
+import meachinelearning.word2vec.Word2Vec
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
