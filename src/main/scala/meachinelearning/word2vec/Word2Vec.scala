@@ -13,7 +13,7 @@ import scala.collection.mutable
   * Created by li on 16/7/8.
   * 使用Word2Vec创建词向量空间, 用于计算词之间的相似度.
   */
-object rd2Vec {
+object Word2Vec {
 
   /**
     * 判断文档中是否存在目标内容
