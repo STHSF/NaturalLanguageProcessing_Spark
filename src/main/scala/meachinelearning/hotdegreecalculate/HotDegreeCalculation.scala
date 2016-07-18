@@ -24,13 +24,9 @@ object HotDegreeCalculation {
   def filterFunc(communityWords: Array[String],
                  textWords: Array[String]): Boolean = {
 
-    communityWords.foreach {
-      word => {
-        if (textWords.contains(word)) {
-          return true
-        }
-      }
-    }
+    communityWords.foreach { word => {
+      if (textWords.contains(word)) return true
+    }}
 
     false
   }
@@ -39,24 +35,50 @@ object HotDegreeCalculation {
     * 统计当前文档库中, 包含社区中提取的关键词的文档数,重复的根据文本ID(url)合并,
     * 特别针对社区(事件)词, 一个社区中包含若干个词, 并且词变化后对应的社区却没有变化.
     *
-    * @param fileList 当前文档
+    * @param articleList 当前文档
     * @param communityWordList textRank提取的每个社区的关键词
     * @return [社区ID, 包含社区中关键词的文档总数]包含社区中关键词的文档总数
     */
-  def communityFrequencyStatistics(fileList: RDD[Array[String]],
+  def communityFrequencyStatistics(articleList: RDD[Array[String]],
                                    communityWordList: Array[(String, Array[String])]): Array[(String, Double)] = {
 
     val communityList = new mutable.ArrayBuffer[(String, Double)]
 
-    communityWordList.foreach {
-      community => {
+    communityWordList.foreach { community => {
+
         val communityID = community._1
         val communityWords = community._2
-        val temp = fileList.filter(content => filterFunc(communityWords, content)).count().toDouble
+        val temp = articleList.filter(content => filterFunc(communityWords, content)).count().toDouble
 
         communityList.+=((communityID, temp))
       }
     }
+
+    communityList.toArray
+  }
+
+  /**
+    * 通过社区中文档的用户访问量来统计社区的热度
+    *
+    * @param articleList 分词后的文章以及文章的用户访问量
+    * @param communityWordList 社区id以及社区中包含的关键词
+    * @return
+    */
+  def communityFrequencyStatisticsWithUserPageView(articleList: RDD[(Array[String], Double)],
+                                                   communityWordList: Array[(String, Array[String])])
+  : Array[(String, Double)] = {
+
+    val communityList = new mutable.ArrayBuffer[(String, Double)]
+
+    communityWordList.foreach{ community => {
+
+      val communityId = community._1
+      val communityWords = community._2
+
+      val temp = articleList.filter(content => filterFunc(communityWords, content._1)).map(x => x._2).sum()
+
+      communityList.+=((communityId, temp))
+    }}
 
     communityList.toArray
   }
@@ -239,7 +261,7 @@ object HotDegreeCalculation {
     * 排序算法主程序入口
     *
     * @param dir 当前社区热度的保存路径, 以及读取前一小时的社区热度的读取路径
-    * @param fileList 当前采集的文本文档
+    * @param articleList 当前采集的文本文档
     * @param communityWordList 社区id 以及社区中包含的关键词
     * @param timeRange 时间间隔 默认为 1
     * @param alpha 贝叶斯平均的权重, 一般为 0.7
@@ -248,7 +270,7 @@ object HotDegreeCalculation {
     * @author Li Yu
     */
   def run(dir: String,
-          fileList: RDD[Array[String]],
+          articleList: RDD[Array[String]],
           communityWordList: Array[(String, Array[String])],
           timeRange: Int, alpha: Double, beta: Double): Unit ={
 
@@ -256,7 +278,11 @@ object HotDegreeCalculation {
     val preHotWords: Array[(String, Double)] = readFromFile(dir)
 
     // 计算当前社区对应的热度
-    val hotWords: Array[(String, Double)] = communityFrequencyStatistics(fileList, communityWordList)
+    // 法1
+    val hotWords: Array[(String, Double)] = communityFrequencyStatistics(articleList, communityWordList)
+
+    // 法2 articleList格式RDD[(Array[String], Double)]
+    // val hotWords: Array[(String, Double)] = communityFrequencyStatisticsWithUserPageView(articleList, communityWordList)
 
     //  通过贝叶斯和牛顿冷却,确定两个时间段的热度排序,得到最终的热度结果
     val result = mutable.HashMap[String, Double]()
