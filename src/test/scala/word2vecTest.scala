@@ -1,4 +1,4 @@
-import meachinelearning.word2vec.Word2Vec
+import meachinelearning.word2vec.rd2Vec
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -17,7 +17,7 @@ object word2vecTest {
 
     val punctuation = sc.textFile("/Users/li/kunyan/DataSet/punctuations.txt").collect()
 
-    val s =  Word2Vec.formatTransform(data, punctuation)
+    val s =  rd2Vec.formatTransform(data, punctuation)
 
     s.foreach(println)
 
