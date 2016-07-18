@@ -1094,9 +1094,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 4236ms :: artifacts dl 51ms
+[debug] :: resolution report :: resolve 6116ms :: artifacts dl 64ms
 [debug] 	report for default#naturallanguageprocessing$sbt_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sbt_2.10-default.xml
-[debug] 	resolve done (4236ms resolve - 51ms download)
+[debug] 	resolve done (6116ms resolve - 64ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1638,6 +1638,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 374ms :: artifacts dl 73ms
+[debug] :: resolution report :: resolve 475ms :: artifacts dl 128ms
 [debug] 	report for default#naturallanguageprocessing$sources_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sources_2.10-default.xml
-[debug] 	resolve done (374ms resolve - 73ms download)
+[debug] 	resolve done (475ms resolve - 128ms download)
