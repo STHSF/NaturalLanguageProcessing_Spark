@@ -7,7 +7,7 @@ import scala.xml.{XML, Elem}
 /**
   * Created by li on 16/7/12.
   */
-object Util {
+object MySQLUtil {
 
 
   /**
