@@ -10,8 +10,8 @@
 [debug] == resolving dependencies default#naturallanguageprocessing$sbt_2.10;1.0->org.scala-sbt#sbt;0.13.8 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.8 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {default=[default(compile)]}
-[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8
+[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] 	found org.scala-sbt#sbt;0.13.8 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
@@ -1094,9 +1094,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 6116ms :: artifacts dl 64ms
+[debug] :: resolution report :: resolve 21127ms :: artifacts dl 3213ms
 [debug] 	report for default#naturallanguageprocessing$sbt_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sbt_2.10-default.xml
-[debug] 	resolve done (6116ms resolve - 64ms download)
+[debug] 	resolve done (21127ms resolve - 3213ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1638,6 +1638,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 475ms :: artifacts dl 128ms
+[debug] :: resolution report :: resolve 1172ms :: artifacts dl 970ms
 [debug] 	report for default#naturallanguageprocessing$sources_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sources_2.10-default.xml
-[debug] 	resolve done (475ms resolve - 128ms download)
+[debug] 	resolve done (1172ms resolve - 970ms download)

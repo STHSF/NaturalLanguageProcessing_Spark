@@ -75,7 +75,7 @@ import org.apache.hadoop.hbase.util.Base64
   def setTimeRange(): String = {
 
     val scan = new Scan()
-    val date = new Date(new Date().getTime - 1 * 60 * 60 * 1000)
+    val date = new Date(new Date().getTime - 30 * 24 * 60 * 60 * 1000)
     val format = new SimpleDateFormat("yyyy-MM-dd HH")
     val time = format.format(date)
     val time1 = format.format(new Date().getTime)
@@ -87,6 +87,36 @@ import org.apache.hadoop.hbase.util.Base64
 
     scan.setTimeRange(startRow, stopRow)
     val proto: ClientProtos.Scan = ProtobufUtil.toScan(scan)
+
+    Base64.encodeBytes(proto.toByteArray)
+  }
+
+  /**
+    * 设置制定的时间范围(一天)
+    * @param time 指定的日期
+    * @return 指定日期至前一天时间范围
+    */
+  def setAssignedTimeRange(time: String): String = {
+
+    val format = new SimpleDateFormat("yyyy-MM-dd")
+
+    val date = format.parse(time)
+
+    val endTime = new Date(date.getTime - 24 * 60 * 60 * 1000)
+
+    val stopTime = format.format(endTime)
+
+    val startDate = time + "-00-00-00"
+    val stopDate = stopTime  + "-00-00-00"
+
+    val sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss")
+    val startRaw = sdf.parse(startDate).getTime
+    val stopRaw = sdf.parse(stopDate).getTime
+
+    val scan = new Scan()
+    scan.setTimeRange(startRaw, stopRaw)
+
+    val proto = ProtobufUtil.toScan(scan)
 
     Base64.encodeBytes(proto.toByteArray)
   }

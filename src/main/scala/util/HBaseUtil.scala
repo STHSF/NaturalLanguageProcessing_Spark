@@ -73,10 +73,11 @@ object HBaseUtil {
 
   /**
     * 获取hbase配置内容,并且初始化hbase配置
+ *
     * @param configFile hbase配置文件
     * @return
     */
-  def getHBaseConfigure(configFile: Elem): Configuration = {
+  def setHBaseConfigure(configFile: Elem): Configuration = {
 
     val rootDir = (configFile \ "hbase" \ "rootDir").text
     val ip = (configFile \ "hbase" \ "ip").text
@@ -94,13 +95,14 @@ object HBaseUtil {
 
   /**
     * 获取hbase中的内容
+ *
     * @param sc SparkContext
     * @param dir 配置文件所在的文件夹
     */
   def readFromHBase(sc: SparkContext, dir: String) {
 
     val configFile = readConfigFile(dir)
-    val configuration = getHBaseConfigure(configFile)
+    val configuration = setHBaseConfigure(configFile)
 
     // 读取hbase中的文件
     try {
