@@ -37,6 +37,8 @@ object TelecomDataProcessing {
     val endTime = new Date(date.getTime - 24 * 60 * 60 * 1000)
     val stopTime = dateFormat.format(endTime)
 
+    println(stopTime)
+
     val startDate = setTime + "-00-00-00"
     val stopDate = stopTime  + "-00-00-00"
 
