@@ -1,8 +1,10 @@
 package util
 
 
+import java.net.URI
+
 import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.{Path, FileSystem}
+import org.apache.hadoop.fs.{FileSystem, Path}
 
 /**
   * Created by li on 16/7/12.
@@ -10,35 +12,100 @@ import org.apache.hadoop.fs.{Path, FileSystem}
 object HDFSUtil {
 
   // 配置环境说明
+  private val conf = new Configuration()
 
-  val conf = new Configuration()
-
-  val hdfs = FileSystem.get(conf)//获得HDFS的FileSystem对象
-
+  private val fileSystem = FileSystem.get(new URI("hdfs://222.73.57.12:9000"),conf)//获得HDFS的FileSystem对象
 
 
+  def deleteFile(fileName: String): Unit = {
 
-  def readFromHDFS(): Unit ={
+    val path = new Path(fileName)
+    val isExists = fileSystem.exists(path)
+    if (isExists) {
 
+      val isDel = fileSystem.delete(path, true)
+      System.out.println(fileName + "  delete? \t" + isDel)
+
+    } else {
+
+      System.out.println(fileName + "  exist? \t" + isExists)
+
+    }
   }
 
 
-
-
-  def Write2HDFS(dir: String , data: Array[String]): Unit = {
+  def deleteFilePath(dir: String): Boolean = {
 
     val path = new Path(dir)
 
-    val dd = hdfs.create(path)
+    if (fileSystem.isDirectory(path)) {
 
-    data.foreach(x => dd.writeUTF(x))
+      val children = fileSystem.listStatus(path)
+
+      //递归删除目录中的子目录下
+      for (i <- 0 until children.length) {
+
+        val success = deleteFilePath(children(i).getPath.toString)
+
+        if (! success){
+          return false
+        }
+      }
+    }
+    // 目录此时为空，可以删除
+    fileSystem.delete(path, true)
+  }
 
 
-    dd.close()
+  def createDir (str: String): Unit = {
+
+    val path = new Path(str)
+
+    fileSystem.mkdirs(path)
 
   }
 
 
+  def createFile(fileName: String, fileContent: String): Unit = {
 
+    val path = new Path(fileName)
+    val bytes = fileContent.getBytes()
+
+    val output = fileSystem.create(path, true)
+
+//    val output = fileSystem.append(path)
+//    val in = new BufferedInputStream(new FileInputStream(fileContent))
+//    IOUtils.copyBytes(in, output, 4096, true)
+
+    output.write(bytes)
+
+    output.close()
+  }
+
+
+
+
+  def Write2HDFS(dir: String, fileName: String, fileContent: String): Unit = {
+
+    val path = new Path(dir)
+
+    if (fileSystem.exists(path)) {
+
+      if (deleteFilePath(dir)) {
+
+        createDir(dir)
+      }
+
+    } else {
+
+      createDir(dir)
+    }
+
+    val file = dir + fileName
+    createFile(file, fileContent)
+
+    fileSystem.close()
+
+  }
 
 }
