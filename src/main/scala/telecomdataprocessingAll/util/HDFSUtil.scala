@@ -1,4 +1,4 @@
-package telecomdataprocessing.util
+package telecomdataprocessingAll.util
 
 import java.text.SimpleDateFormat
 

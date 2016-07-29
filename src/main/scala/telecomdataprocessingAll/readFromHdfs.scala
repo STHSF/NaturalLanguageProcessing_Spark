@@ -1,4 +1,4 @@
-package telecomdataprocessing
+package telecomdataprocessingAll
 
 import org.apache.spark.{SparkConf, SparkContext}
 import util.LoggerUtil
