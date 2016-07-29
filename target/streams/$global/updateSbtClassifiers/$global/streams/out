@@ -10,7 +10,6 @@
 [debug] == resolving dependencies default#naturallanguageprocessing$sbt_2.10;1.0->org.scala-sbt#sbt;0.13.8 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.8 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {default=[default(compile)]}
-[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8
 [debug] 	found org.scala-sbt#sbt;0.13.8 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
@@ -1094,9 +1093,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 3999ms :: artifacts dl 69ms
+[debug] :: resolution report :: resolve 2882ms :: artifacts dl 28ms
 [debug] 	report for default#naturallanguageprocessing$sbt_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sbt_2.10-default.xml
-[debug] 	resolve done (3999ms resolve - 69ms download)
+[debug] 	resolve done (2882ms resolve - 28ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1638,6 +1637,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 834ms :: artifacts dl 52ms
+[debug] :: resolution report :: resolve 126ms :: artifacts dl 28ms
 [debug] 	report for default#naturallanguageprocessing$sources_2.10;1.0 default produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sources_2.10-default.xml
-[debug] 	resolve done (834ms resolve - 52ms download)
+[debug] 	resolve done (126ms resolve - 28ms download)

@@ -1,6 +1,7 @@
 package util
 
 
+import java.io.{BufferedInputStream, FileInputStream}
 import java.net.URI
 
 import org.apache.hadoop.conf.Configuration
@@ -13,6 +14,8 @@ object HDFSUtil {
 
   // 配置环境说明
   private val conf = new Configuration()
+  conf.addResource(new Path("/opt/hadoop-0.20.0/conf/core-site.xml"))
+  conf.addResource(new Path("/opt/hadoop-0.20.0/conf/hdfs-site.xml"))
 
   private val fileSystem = FileSystem.get(new URI("hdfs://222.73.57.12:9000"),conf)//获得HDFS的FileSystem对象
 
@@ -69,7 +72,7 @@ object HDFSUtil {
   def createFile(fileName: String, fileContent: String): Unit = {
 
     val path = new Path(fileName)
-    val bytes = fileContent.getBytes()
+    val bytes = fileContent.getBytes("UTF-8")
 
     val output = fileSystem.create(path, true)
 
@@ -81,6 +84,24 @@ object HDFSUtil {
 
     output.close()
   }
+  def createFile2(fileName: String, fileContent: String): Unit = {
+
+    val path = new Path(fileName)
+    val bytes = fileContent.getBytes("UTF-8")
+
+    val output = fileSystem.create(path, true)
+
+//    val output = fileSystem.append(path)
+    val in = new BufferedInputStream(new FileInputStream(fileContent))
+//    IOUtils.copyBytes(in, output, 4096, true)
+
+    output.write(bytes)
+
+    output.close()
+  }
+
+
+
 
 
 

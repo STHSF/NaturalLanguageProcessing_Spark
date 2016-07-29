@@ -11,9 +11,9 @@
 //import scala.collection.mutable
 //
 ///**
-//  * Created by li on 16/7/20.
+//  * Created by li on 16/7/25.
 //  */
-//object TelecomDataProcessing {
+//object TelecomDataProcessingByHour {
 //
 //  /**
 //    * 设置指定的时间范围
@@ -77,14 +77,13 @@
 //    *
 //    * @param sc SparkContext
 //    * @param dir 数据存储的位置
-//    * @param setTime 读取数据的时间
 //    * @return Li Yu
 //    * @note rowNum: 5
 //    */
-//  def dataReadFromHDFS(sc:SparkContext, dir: String, setTime: String): RDD[(String, String, String)] = {
+//  def dataReadFromHDFS(sc:SparkContext, dir: String): RDD[(String, String, String)] = {
 //
-//    val filePath = dir + setTime + ".tar.gz"
-//    val data = sc.textFile(filePath, 10)
+//    val filePath = dir
+//    val data = sc.textFile(filePath)
 //
 //    val url =  data.map(_.split("\t")).filter(_.length == 8).map(x => (x(0), x(3) + x(4), x(5)))
 //
@@ -108,11 +107,42 @@
 //
 //      val urlFormat = HBaseUtil.judgeChaser(url)
 //
-//      new String(url, urlFormat)
+//      val time = x._2.getColumnLatestCell(Bytes.toBytes("basic"), Bytes.toBytes("url")).getTimestamp.toString
+//
+//      new String(time) + new String(url, urlFormat)
 //
 //    }}
 //
 //    news
+//  }
+//
+//  /**
+//    * 从hbase读取规定时间内的数据
+//    *
+//    * @param sc
+//    * @param confDir
+//    * @param setTime
+//    * @param tableName
+//    * @param timeRangeST
+//    * @param timeRangeED
+//    */
+//  def readFromHbase(sc: SparkContext, confDir: String, setTime: String,
+//                    tableName: String, timeRangeST: Int, timeRangeED: Int): Unit ={
+//
+//    val timeRangeHour = setAssignedHourRange(setTime)
+//
+//    for (item <- timeRangeST until timeRangeED) {
+//
+//      //从HBase中获取新闻数据
+//      val hBaseConf = HBaseUtil.getHBaseConf(sc, confDir, timeRangeHour(item), tableName)
+//      val newsFromHBase = newsReadFromHBase(hBaseConf)
+//
+//      //url过滤
+//      val newsFiltered = TelecomDataProcessing.urlFilter(newsFromHBase)
+//
+//    }
+//
+//
 //  }
 //
 //  /**
@@ -184,74 +214,54 @@
 //    val confDir = args(4)  // HBase配置文件目录
 //    val tableName = args(5)  // 表名
 //
-//    //结果保存的变量
-//    val result = new mutable.ArrayBuffer[(String)]
+//    val hBaseRDD = HBaseUtil.getHBaseConf(sc, confDir, timeRangeHour(2), tableName)
 //
-//    //循环遍历从开始时间段到结束时间段中HBase中的新闻数据
-//    for (item <- timeRangeST until timeRangeED) {
+//    val newsFiltered = newsReadFromHBase(hBaseRDD)
 //
-//      // 转换数据格式,将item变成时间的格式,用于标识结果输出
-//      val dataFormat = new SimpleDateFormat("yyyy-MM-dd")
-//      val seTime = dataFormat.parse(setTime)
-//      val dateTime = new Date(seTime.getTime + item * 60 * 60 * 1000)
-//      val sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss")
-//      val newsTimeLine = sdf.format(dateTime)
+//    // 设置从读取hdfs上的数据的时间
+//    val hourRange = setAssignedTimeRange(setTime)
+//    val startTime = hourRange._1
+//    val stopTime = hourRange._2
+//    val day = (stopTime - startTime) / (24 * 60 * 60 * 1000)
+//    LoggerUtil.warn("共需从hdfs数据读 " + "%s".format(day) + " 天的数据"+" 》》》》》》》》》》》》")
 //
-//      //从HBase中获取新闻数据
-//      LoggerUtil.warn("从hBase数据读 " + "%s".format(newsTimeLine) + " 时刻的数据"+" 》》》》》》》》》》》》")
-//      val hBaseConf = HBaseUtil.getHBaseConf(sc, confDir, timeRangeHour(item), tableName)
-//      val newsFromHBase = newsReadFromHBase(hBaseConf)
-//      LoggerUtil.warn("hBase" + "%s".format(newsTimeLine) + " 时刻的数据读取结束 》》》》》》》》》》》》")
+//    // 取出每一天的数据
+//    for (i <- 0 to day.toInt ) {
 //
-//      //url过滤
-//      val newsFiltered = TelecomDataProcessing.urlFilter(newsFromHBase)
+//      //
+//      val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+//      val date = dateFormat.parse(setTime)
+//      val stopTime = new Date(date.getTime + i * 24 * 60 * 60 * 1000)
+//      val dayTime = dateFormat.format(stopTime)
 //
-//      // 设置从读取hdfs上的数据的时间
-//      val hourRange = setAssignedTimeRange(setTime)
-//      val startTime = hourRange._1
-//      val stopTime = hourRange._2
-//      val day = (stopTime - startTime) / (24 * 60 * 60 * 1000)
-//      LoggerUtil.warn("共需从hdfs数据读 " + "%s".format(day) + " 天的数据"+" 》》》》》》》》》》》》")
+//      LoggerUtil.warn("从hdfs数据读 " + "%s".format(dayTime) + " 日的数据"+" 》》》》》》》》》》》》")
 //
-//      // 取出每一天的数据
-//      for (i <- 0 to day.toInt ) {
+//      // 对每一天中每一小时的数据进行统计
+//      for (hour <- 0 until 24) {
 //
-//        // 转换数据格式,将i转换成时间的格式,用于标识输出结果.
-//        val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-//        val date = dateFormat.parse(setTime)
-//        val stopTime = new Date(date.getTime + i * 24 * 60 * 60 * 1000)
-//        val dayTime = dateFormat.format(stopTime)
+//        //获取每个小时的电信数据
 //
-//        LoggerUtil.warn("从hdfs数据读 " + "%s".format(dayTime) + " 日的数据"+" 》》》》》》》》》》》》")
-//        val dataFromHDFS = dataReadFromHDFS(sc, dir, dayTime)
+//        LoggerUtil.warn("从hdfs数据读 " + "%s".format(dayTime) + " 日" + "%s".format(hour) + " 小时的数据" + " 》》》》》》")
+//
+//        val hdfsPath = dir + dayTime + "/" + hour.toString + ".tar.gz"
+//        val telecomData = dataReadFromHDFS(sc, hdfsPath)
 //          .filter(! _._1.contains("home/telecom"))
-//        LoggerUtil.warn("hdfs一天的数据读取结束 》》》》》》》》》》》》")
+//          .map(_._2)
+//        LoggerUtil.warn("hdfs一小时数据读取结束 》》》》》》》》》》》》")
 //
-//        // 对每一天中每一小时的数据进行统计
-//        for (j <- 0 until 24) {
+//        //url过滤
+//        val telecomDataFiltered = TelecomDataProcessing.urlFilter(telecomData)
+//        LoggerUtil.warn("hdfs中url过滤结束 》》》》》》》》》》》》")
 //
-//          //获取每个小时的电信数据
-//          LoggerUtil.warn("从hdfs数据读 " + "%s".format(dayTime) + " 日" + "%s".format(j) + " 小时的数据" + " 》》》》》》")
-//          val telecomData = dataFromHDFS.filter { line => {
+//        //url匹配
+//        LoggerUtil.warn("hbase和hdfs中的url匹配开始 》》》》》》》》》》》》")
+//        val res = TelecomDataProcessing.urlMatching(telecomDataFiltered, newsFiltered)
+//          .map(x => x._1 + "," + x._2)
+//          .mkString("\t")
+//        LoggerUtil.warn("%s".format(dayTime) + " 日" + "%s".format(hour) + " 时的url匹配结束" + " 》》》》》》")
 //
-//            timeRangeHour(j)._1 <= line._1.toLong && line._1.toLong <= timeRangeHour(j)._2
+//        //
 //
-//          }}.map (x => x._2)
-//          LoggerUtil.warn("hdfs一小时数据读取结束 》》》》》》》》》》》》")
-//
-//          //url过滤
-//          val telecomDataFiltered = TelecomDataProcessing.urlFilter(telecomData)
-//          LoggerUtil.warn("hdfs中url过滤结束 》》》》》》》》》》》》")
-//
-//          //url匹配
-//          LoggerUtil.warn("hbase和hdfs中的url匹配开始 》》》》》》》》》》》》")
-//          val res = TelecomDataProcessing.urlMatching(telecomDataFiltered, newsFiltered)
-//            .map(x => x._1 + "," + x._2)
-//            .mkString("\t")
-//          LoggerUtil.warn("%s".format(dayTime) + " 日" + "%s".format(j) + " 时的url匹配结束" + " 》》》》》》")
-//
-//          result.+=(newsTimeLine + "|"+ dayTime + "||" + res + "\n")
-//        }
 //      }
 //    }
 //
@@ -265,5 +275,6 @@
 //
 //    sc.stop()
 //  }
+//
 //
 //}

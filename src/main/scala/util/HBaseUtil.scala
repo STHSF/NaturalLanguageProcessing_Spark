@@ -5,9 +5,12 @@ import java.io.{FileNotFoundException, IOException}
 import com.ibm.icu.text.CharsetDetector
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.HBaseConfiguration
+import org.apache.hadoop.hbase.client.Result
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD
 
 import scala.xml.{Elem, XML}
 
@@ -32,30 +35,30 @@ object HBaseUtil {
     encoding.getName
   }
 
-//  /**
-//    * 设置时间范围
-//    *
-//    * @return 时间范围
-//    * @author yangshuai
-//    */
-//  def setTimeRange(): String = {
-//
-//    val scan = new Scan()
-//    val date = new Date(new Date().getTime - 1 * 60 * 60 * 1000)
-//    val format = new SimpleDateFormat("yyyy-MM-dd HH")
-//    val time = format.format(date)
-//    val time1 = format.format(new Date().getTime)
-//    val startTime = time + "-00-00"
-//    val stopTime = time1 + "-00-00"
-//    val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss")
-//    val startRow: Long = sdf.parse(startTime).getTime
-//    val stopRow: Long = sdf.parse(stopTime).getTime
-//
-//    scan.setTimeRange(startRow, stopRow)
-//    val proto: ClientProtos.Scan = ProtobufUtil.toScan(scan)
-//
-//    Base64.encodeBytes(proto.toByteArray)
-//  }
+  //  /**
+  //    * 设置时间范围
+  //    *
+  //    * @return 时间范围
+  //    * @author yangshuai
+  //    */
+  //  def setTimeRange(): String = {
+  //
+  //    val scan = new Scan()
+  //    val date = new Date(new Date().getTime - 1 * 60 * 60 * 1000)
+  //    val format = new SimpleDateFormat("yyyy-MM-dd HH")
+  //    val time = format.format(date)
+  //    val time1 = format.format(new Date().getTime)
+  //    val startTime = time + "-00-00"
+  //    val stopTime = time1 + "-00-00"
+  //    val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss")
+  //    val startRow: Long = sdf.parse(startTime).getTime
+  //    val stopRow: Long = sdf.parse(stopTime).getTime
+  //
+  //    scan.setTimeRange(startRow, stopRow)
+  //    val proto: ClientProtos.Scan = ProtobufUtil.toScan(scan)
+  //
+  //    Base64.encodeBytes(proto.toByteArray)
+  //  }
 
 
   /**
@@ -73,7 +76,7 @@ object HBaseUtil {
 
   /**
     * 获取hbase配置内容,并且初始化hbase配置
- *
+    *
     * @param configFile hbase配置文件
     * @return
     */
@@ -95,7 +98,7 @@ object HBaseUtil {
 
   /**
     * 获取hbase中的内容
- *
+    *
     * @param sc SparkContext
     * @param dir 配置文件所在的文件夹
     */
@@ -136,7 +139,7 @@ object HBaseUtil {
       }).cache()
 
       news.foreach(x => println(x))
-//      hBaseRDD.saveAsTextFile("")
+      //      hBaseRDD.saveAsTextFile("")
 
     } catch {
 
@@ -149,6 +152,44 @@ object HBaseUtil {
 
     }
   }
+
+
+  def getHBaseConfStartStampStopStamp(sc: SparkContext, confDir: String, tableName: String, startTimeStamp:Long, stopTimeStamp: Long) : RDD[(ImmutableBytesWritable, Result)] = {
+
+    val configFile = HBaseUtil.readConfigFile(confDir)
+    val configuration = HBaseUtil.setHBaseConfigure(configFile)
+
+    configuration.set(TableInputFormat.INPUT_TABLE, tableName)
+    configuration.set(TableInputFormat.SCAN_TIMERANGE_END, stopTimeStamp.toString)
+    configuration.set(TableInputFormat.SCAN_TIMERANGE_START, startTimeStamp.toString)
+
+    // 使用Hadoop api来创建一个RDD
+    val hBaseRDD = sc.newAPIHadoopRDD(configuration,
+      classOf[TableInputFormat],
+      classOf[org.apache.hadoop.hbase.io.ImmutableBytesWritable],
+      classOf[org.apache.hadoop.hbase.client.Result])
+
+    hBaseRDD
+  }
+
+
+
+  def getHBaseConfWholeTable(sc: SparkContext, confDir: String, tableName: String) : RDD[(ImmutableBytesWritable, Result)] = {
+
+    val configFile = HBaseUtil.readConfigFile(confDir)
+    val configuration = HBaseUtil.setHBaseConfigure(configFile)
+
+    configuration.set(TableInputFormat.INPUT_TABLE, tableName)
+
+    // 使用Hadoop api来创建一个RDD
+    val hBaseRDD = sc.newAPIHadoopRDD(configuration,
+      classOf[TableInputFormat],
+      classOf[org.apache.hadoop.hbase.io.ImmutableBytesWritable],
+      classOf[org.apache.hadoop.hbase.client.Result])
+
+    hBaseRDD
+  }
+
 
   def write2HBase: Unit ={
 
