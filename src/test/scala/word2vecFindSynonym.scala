@@ -3,6 +3,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * Created by li on 16/7/14.
+  * word2vec模型
   */
 object word2vecFindSynonym {
 
@@ -17,7 +18,7 @@ object word2vecFindSynonym {
     // 读取保存在hdfs上的模型
     val model = Word2VecModel.load(sc, dir)
 
-    val synonyms = model.findSynonyms("傻", 40)
+    val synonyms = model.findSynonyms("马云", 100)
 
     for((synonym, cosineSimilarity ) <- synonyms){
       println(s"$synonym   $cosineSimilarity")
