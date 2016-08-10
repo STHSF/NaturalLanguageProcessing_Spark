@@ -4,7 +4,7 @@
 		module="naturallanguageprocessing$sbt_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160801090711"
+		publication="20160809151121"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

@@ -1,5 +1,7 @@
 import util.HDFSUtil
 
+import scala.xml.XML
+
 /**
   * Created by li on 16/7/25.
   */
@@ -7,14 +9,9 @@ object HDFSUtilTest {
 
   def main(args: Array[String]) {
 
-     HDFSUtil.createDir("/liyutest")
-//    HDFSUtil.createDir("/liyutest/lll")
+    val configFile = XML.loadFile("/Users/li/Kunyan/NaturalLanguageProcessing/src/main/scala/util/config.xml")
 
-
-    HDFSUtil.createFile("/liyutest/liyu3","252435234")
-
-//    HDFSUtil.deleteFilePath("/liyutest")
-
+    val filesystem = HDFSUtil.setHdfsConfigure(configFile)
 
   }
 

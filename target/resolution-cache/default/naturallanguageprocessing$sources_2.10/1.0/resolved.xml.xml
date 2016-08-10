@@ -4,7 +4,7 @@
 		module="naturallanguageprocessing$sources_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160801090716"
+		publication="20160809151133"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

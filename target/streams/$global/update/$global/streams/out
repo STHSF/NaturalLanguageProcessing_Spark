@@ -1,4 +1,4 @@
-[info] Updating {file:/Users/li/kunyan/NaturalLanguageProcessing/}naturallanguageprocessing...
+[info] Updating {file:/Users/li/Kunyan/NaturalLanguageProcessing/}naturallanguageprocessing...
 [debug] :: resolving dependencies :: default#naturallanguageprocessing_2.10;1.0
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -7,7 +7,7 @@
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [compile]
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scala-lang#scala-compiler;2.10.4 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-compiler;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@25c920af
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@425e45ed
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.4
 [debug] 	found org.scala-lang#scala-compiler;2.10.4 in sbt-chain
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scala-lang#scala-compiler;2.10.4 [compile->runtime]
@@ -4634,7 +4634,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-client;1.1.2!hbase-client.pom(pom.original) (1466ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-client;1.1.2!hbase-client.pom(pom.original) (2353ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
@@ -4648,7 +4648,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase;1.1.2!hbase.pom(pom.original) (4059ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase;1.1.2!hbase.pom(pom.original) (3979ms)
 [info] Resolving org.apache#apache;12 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache#apache;12 {}
 [debug] sbt-chain: module revision found in cache: org.apache#apache;12
@@ -4662,9 +4662,9 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hbase#hbase-client;1.1.2 [compile->compile]
 [debug] == resolving dependencies org.apache.hbase#hbase-client;1.1.2->org.apache.hbase#hbase-annotations;1.1.2 [compile->compile(*)]
 [info] Resolving org.apache.hbase#hbase-annotations;1.1.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6a1627e9
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5244292a
 [info] Resolving org.apache.hbase#hbase-annotations;1.1.2 ...
-[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@6a1627e9
+[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@5244292a
 [debug] 		tried /Users/li/.ivy2/local/org.apache.hbase/hbase-annotations/1.1.2/ivys/ivy.xml
 [debug] 	local: no ivy file found for org.apache.hbase#hbase-annotations;1.1.2
 [debug] 		tried https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
@@ -4674,7 +4674,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-annotations;1.1.2!hbase-annotations.pom(pom.original) (3565ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-annotations;1.1.2!hbase-annotations.pom(pom.original) (1412ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4708,7 +4708,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-protocol;1.1.2!hbase-protocol.pom(pom.original) (2632ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-protocol;1.1.2!hbase-protocol.pom(pom.original) (1327ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4856,7 +4856,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-common;1.1.2!hbase-common.pom(pom.original) (2388ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-common;1.1.2!hbase-common.pom(pom.original) (1273ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4937,7 +4937,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-server;1.1.2!hbase-server.pom(pom.original) (2318ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-server;1.1.2!hbase-server.pom(pom.original) (1741ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4948,9 +4948,9 @@
 [debug] == resolving dependencies org.apache.hbase#hbase-server;1.1.2->org.apache.hbase#hbase-protocol;1.1.2 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hbase#hbase-server;1.1.2->org.apache.hbase#hbase-procedure;1.1.2 [compile->compile(*)]
 [info] Resolving org.apache.hbase#hbase-procedure;1.1.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4eb3255a
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@432ba51d
 [info] Resolving org.apache.hbase#hbase-procedure;1.1.2 ...
-[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@4eb3255a
+[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@432ba51d
 [debug] 		tried /Users/li/.ivy2/local/org.apache.hbase/hbase-procedure/1.1.2/ivys/ivy.xml
 [debug] 	local: no ivy file found for org.apache.hbase#hbase-procedure;1.1.2
 [debug] 		tried https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
@@ -4960,7 +4960,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-procedure;1.1.2!hbase-procedure.pom(pom.original) (1371ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-procedure;1.1.2!hbase-procedure.pom(pom.original) (1532ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -5194,7 +5194,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-prefix-tree;1.1.2!hbase-prefix-tree.pom(pom.original) (2042ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-prefix-tree;1.1.2!hbase-prefix-tree.pom(pom.original) (1668ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -13818,24 +13818,8 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->default(compile)]
 [info] Resolving org.apache.hadoop#hadoop-hdfs;2.7.1 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hadoop#hadoop-hdfs;2.7.1 {provided=[default(compile)]}
-[info] Resolving org.apache.hadoop#hadoop-hdfs;2.7.1 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.apache.hadoop#hadoop-hdfs;2.7.1 {provided=[default(compile)]}
-[debug] 		tried /Users/li/.ivy2/local/org.apache.hadoop/hadoop-hdfs/2.7.1/ivys/ivy.xml
-[debug] 	local: no ivy file found for org.apache.hadoop#hadoop-hdfs;2.7.1
-[debug] 		tried https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom
-[debug] 	jcenter: found md file for org.apache.hadoop#hadoop-hdfs;2.7.1
-[debug] 		=> https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom (2.7.1)
-[debug] downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.pom
-[debug] 	[SUCCESSFUL ] org.apache.hadoop#hadoop-hdfs;2.7.1!hadoop-hdfs.pom(pom.original) (1320ms)
-[info] Resolving org.apache.hadoop#hadoop-project-dist;2.7.1 ...
-[debug] sbt-chain: Checking cache for: dependency: org.apache.hadoop#hadoop-project-dist;2.7.1 {}
-[debug] sbt-chain: module revision found in cache: org.apache.hadoop#hadoop-project-dist;2.7.1
-[debug] 		tried /Users/li/.ivy2/local/org.apache.hadoop/hadoop-hdfs/2.7.1/jars/hadoop-hdfs.jar
-[debug] 		tried https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar
-[debug] 	found org.apache.hadoop#hadoop-hdfs;2.7.1 in jcenter
+[debug] sbt-chain: module revision found in cache: org.apache.hadoop#hadoop-hdfs;2.7.1
+[debug] 	found org.apache.hadoop#hadoop-hdfs;2.7.1 in sbt-chain
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->runtime]
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->compile]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->compile(*)]
@@ -26930,31 +26914,26 @@
 [debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.2.5!scalatest_2.10.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.5!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.5!scala-reflect.jar
-[debug] 		tried https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar
-[info] downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar ...
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar
-[debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar.sha1
-[debug] sha1 OK for https://jcenter.bintray.com/org/apache/hadoop/hadoop-hdfs/2.7.1/hadoop-hdfs-2.7.1.jar
-[info] 	[SUCCESSFUL ] org.apache.hadoop#hadoop-hdfs;2.7.1!hadoop-hdfs.jar (276382ms)
+[debug] 	[NOT REQUIRED] org.apache.hadoop#hadoop-hdfs;2.7.1!hadoop-hdfs.jar
 [debug] 	[NOT REQUIRED] commons-daemon#commons-daemon;1.0.13!commons-daemon.jar
 [debug] 	[NOT REQUIRED] javax.servlet#servlet-api;2.5!servlet-api.jar
 [debug] 	[NOT REQUIRED] xerces#xercesImpl;2.9.1!xercesImpl.jar
 [debug] 	[NOT REQUIRED] org.fusesource.leveldbjni#leveldbjni-all;1.8!leveldbjni-all.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 46750ms :: artifacts dl 278493ms
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 provided produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-provided.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 optional produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-optional.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 plugin produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-plugin.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 sources produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-sources.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 docs produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-docs.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 pom produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-pom.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 scala-tool produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-scala-tool.xml
-[debug] 	resolve done (46750ms resolve - 278493ms download)
+[debug] :: resolution report :: resolve 52094ms :: artifacts dl 1796ms
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 provided produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-provided.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 optional produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-optional.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 plugin produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-plugin.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 sources produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-sources.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 docs produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-docs.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 pom produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-pom.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 scala-tool produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-scala-tool.xml
+[debug] 	resolve done (52094ms resolve - 1796ms download)
 [info] Done updating.
