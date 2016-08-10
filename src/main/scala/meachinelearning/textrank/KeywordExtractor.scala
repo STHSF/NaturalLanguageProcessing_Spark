@@ -155,21 +155,26 @@ object KeywordExtractor {
 /**
   * 测试用例
   */
-object test extends  App {
+object test {
 
   val conf = new SparkConf().setAppName("text").setMaster("local")
   val sc = new SparkContext(conf)
 
-  val file = sc.textFile("/Users/li/kunyan/DataSet/textRankTestData/textRankTest2.txt")
-  val doc = new ListBuffer[(String)]
-  file.foreach {
-    word =>
-      val list = word.split(",").foreach(x => doc.+=(x))
+  def main(args: Array[String]) {
+
+    val file = sc.textFile("/Users/li/kunyan/DataSet/textRankTestData/textRankTest2.txt")
+    val doc = new ListBuffer[(String)]
+    file.foreach {
+      word =>
+        val list = word.split(",").foreach(x => doc.+=(x))
+    }
+
+    val keyWordList = KeywordExtractor.run("url", 5, doc, 3, 100, 0.85f)
+
+    keyWordList.foreach {
+      x => println(x._1, x._2)
+    }
   }
 
-  val keyWordList = KeywordExtractor.run("url", 5, doc, 3, 100, 0.85f)
-
-  keyWordList.foreach(
-    x => println(x._1, x._2)
-  )
+  sc.stop()
 }

@@ -1,4 +1,4 @@
-[info] Updating {file:/Users/li/kunyan/NaturalLanguageProcessing/}naturallanguageprocessing...
+[info] Updating {file:/Users/li/Kunyan/NaturalLanguageProcessing/}naturallanguageprocessing...
 [debug] :: resolving dependencies :: default#naturallanguageprocessing_2.10;1.0
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
@@ -7,7 +7,7 @@
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [compile]
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scala-lang#scala-compiler;2.10.4 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-compiler;2.10.4 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@70d2bad7
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@425e45ed
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.4
 [debug] 	found org.scala-lang#scala-compiler;2.10.4 in sbt-chain
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scala-lang#scala-compiler;2.10.4 [compile->runtime]
@@ -4634,7 +4634,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-client/1.1.2/hbase-client-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-client;1.1.2!hbase-client.pom(pom.original) (1198ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-client;1.1.2!hbase-client.pom(pom.original) (2353ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
@@ -4648,7 +4648,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase/1.1.2/hbase-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase;1.1.2!hbase.pom(pom.original) (2400ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase;1.1.2!hbase.pom(pom.original) (3979ms)
 [info] Resolving org.apache#apache;12 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache#apache;12 {}
 [debug] sbt-chain: module revision found in cache: org.apache#apache;12
@@ -4662,9 +4662,9 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hbase#hbase-client;1.1.2 [compile->compile]
 [debug] == resolving dependencies org.apache.hbase#hbase-client;1.1.2->org.apache.hbase#hbase-annotations;1.1.2 [compile->compile(*)]
 [info] Resolving org.apache.hbase#hbase-annotations;1.1.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@13442716
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@5244292a
 [info] Resolving org.apache.hbase#hbase-annotations;1.1.2 ...
-[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@13442716
+[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@5244292a
 [debug] 		tried /Users/li/.ivy2/local/org.apache.hbase/hbase-annotations/1.1.2/ivys/ivy.xml
 [debug] 	local: no ivy file found for org.apache.hbase#hbase-annotations;1.1.2
 [debug] 		tried https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
@@ -4674,7 +4674,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-annotations/1.1.2/hbase-annotations-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-annotations;1.1.2!hbase-annotations.pom(pom.original) (895ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-annotations;1.1.2!hbase-annotations.pom(pom.original) (1412ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4708,7 +4708,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-protocol/1.1.2/hbase-protocol-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-protocol;1.1.2!hbase-protocol.pom(pom.original) (1099ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-protocol;1.1.2!hbase-protocol.pom(pom.original) (1327ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4856,7 +4856,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-common/1.1.2/hbase-common-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-common;1.1.2!hbase-common.pom(pom.original) (1428ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-common;1.1.2!hbase-common.pom(pom.original) (1273ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4937,7 +4937,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-server/1.1.2/hbase-server-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-server;1.1.2!hbase-server.pom(pom.original) (1613ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-server;1.1.2!hbase-server.pom(pom.original) (1741ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -4948,9 +4948,9 @@
 [debug] == resolving dependencies org.apache.hbase#hbase-server;1.1.2->org.apache.hbase#hbase-protocol;1.1.2 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hbase#hbase-server;1.1.2->org.apache.hbase#hbase-procedure;1.1.2 [compile->compile(*)]
 [info] Resolving org.apache.hbase#hbase-procedure;1.1.2 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1ef39c6f
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@432ba51d
 [info] Resolving org.apache.hbase#hbase-procedure;1.1.2 ...
-[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@1ef39c6f
+[debug] sbt-chain-delegate: Checking cache for: sbt.ivyint.MergedDescriptors@432ba51d
 [debug] 		tried /Users/li/.ivy2/local/org.apache.hbase/hbase-procedure/1.1.2/ivys/ivy.xml
 [debug] 	local: no ivy file found for org.apache.hbase#hbase-procedure;1.1.2
 [debug] 		tried https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
@@ -4960,7 +4960,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-procedure/1.1.2/hbase-procedure-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-procedure;1.1.2!hbase-procedure.pom(pom.original) (1101ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-procedure;1.1.2!hbase-procedure.pom(pom.original) (1532ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -5194,7 +5194,7 @@
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom
 [debug] 	jcenter: downloading https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom.sha1
 [debug] sha1 OK for https://jcenter.bintray.com/org/apache/hbase/hbase-prefix-tree/1.1.2/hbase-prefix-tree-1.1.2.pom
-[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-prefix-tree;1.1.2!hbase-prefix-tree.pom(pom.original) (1426ms)
+[debug] 	[SUCCESSFUL ] org.apache.hbase#hbase-prefix-tree;1.1.2!hbase-prefix-tree.pom(pom.original) (1668ms)
 [info] Resolving org.apache.hbase#hbase;1.1.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.hbase#hbase;1.1.2 {}
 [debug] sbt-chain: module revision found in cache: org.apache.hbase#hbase;1.1.2
@@ -13815,6 +13815,171 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scalatest#scalatest_2.10;2.2.5 [test->master]
 [debug] resolving dependencies for configuration 'provided'
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [provided]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->default(compile)]
+[info] Resolving org.apache.hadoop#hadoop-hdfs;2.7.1 ...
+[debug] sbt-chain: Checking cache for: dependency: org.apache.hadoop#hadoop-hdfs;2.7.1 {provided=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.apache.hadoop#hadoop-hdfs;2.7.1
+[debug] 	found org.apache.hadoop#hadoop-hdfs;2.7.1 in sbt-chain
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->runtime]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->compile(*)]
+[debug] == resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [compile->compile(*)]
+[info] Resolving com.google.code.findbugs#jsr305;1.3.9 ...
+[debug] sbt-chain: Checking cache for: dependency: com.google.code.findbugs#jsr305;1.3.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: com.google.code.findbugs#jsr305;1.3.9
+[debug] 	found com.google.code.findbugs#jsr305;1.3.9 in sbt-chain
+[debug] == resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->compile(*)]
+[debug] excluding dependency: org.mortbay.jetty#servlet-api;2.5-20081211 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] == resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
+[debug] excluding dependency: org.mortbay.jetty#servlet-api;2.5-20081211 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;3.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;3.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;3.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;3.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;3.8.2 {test=[runtime(*), master(compile)]}
+[debug] == resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->compile(*)]
+[debug] == resolving dependencies com.sun.jersey#jersey-server;1.9->asm#asm;3.1 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-core-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-core-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-core-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-core-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-core-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-core-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.codehaus.jackson#jackson-mapper-asl;1.9.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies com.sun.jersey#jersey-server;1.9->asm#asm;3.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->compile(*)]
+[info] Resolving commons-daemon#commons-daemon;1.0.13 ...
+[debug] sbt-chain: Checking cache for: dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: commons-daemon#commons-daemon;1.0.13
+[debug] 	found commons-daemon#commons-daemon;1.0.13 in sbt-chain
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->compile(*)]
+[info] Resolving javax.servlet#servlet-api;2.5 ...
+[debug] sbt-chain: Checking cache for: dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: javax.servlet#servlet-api;2.5
+[debug] 	found javax.servlet#servlet-api;2.5 in sbt-chain
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->compile(*)]
+[info] Resolving io.netty#netty-all;4.0.23.Final ...
+[debug] sbt-chain: Checking cache for: dependency: io.netty#netty-all;4.0.23.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: io.netty#netty-all;4.0.23.Final
+[debug] 	found io.netty#netty-all;4.0.23.Final in sbt-chain
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->compile(*)]
+[info] Resolving xerces#xercesImpl;2.9.1 ...
+[debug] sbt-chain: Checking cache for: dependency: xerces#xercesImpl;2.9.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: xerces#xercesImpl;2.9.1
+[debug] 	found xerces#xercesImpl;2.9.1 in sbt-chain
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->compile(*)]
+[info] Resolving org.fusesource.leveldbjni#leveldbjni-all;1.8 ...
+[debug] sbt-chain: Checking cache for: dependency: org.fusesource.leveldbjni#leveldbjni-all;1.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: module revision found in cache: org.fusesource.leveldbjni#leveldbjni-all;1.8
+[debug] 	found org.fusesource.leveldbjni#leveldbjni-all;1.8 in sbt-chain
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [runtime->compile]
+[debug] == resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [runtime->runtime(*)]
+[debug] == resolving dependencies com.google.guava#guava;11.0.2->com.google.code.findbugs#jsr305;1.3.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->compile]
+[debug] excluding dependency: org.mortbay.jetty#servlet-api;2.5-20081211 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
+[debug] == resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->compile]
+[debug] == resolving dependencies com.sun.jersey#jersey-server;1.9->asm#asm;3.1 [runtime->runtime(*)]
+[debug] == resolving dependencies com.sun.jersey#jersey-server;1.9->asm#asm;3.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.codehaus.jackson#jackson-mapper-asl;1.9.13->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->compile]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->master]
 [debug] resolving dependencies for configuration 'optional'
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [optional]
 [debug] resolving dependencies for configuration 'compile-internal'
@@ -15157,136 +15322,9 @@
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.2.0 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [compile->compile(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [compile->compile(*)]
 [debug] excluding dependency: org.apache.hadoop#hadoop-yarn-server-web-proxy;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.apache.avro#avro;1.7.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
@@ -16105,6 +16143,8 @@
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)]
 [debug] excluding dependency: com.google.guava#guava;15.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;1.3.9 [compile->compile(*)]
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->compile(*)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.spark#spark-core_2.10;1.5.2->com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4 [compile->master(compile)]
@@ -16122,6 +16162,36 @@
 [debug] excluding dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-glusterfs;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-s3;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;16.0.1 [compile->compile(*)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;14.0.1 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;16.0.1 [compile->master(compile)]
@@ -16130,6 +16200,37 @@
 [debug] excluding dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-glusterfs;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-s3;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.6 [compile->compile(*)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.4 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.6 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-io#commons-io;2.4 [compile->compile(*)]
@@ -16406,41 +16507,101 @@
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [runtime->runtime(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [runtime->compile]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [runtime->compile]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->compile]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [runtime->compile]
 [debug] excluding dependency: org.apache.hadoop#hadoop-yarn-server-web-proxy;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
@@ -18026,6 +18187,10 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hbase#hbase-server;1.1.2 [compile->master]
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [optional]
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [provided]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->default(compile)]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->runtime]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->compile]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->master]
 [debug] resolving dependencies for configuration 'runtime-internal'
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [runtime-internal]
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [runtime]
@@ -20315,6 +20480,8 @@
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)]
 [debug] excluding dependency: com.google.guava#guava;15.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;1.3.9 [compile->compile(*)]
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->compile(*)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.spark#spark-core_2.10;1.5.2->com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4 [compile->master(compile)]
@@ -23577,136 +23744,9 @@
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.2.0 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [compile->compile(*)]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [compile->compile(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [compile->compile(*)]
 [debug] excluding dependency: org.apache.hadoop#hadoop-yarn-server-web-proxy;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.apache.avro#avro;1.7.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
@@ -24525,6 +24565,8 @@
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.thoughtworks.paranamer#paranamer;2.6 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->compile(*)]
 [debug] excluding dependency: com.google.guava#guava;15.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;1.3.9 [compile->compile(*)]
+[debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->compile(*)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;2.0.1 [compile->master(compile)]
 [debug] == resolving dependencies com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4->com.google.code.findbugs#jsr305;3.0.0 [compile->master(compile)]
 [debug] == resolving dependencies org.apache.spark#spark-core_2.10;1.5.2->com.fasterxml.jackson.module#jackson-module-scala_2.10;2.4.4 [compile->master(compile)]
@@ -24542,6 +24584,36 @@
 [debug] excluding dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-glusterfs;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-s3;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;16.0.1 [compile->compile(*)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;14.0.1 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->com.google.guava#guava;16.0.1 [compile->master(compile)]
@@ -24550,6 +24622,37 @@
 [debug] excluding dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-glusterfs;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
 [debug] excluding dependency: org.tachyonproject#tachyon-underfs-s3;0.7.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in compile
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.hadoop#hadoop-client;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.hadoop#hadoop-client;1.0.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.commons#commons-lang3;3.3.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.apache.commons#commons-lang3;3.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.10 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-log4j12;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: junit#junit;4.10 {test=[runtime(*), master(compile)]} => dependency: junit#junit;4.12 {test=[runtime(*), master(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.apache.curator#curator-test;2.4.0 {test=[runtime(*), master(compile)]} => dependency: org.apache.curator#curator-test;2.1.0-incubating {test=[runtime(*), master(compile)]}
+[debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.6 [compile->compile(*)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.4 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-lang#commons-lang;2.6 [compile->master(compile)]
 [debug] == resolving dependencies org.tachyonproject#tachyon-client;0.7.1->commons-io#commons-io;2.4 [compile->compile(*)]
@@ -24826,41 +24929,101 @@
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [runtime->runtime(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-common;2.7.1 [runtime->compile]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.2.0 [runtime->compile]
-[debug] excluding dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: com.sun.jersey#jersey-core;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: com.sun.jersey#jersey-server;1.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: commons-daemon#commons-daemon;1.0.13 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: javax.servlet.jsp#jsp-api;2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: javax.servlet#servlet-api;2.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: org.codehaus.jackson#jackson-mapper-asl;1.8.8 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] excluding dependency: tomcat#jasper-runtime;5.5.23 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;11.0.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.guava#guava;16.0.1 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-cli#commons-cli;1.2 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.4 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-codec#commons-codec;1.6 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.1 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-io#commons-io;2.4 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.5 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->commons-lang#commons-lang;2.6 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->log4j#log4j;1.2.17 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.8.8 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [runtime->runtime(*)]
-[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.2.0->xmlenc#xmlenc;0.52 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->compile(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [compile->master(compile)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;11.0.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.guava#guava;16.0.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.mortbay.jetty#jetty-util;6.1.26 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-core;1.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.sun.jersey#jersey-server;1.9 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-cli#commons-cli;1.2 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-codec#commons-codec;1.6 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-io#commons-io;2.4 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-lang#commons-lang;2.6 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-logging#commons-logging;1.1.3 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->commons-daemon#commons-daemon;1.0.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->log4j#log4j;1.2.17 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->javax.servlet#servlet-api;2.5 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-core-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.codehaus.jackson#jackson-mapper-asl;1.9.13 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xmlenc#xmlenc;0.52 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.23.Final [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->io.netty#netty-all;4.0.29.Final [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->xerces#xercesImpl;2.9.1 [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.apache.htrace#htrace-core;3.1.0-incubating [runtime->compile]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->runtime(*)]
+[debug] == resolving dependencies org.apache.hadoop#hadoop-hdfs;2.7.1->org.fusesource.leveldbjni#leveldbjni-all;1.8 [runtime->compile]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.apache.hadoop#hadoop-client;2.2.0->org.apache.hadoop#hadoop-mapreduce-client-app;2.2.0 [runtime->compile]
 [debug] excluding dependency: org.apache.hadoop#hadoop-yarn-server-web-proxy;2.2.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
@@ -26486,6 +26649,10 @@
 [debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.scalatest#scalatest_2.10;2.2.5 [test->master]
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [optional]
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [provided]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->default(compile)]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->runtime]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->compile]
+[debug] == resolving dependencies default#naturallanguageprocessing_2.10;1.0->org.apache.hadoop#hadoop-hdfs;2.7.1 [provided->master]
 [debug] resolving dependencies for configuration 'plugin'
 [debug] == resolving dependencies for default#naturallanguageprocessing_2.10;1.0 [plugin]
 [debug] resolving dependencies for configuration 'sources'
@@ -26563,9 +26730,11 @@
 [debug] 	[NOT REQUIRED] org.apache.hbase#hbase-server;1.1.2!hbase-server.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.4!scala-reflect.jar
 [debug] 	[NOT REQUIRED] org.apache.hadoop#hadoop-annotations;2.7.1!hadoop-annotations.jar
+[debug] 	[NOT REQUIRED] com.google.guava#guava;11.0.2!guava.jar
 [debug] 	[NOT REQUIRED] commons-cli#commons-cli;1.2!commons-cli.jar
 [debug] 	[NOT REQUIRED] xmlenc#xmlenc;0.52!xmlenc.jar
 [debug] 	[NOT REQUIRED] commons-httpclient#commons-httpclient;3.1!commons-httpclient.jar
+[debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.4!commons-codec.jar
 [debug] 	[NOT REQUIRED] commons-io#commons-io;2.4!commons-io.jar
 [debug] 	[NOT REQUIRED] commons-net#commons-net;3.1!commons-net.jar
 [debug] 	[NOT REQUIRED] commons-collections#commons-collections;3.2.1!commons-collections.jar
@@ -26574,6 +26743,7 @@
 [debug] 	[NOT REQUIRED] com.sun.jersey#jersey-core;1.9!jersey-core.jar(bundle)
 [debug] 	[NOT REQUIRED] com.sun.jersey#jersey-json;1.9!jersey-json.jar(bundle)
 [debug] 	[NOT REQUIRED] com.sun.jersey#jersey-server;1.9!jersey-server.jar(bundle)
+[debug] 	[NOT REQUIRED] commons-logging#commons-logging;1.1.3!commons-logging.jar
 [debug] 	[NOT REQUIRED] log4j#log4j;1.2.17!log4j.jar(bundle)
 [debug] 	[NOT REQUIRED] net.java.dev.jets3t#jets3t;0.9.0!jets3t.jar
 [debug] 	[NOT REQUIRED] commons-lang#commons-lang;2.6!commons-lang.jar
@@ -26591,6 +26761,7 @@
 [debug] 	[NOT REQUIRED] org.apache.htrace#htrace-core;3.1.0-incubating!htrace-core.jar
 [debug] 	[NOT REQUIRED] org.apache.zookeeper#zookeeper;3.4.6!zookeeper.jar
 [debug] 	[NOT REQUIRED] org.apache.commons#commons-compress;1.4.1!commons-compress.jar
+[debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;1.3.9!jsr305.jar
 [debug] 	[NOT REQUIRED] org.codehaus.jettison#jettison;1.1!jettison.jar(bundle)
 [debug] 	[NOT REQUIRED] org.codehaus.jackson#jackson-xc;1.8.3!jackson-xc.jar
 [debug] 	[NOT REQUIRED] asm#asm;3.1!asm.jar
@@ -26721,6 +26892,7 @@
 [debug] 	[NOT REQUIRED] org.apache.hbase#hbase-protocol;1.1.2!hbase-protocol.jar
 [debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.9!commons-codec.jar
 [debug] 	[NOT REQUIRED] commons-logging#commons-logging;1.2!commons-logging.jar
+[debug] 	[NOT REQUIRED] io.netty#netty-all;4.0.23.Final!netty-all.jar
 [debug] 	[NOT REQUIRED] org.jruby.jcodings#jcodings;1.0.8!jcodings.jar
 [debug] 	[NOT REQUIRED] org.jruby.joni#joni;2.1.2!joni.jar
 [debug] 	[NOT REQUIRED] org.apache.hbase#hbase-procedure;1.1.2!hbase-procedure.jar
@@ -26742,21 +26914,26 @@
 [debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.10;2.2.5!scalatest_2.10.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.5!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.10.5!scala-reflect.jar
+[debug] 	[NOT REQUIRED] org.apache.hadoop#hadoop-hdfs;2.7.1!hadoop-hdfs.jar
+[debug] 	[NOT REQUIRED] commons-daemon#commons-daemon;1.0.13!commons-daemon.jar
+[debug] 	[NOT REQUIRED] javax.servlet#servlet-api;2.5!servlet-api.jar
+[debug] 	[NOT REQUIRED] xerces#xercesImpl;2.9.1!xercesImpl.jar
+[debug] 	[NOT REQUIRED] org.fusesource.leveldbjni#leveldbjni-all;1.8!leveldbjni-all.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 36752ms :: artifacts dl 1981ms
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 provided produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-provided.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 optional produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-optional.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test-internal produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test-internal.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 plugin produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-plugin.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 sources produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-sources.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 docs produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-docs.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 pom produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-pom.xml
-[debug] 	report for default#naturallanguageprocessing_2.10;1.0 scala-tool produced in /Users/li/kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-scala-tool.xml
-[debug] 	resolve done (36752ms resolve - 1981ms download)
+[debug] :: resolution report :: resolve 52094ms :: artifacts dl 1796ms
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 provided produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-provided.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 optional produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-optional.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 compile-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-compile-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 runtime-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-runtime-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 test-internal produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-test-internal.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 plugin produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-plugin.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 sources produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-sources.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 docs produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-docs.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 pom produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-pom.xml
+[debug] 	report for default#naturallanguageprocessing_2.10;1.0 scala-tool produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing_2.10-scala-tool.xml
+[debug] 	resolve done (52094ms resolve - 1796ms download)
 [info] Done updating.

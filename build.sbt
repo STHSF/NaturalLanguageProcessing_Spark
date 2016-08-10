@@ -14,6 +14,8 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.10.4"
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-common" % "2.7.1" excludeAll ExclusionRule(organization = "javax.servlet")
 
+libraryDependencies += "org.apache.hadoop" % "hadoop-hdfs" % "2.7.1" % "provided"
+
 libraryDependencies += "org.apache.spark" % "spark-core_2.10" % "1.5.2"
 
 libraryDependencies += "org.apache.spark" % "spark-mllib_2.10" % "1.5.2"

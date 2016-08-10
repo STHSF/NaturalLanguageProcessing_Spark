@@ -8,8 +8,12 @@
     </mysql>
 
     <hbase>
-        <rootDir>hdfs://222.73.34.99:9000/hbase</rootDir>
+        <rootDir>hdfs://61.147.114.89:9000/hbase</rootDir>
         <ip>server0,server1,server2,server3</ip>
     </hbase>
+
+    <hdfs>
+        <rootDir>hdfs://61.147.114.85:9000</rootDir>
+    </hdfs>
 
 </xml>
