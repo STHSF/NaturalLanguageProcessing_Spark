@@ -36,6 +36,8 @@ libraryDependencies += "org.apache.hbase" % "hbase-common" % "1.1.2"
 
 libraryDependencies += "org.apache.hbase" % "hbase-server" % "1.1.2"
 
+libraryDependencies += "org.scalanlp" % "breeze_2.10" % "0.11.2"
+
 
 
 assemblyMergeStrategy in assembly := {

@@ -1,15 +1,6 @@
-import breeze.linalg.DenseMatrix
-import breeze.numerics._
-
-import breeze.linalg.{ Matrix => BM, CSCMatrix => BSM,
-DenseMatrix => BDM, Vector => BV,
-DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy,
-svd => brzSvd, accumulate => Accumulate, rot90 => Rot90, sum => Bsum
-}
-
-import breeze.numerics.{
-exp => Bexp, tanh => Btanh
-}
+import breeze.linalg.{CSCMatrix => BSM, DenseMatrix => BDM, DenseVector => BDV, Matrix => BM, SparseVector => BSV, Vector => BV, accumulate => Accumulate, axpy => brzAxpy, rot90 => Rot90, sum => Bsum, svd => brzSvd}
+import breeze.numerics.{exp => Bexp, tanh => Btanh}
+import org.apache.spark.mllib.linalg.DenseMatrix
 
 
 /**
@@ -20,16 +11,21 @@ object CNNTest {
 
   def main(args: Array[String]) {
 
-    val dd = BDM.ones[Double](3, 3)
-    val jj = BDM.ones[Double](3, 3)
-
     def sigm(matrix: BDM[Double]): BDM[Double] = {
       val s1 = 1.0 / (Bexp(matrix * (-1.0)) + 1.0)
       s1
     }
 
-    val j = sigm(dd)
-    println(j)
+    val result = BDM.ones[Double](2, 3) + 1.8
+
+    println(result)
+
+
+    val re = sigm(result)
+
+    println(re)
+
+
   }
 
 }

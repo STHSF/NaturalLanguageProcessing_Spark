@@ -1,6 +1,6 @@
 package deeplearning.cnn
 
-import deeplearning.cnn.CNNModel
+import deeplearning.cnn._
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.RDD
@@ -8,18 +8,12 @@ import org.apache.spark.Logging
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.linalg.distributed.RowMatrix
-import breeze.numerics._
-import breeze.linalg._
 
-
-import breeze.linalg.{ Matrix => BM, CSCMatrix => BSM,
-DenseMatrix => BDM, Vector => BV,
-DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy,
-svd => brzSvd, accumulate => Accumulate, rot90 => Rot90, sum => Bsum
+import breeze.linalg.{ Matrix => BM, CSCMatrix => BSM, DenseMatrix => BDM, Vector => BV,
+  DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy, svd => brzSvd,
+  accumulate => Accumulate, rot90 => Rot90, sum => Bsum
 }
-import breeze.numerics.{
-exp => Bexp, tanh => Btanh
-}
+import breeze.numerics.{exp => Bexp, tanh => Btanh}
 
 import scala.collection.mutable.ArrayBuffer
 import java.util.Random
@@ -114,12 +108,12 @@ class CNN(
   }
 
   /** 卷积神经网络层参数初始化. */
-  def CnnSetup: (Array[CNNLayers], BDM[Double], BDM[Double], Double) = {
+  def CNNSetup: (Array[CNNLayers], BDM[Double], BDM[Double], Double) = {
 
     var inputmaps1 = 1.0
     var mapsize1 = mapsize
     var confinit = ArrayBuffer[CNNLayers]()
-    for (l <- 0 to layer - 1) { // layer
+    for (l <- 0 until layer) { // layer
     val type1 = types(l)
       val outputmap1 = outputmaps(l)
       val kernelsize1 = kernelsize(l)
@@ -136,10 +130,10 @@ class CNN(
         val fan_out = outputmap1 * math.pow(kernelsize1, 2)
         val fan_in = inputmaps1 * math.pow(kernelsize1, 2)
         val ki = ArrayBuffer[Array[BDM[Double]]]()
-        for (i <- 0 to inputmaps1.toInt - 1) { // input map
+        for (i <- 0 until inputmaps1.toInt) { // input map
 
         val kj = ArrayBuffer[BDM[Double]]()
-          for (j <- 0 to outputmap1.toInt - 1) { // output map
+          for (j <- 0 until outputmap1.toInt) { // output map
 
           val kk = (BDM.rand[Double](kernelsize1.toInt, kernelsize1.toInt) - 0.5) * 2.0 * sqrt(6.0 / (fan_in + fan_out))
             kj += kk
@@ -161,7 +155,7 @@ class CNN(
 
     val fvnum = mapsize1(0, 0) * mapsize1(0, 1) * inputmaps1
     val ffb = BDM.zeros[Double](onum, 1)
-    val ffW = (BDM.rand[Double](onum, fvnum.toInt) - 0.5) * 2.0 * sqrt(6.0 / (onum + fvnum))
+    val ffW = (BDM.rand[Double](onum, fvnum.toInt) - 0.5) * (2.0) * sqrt(6.0 / (onum + fvnum))
 
     (confinit.toArray, ffb, ffW, alpha)
   }
@@ -169,12 +163,12 @@ class CNN(
   /**
     * 运行卷积神经网络算法.
     */
-  def CNNtrain(train_d: RDD[(BDM[Double], Any)], opts: Array[Double]): CNNModel = {
+  def CNNtrain(train_d: RDD[(BDM[Double], BDM[Double])], opts: Array[Double]): CNNModel = {
     val sc = train_d.sparkContext
     var initStartTime = System.currentTimeMillis()
     var initEndTime = System.currentTimeMillis()
     // 参数初始化配置
-    var (cnn_layers, cnn_ffb, cnn_ffW, cnn_alpha) = CnnSetup
+    var (cnn_layers, cnn_ffb, cnn_ffW, cnn_alpha) = CNNSetup
     // 样本数据划分：训练数据、交叉检验数据
     val validation = opts(2)
     val splitW1 = Array(1.0 - validation, validation)
@@ -282,8 +276,8 @@ object CNN extends Serializable {
     * tanh激活函数
     * f=1.7159*tanh(2/3.*A);
     */
-  def tanh_opt(matrix: BDM[Double]): BDM[Double] = {
-    val s1 = Btanh(matrix * (2.0 / 3.0)) * 1.7159
+  def tanhOpt(matrix: BDM[Double]): BDM[Double] = {
+    val s1 = Btanh(matrix * (2.0 / 3.0)) :* 1.7159
     s1
   }
 
@@ -297,16 +291,21 @@ object CNN extends Serializable {
     val sa = Array(a.rows, a.cols)
     var tt = new Array[Array[Int]](sa.length)
     for (ii <- sa.length - 1 to 0 by -1) {
+
       var h = BDV.zeros[Int](sa(ii) * s(ii))
       h(0 to sa(ii) * s(ii) - 1 by s(ii)) := 1
       tt(ii) = Accumulate(h).data
     }
+
     var b = BDM.zeros[Double](tt(0).length, tt(1).length)
     for (j1 <- 0 to b.rows - 1) {
+
       for (j2 <- 0 to b.cols - 1) {
+
         b(j1, j2) = a(tt(0)(j1) - 1, tt(1)(j2) - 1)
       }
     }
+
     b
   }
 
