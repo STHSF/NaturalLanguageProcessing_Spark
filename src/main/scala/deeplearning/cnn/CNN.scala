@@ -10,8 +10,8 @@ import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.linalg.distributed.RowMatrix
 
 import breeze.linalg.{ Matrix => BM, CSCMatrix => BSM, DenseMatrix => BDM, Vector => BV,
-  DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy, svd => brzSvd,
-  accumulate => Accumulate, rot90 => Rot90, sum => Bsum
+DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy, svd => brzSvd,
+accumulate => Accumulate, rot90 => Rot90, sum => Bsum
 }
 import breeze.numerics.{exp => Bexp, tanh => Btanh}
 
@@ -21,16 +21,15 @@ import scala.math._
 
 /**
   * types：网络层类别
-  * outputmaps：特征map数量
-  * kernelsize：卷积核k大小
+  * outputMaps：特征map数量
+  * kernelSize：卷积核k大小
   * k: 卷积核
   * b: 偏置
   * dk: 卷积核的偏导
   * db: 偏置的偏导
   * scale: pooling大小
   */
-case class CNNLayers(
-                      types: String,
+case class CNNLayers( types: String,
                       outputmaps: Double,
                       kernelsize: Double,
                       scale: Double,
@@ -42,26 +41,28 @@ case class CNNLayers(
 /**
   * CNN(convolution neural network)卷积神经网络
   */
-class CNN(
-           private var mapsize: BDM[Double],
+class CNN( private var mapSize: BDM[Double],
            private var types: Array[String],
            private var layer: Int,
-           private var onum: Int,
-           private var outputmaps: Array[Double],
-           private var kernelsize: Array[Double],
+           private var outputNum: Int,
+           private var outputMaps: Array[Double],
+           private var kernelSize: Array[Double],
            private var scale: Array[Double],
            private var alpha: Double) extends Serializable with Logging {
 
+  /** 变量初始化. */
   def this() = this(new BDM(1, 2, Array(28.0, 28.0)),
-    Array("i", "c", "s", "c", "s"), 5, 10,
+    Array("i", "c", "s", "c", "s"),
+    5,
+    10,
     Array(0.0, 6.0, 0.0, 12.0, 0.0),
     Array(0.0, 5.0, 0.0, 5.0, 0.0),
     Array(0.0, 0.0, 2.0, 0.0, 2.0),
     1.0)
 
   /** 设置输入层大小. Default: [28, 28]. */
-  def setMapsize(mapsize: BDM[Double]): this.type = {
-    this.mapsize = mapsize
+  def setMapsize(mapSize: BDM[Double]): this.type = {
+    this.mapSize = mapSize
     this
   }
 
@@ -78,20 +79,20 @@ class CNN(
   }
 
   /** 设置输出维度. Default: 10. */
-  def setOnum(onum: Int): this.type = {
-    this.onum = onum
+  def setOnum(outPutNum: Int): this.type = {
+    this.outputNum = outPutNum
     this
   }
 
   /** 设置特征map数量. Default: [0.0, 6.0, 0.0, 12.0, 0.0]. */
-  def setOutputmaps(outputmaps: Array[Double]): this.type = {
-    this.outputmaps = outputmaps
+  def setOutputmaps(outputMaps: Array[Double]): this.type = {
+    this.outputMaps = outputMaps
     this
   }
 
   /** 设置卷积核k大小. Default: [0.0, 5.0, 0.0, 5.0, 0.0]. */
-  def setKernelsize(kernelsize: Array[Double]): this.type = {
-    this.kernelsize = kernelsize
+  def setKernelsize(kernelSize: Array[Double]): this.type = {
+    this.kernelSize = kernelSize
     this
   }
 
@@ -111,12 +112,12 @@ class CNN(
   def CNNSetup: (Array[CNNLayers], BDM[Double], BDM[Double], Double) = {
 
     var inputmaps1 = 1.0
-    var mapsize1 = mapsize
+    var mapsize1 = mapSize  //输入层大小
     var confinit = ArrayBuffer[CNNLayers]()
     for (l <- 0 until layer) { // layer
     val type1 = types(l)
-      val outputmap1 = outputmaps(l)
-      val kernelsize1 = kernelsize(l)
+      val outputmap1 = outputMaps(l)
+      val kernelsize1 = kernelSize(l)
       val scale1 = scale(l)
       val layersconf = if (type1 == "s") { // 每一层参数初始化
 
@@ -132,10 +133,10 @@ class CNN(
         val ki = ArrayBuffer[Array[BDM[Double]]]()
         for (i <- 0 until inputmaps1.toInt) { // input map
 
-        val kj = ArrayBuffer[BDM[Double]]()
+          val kj = ArrayBuffer[BDM[Double]]()
           for (j <- 0 until outputmap1.toInt) { // output map
 
-          val kk = (BDM.rand[Double](kernelsize1.toInt, kernelsize1.toInt) - 0.5) * 2.0 * sqrt(6.0 / (fan_in + fan_out))
+            val kk = (BDM.rand[Double](kernelsize1.toInt, kernelsize1.toInt) - 0.5) * 2.0 * sqrt(6.0 / (fan_in + fan_out))
             kj += kk
           }
           ki += kj.toArray
@@ -154,8 +155,8 @@ class CNN(
     }
 
     val fvnum = mapsize1(0, 0) * mapsize1(0, 1) * inputmaps1
-    val ffb = BDM.zeros[Double](onum, 1)
-    val ffW = (BDM.rand[Double](onum, fvnum.toInt) - 0.5) * (2.0) * sqrt(6.0 / (onum + fvnum))
+    val ffb = BDM.zeros[Double](outputNum, 1)
+    val ffW = (BDM.rand[Double](outputNum, fvnum.toInt) - 0.5) * 2.0 * sqrt(6.0 / (outputNum + fvnum))
 
     (confinit.toArray, ffb, ffW, alpha)
   }
@@ -175,18 +176,23 @@ class CNN(
     val train_split1 = train_d.randomSplit(splitW1, System.nanoTime())
     val train_t = train_split1(0)
     val train_v = train_split1(1)
+
     // m:训练样本的数量
     val m = train_t.count
+
     // 计算batch的数量
     val batchsize = opts(0).toInt
     val numepochs = opts(1).toInt
     val numbatches = (m / batchsize).toInt
     var rL = Array.fill(numepochs * numbatches.toInt)(0.0)
     var n = 0
+
     // numepochs是循环的次数
     for (i <- 1 to numepochs) {
+
       initStartTime = System.currentTimeMillis()
       val splitW2 = Array.fill(numbatches)(1.0 / numbatches)
+
       // 根据分组权重，随机划分每组样本数据
       for (l <- 1 to numbatches) {
         // 权重
@@ -411,7 +417,9 @@ object CNN extends Serializable {
           nn_a += nna1.toArray
           inputmaps1 = outputmap1
         } else if (type1 == "s") {
+
           for (j <- 0 to inputmaps1.toInt - 1) {
+
             // z = convn(net.layers{l - 1}.a{j}, ones(net.layers{l}.scale) / (net.layers{l}.scale ^ 2), 'valid'); replace with variable
             // net.layers{l}.a{j} = z(1 : net.layers{l}.scale : end, 1 : net.layers{l}.scale : end, :);
             val z = convn(nn_a(l - 1)(j), BDM.ones[Double](scale1.toInt, scale1.toInt) / (scale1 * scale1), "valid")

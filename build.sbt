@@ -36,8 +36,18 @@ libraryDependencies += "org.apache.hbase" % "hbase-common" % "1.1.2"
 
 libraryDependencies += "org.apache.hbase" % "hbase-server" % "1.1.2"
 
-libraryDependencies += "org.scalanlp" % "breeze_2.10" % "0.11.2"
 
+//libraryDependencies += "org.scalanlp" % "breeze_2.10" % "0.11.2"
+
+libraryDependencies += "org.scalanlp" % "breeze-math_2.10" % "0.4" intransitive()
+
+//libraryDependencies += "org.scalanlp" % "breeze-learn_2.9.2" % "0.2" intransitive()
+
+libraryDependencies += "org.scalanlp" % "breeze-process_2.10" % "0.3" intransitive()
+
+libraryDependencies += "org.scalanlp" % "breeze-viz_2.10" % "0.12" exclude("org.scalanlp", "breeze_2.10")
+
+libraryDependencies += "org.scalanlp" % "nak_2.10" % "1.3"
 
 
 assemblyMergeStrategy in assembly := {
