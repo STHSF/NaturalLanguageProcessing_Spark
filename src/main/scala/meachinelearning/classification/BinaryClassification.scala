@@ -1,7 +1,7 @@
 package meachinelearning.classification
 
 import org.apache.spark.ml.feature.{HashingTF, IDF, StopWordsRemover, Tokenizer}
-import org.apache.spark.mllib.classification.NaiveBayes
+import org.apache.spark.mllib.classification.SVMWithSGD
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
 import org.apache.spark.mllib.regression.LabeledPoint
@@ -114,11 +114,11 @@ object BinaryClassification extends App{
   // trainDataRdd.take(1).foreach(println)
 
   /** NativeBayes训练模型 */
-  val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
+//  val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
 
   /** SVM训练模型 */
-  //   var numIterations = 100
-  //   val model = SVMWithSGD.train(trainDataRdd , numIterations)
+     var numIterations = 100
+     val model = SVMWithSGD.train(trainDataRdd , numIterations)
 
   /** RandomForest训练模型 */
   //    val numClasses = 2

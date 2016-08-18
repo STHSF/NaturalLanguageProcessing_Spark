@@ -8,7 +8,7 @@ Natural Language Processing by using Machine Learning algorithms.
 
 ####   TextClassification
 
-Text classification by using bayesian, svm.
+Text classification by using Bayesian, svmWithSGD, GaussianKernelSVM.
 
 ####   CorrelationAnalysis
 
