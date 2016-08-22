@@ -1,5 +1,4 @@
 package tests
-//package deeplearning.cnn
 
 import breeze.linalg.{CSCMatrix => BSM, DenseMatrix => BDM, DenseVector => BDV, Matrix => BM, SparseVector => BSV, Vector => BV, axpy => brzAxpy, max => Bmax, min => Bmin, sum => Bsum, svd => brzSvd}
 import deeplearning.cnn.CNN
