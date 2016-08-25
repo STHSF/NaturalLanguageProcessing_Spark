@@ -70,7 +70,7 @@ import org.apache.hadoop.hbase.util.Base64
     * 设置时间范围
     *
     * @return 时间范围
-    * @author yangshuai
+    * @author
     */
   def setTimeRange(): String = {
 

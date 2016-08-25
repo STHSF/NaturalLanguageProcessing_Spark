@@ -49,6 +49,7 @@ libraryDependencies += "org.scalanlp" % "breeze-viz_2.10" % "0.12" exclude("org.
 
 libraryDependencies += "org.scalanlp" % "nak_2.10" % "1.3"
 
+libraryDependencies += "redis.clients" % "jedis" % "2.8.0"
 
 assemblyMergeStrategy in assembly := {
   case PathList("javax", "servlet", xs @ _*) => MergeStrategy.last

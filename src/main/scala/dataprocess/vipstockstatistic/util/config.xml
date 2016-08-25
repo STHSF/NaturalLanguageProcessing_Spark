@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+
+    <hbase>
+        <rootDir>hdfs://61.147.114.85:9000/hbase</rootDir>
+        <ip>slave1,slave2,slave3</ip>
+    </hbase>
+
+    <hdfs>
+        <rootDir>hdfs://61.147.114.85:9000</rootDir>
+    </hdfs>
+
+    <kunyan>
+        <kunyanHost>61.147.114.88</kunyanHost>
+        <kunyanPort>16003</kunyanPort>
+    </kunyan>
+
+    <redis>
+        <ip>61.147.114.72</ip>
+        <port>6666</port>
+        <db>db9</db>
+        <auth>backtest</auth>
+    </redis>
+
+</xml>
