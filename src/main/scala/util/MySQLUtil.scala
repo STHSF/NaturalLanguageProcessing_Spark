@@ -2,6 +2,8 @@ package util
 
 import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet}
 
+import scala.collection.mutable.ArrayBuffer
+
 import scala.xml.{XML, Elem}
 
 /**
@@ -12,6 +14,7 @@ object MySQLUtil {
 
   /**
     * 获取xml格式的配置文件
+ *
     * @param dir 配置文件所在的文件目录
     * @return
     */
@@ -97,7 +100,7 @@ object MySQLUtil {
     * @param configFile 配置文件
     * @param sql mysql查询语句
     */
-  def readFromMysql(configFile: Elem, sql: String): Unit = {
+  def readFromMysql(configFile: Elem, sql: String): Array[(String, String)] = {
 
     var conn: Connection = null
 
@@ -108,26 +111,29 @@ object MySQLUtil {
 
       val statement = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)
       // 通过sql查询语句查询的结果
+      // val sql = "select symbol, sename from bt_stcode where (EXCHANGE = '001002' or EXCHANGE = '001003') and SETYPE = '101' and CUR = 'CNY' and ISVALID = 1 and LISTSTATUS <> '2'"
       val result = statement.executeQuery(sql)
 
+      val stocks = ArrayBuffer[(String, String)]()
       while(result.next()) {
 
         /**
           * todo 对查询的结果进行操作
           */
-        result.getString("quote") //table name
-
+        val stockID = result.getString("symbol") //row name
+        val stock = stockID + "," + result.getString("sename") //row name
+        stocks +=((stockID, stock))
       }
 
+      stocks.toArray
     } catch {
 
-      case e: Exception => println("Mysql Read Fault")
+      case e: Exception => Array(("error", "error"))
     } finally {
 
       conn.close()
     }
+
   }
-
-
 
 }
