@@ -11,10 +11,9 @@ import scala.xml.{XML, Elem}
   */
 object MySQLUtil {
 
-
   /**
     * 获取xml格式的配置文件
- *
+    *
     * @param dir 配置文件所在的文件目录
     * @return
     */
@@ -25,14 +24,13 @@ object MySQLUtil {
     configFile
   }
 
-
   /**
     * 读取配置文件中的内容,并建立连接
     *
     * @param configFile 配置文件
     * @return
     */
-  def getConnect(configFile: Elem): Connection ={
+  def getConnect(configFile: Elem): Connection = {
 
     //写在配置文件中
     val url = (configFile \ "mysql" \ "url" ).text
@@ -65,19 +63,19 @@ object MySQLUtil {
       // 读取配置文件并建立连接
       conn = getConnect(configFile)
 
-      // data 需要写入的内容
+      /** 对需要写入的内容(data)的每一行进行操作 */
       data.foreach{ line => {
 
-        // 对data的每一行进行操作
         val temp = line.split(",")
 
+        /** sql插入语句: */
         prep = conn.prepareStatement(sql)
         prep.setString(1, temp(0))
         prep.setString(2, temp(1))
 
         prep.executeUpdate()
       }}
-    } catch{
+    } catch {
 
       case e: Exception => println("Mysql Exception")
     } finally {
@@ -117,11 +115,9 @@ object MySQLUtil {
       val stocks = ArrayBuffer[(String, String)]()
       while(result.next()) {
 
-        /**
-          * todo 对查询的结果进行操作
-          */
-        val stockID = result.getString("symbol") //row name
-        val stock = stockID + "," + result.getString("sename") //row name
+        /** todo 对查询的结果进行操作 */
+        val stockID = result.getString("symbol") // symbol: row name
+        val stock = stockID + "," + result.getString("sename") // sename: row name
         stocks +=((stockID, stock))
       }
 
@@ -133,7 +129,6 @@ object MySQLUtil {
 
       conn.close()
     }
-
   }
 
 }

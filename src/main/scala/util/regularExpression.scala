@@ -16,15 +16,12 @@ object regularExpression extends App{
   val data = sc.textFile("file:/Users/li/kunyan/111.txt")
 
 
-
   def quotationMatch(sentence:String): Array[String]={
 
-
-
     val regex = new Regex("\"([^\"]*)\"")
-//    val regex = new Regex("(?<=\").{1,}(?=\")")
+    // val regex = new Regex("(?<=\").{1,}(?=\")")
 
-//      val regex = "\"([^\"]*)\"".r
+    // val regex = "\"([^\"]*)\"".r
     val num = regex.findAllIn(sentence)
     val res = new ListBuffer[String]
     while(num.hasNext){
@@ -34,15 +31,13 @@ object regularExpression extends App{
       res.toArray
   }
 
-  //  val res = quotationMatch(data)
-  data.foreach(
+  // val res = quotationMatch(data)
+  data.foreach {
 
     x =>{
       val res =  quotationMatch(x)
       res.foreach(println)
     }
-  )
-
-
+  }
 
 }

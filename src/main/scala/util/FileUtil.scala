@@ -7,7 +7,7 @@ import scala.collection.mutable.ListBuffer
 import scala.io.Source
 
 /**
-  * Created by Administrator on 2016/2/22.
+  * Created by li on 2016/2/22.
   */
 object FileUtil {
 
@@ -85,6 +85,5 @@ object FileUtil {
     )
     res.toArray
   }
-
 
 }
