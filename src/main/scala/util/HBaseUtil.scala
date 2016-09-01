@@ -80,7 +80,7 @@ object HBaseUtil {
     * @param configFile hbase配置文件
     * @return
     */
-  def setHBaseConfigure(configFile: Elem): Configuration = {
+  private def setHBaseConfigure(configFile: Elem): Configuration = {
 
     val rootDir = (configFile \ "hbase" \ "rootDir").text
     val ip = (configFile \ "hbase" \ "ip").text
@@ -191,7 +191,12 @@ object HBaseUtil {
   }
 
 
-  def write2HBase: Unit ={
+  def getAssignedDataFromHBase: Unit = {
+
+  }
+
+
+  def write2HBase: Unit = {
 
   }
 

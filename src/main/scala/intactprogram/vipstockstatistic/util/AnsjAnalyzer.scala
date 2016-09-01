@@ -1,6 +1,5 @@
 package dataprocess.vipstockstatistic.util
 
-import org.ansj.domain.Term
 import org.ansj.library.UserDefineLibrary
 import org.ansj.splitWord.analysis.{NlpAnalysis, ToAnalysis}
 import org.apache.spark.SparkContext
@@ -71,13 +70,13 @@ object AnsjAnalyzer {
     * @return  分词结果
     * @author zhangxin
     */
-  def cutWithTag(sentence: String):Array[Term]={
+  def cutWithTag(sentence: String):Array[String]={
 
     // 切词
     val sent = NlpAnalysis.parse(sentence)
 
     // 提取分词结果
-    val words= for(i <- Range(0, sent.size())) yield sent.get(i).getFrom
+    val words= for(i <- Range(0, sent.size())) yield sent.get(i).getName
 
     words.toArray
   }

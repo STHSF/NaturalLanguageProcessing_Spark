@@ -3,26 +3,12 @@ package util
 import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet}
 
 import scala.collection.mutable.ArrayBuffer
-
-import scala.xml.{XML, Elem}
+import scala.xml.Elem
 
 /**
   * Created by li on 16/7/12.
   */
 object MySQLUtil {
-
-  /**
-    * 获取xml格式的配置文件
-    *
-    * @param dir 配置文件所在的文件目录
-    * @return
-    */
-  def readConfigFile(dir: String): Elem = {
-
-    val configFile = XML.loadFile(dir)
-
-    configFile
-  }
 
   /**
     * 读取配置文件中的内容,并建立连接

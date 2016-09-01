@@ -1,0 +1,5 @@
+all
+help sbt
+help clean
+help clear
+exit

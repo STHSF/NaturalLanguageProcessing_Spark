@@ -1,5 +1,6 @@
 package dataprocess.vipstockstatistic
 
+import dataprocess.vipstockstatistic.util.AnsjAnalyzer
 import org.apache.spark.SparkContext
 
 /**

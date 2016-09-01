@@ -1,5 +1,6 @@
 package dataprocess.vipstockstatistic
 
+import com.kunyandata.nlpsuit.util.{TextPreprocessing, KunyanConf}
 import org.apache.spark.rdd.RDD
 
 import scala.xml.XML
