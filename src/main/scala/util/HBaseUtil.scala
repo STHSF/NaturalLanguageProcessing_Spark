@@ -4,8 +4,8 @@ import java.io.{FileNotFoundException, IOException}
 
 import com.ibm.icu.text.CharsetDetector
 import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.hbase.HBaseConfiguration
-import org.apache.hadoop.hbase.client.Result
+import org.apache.hadoop.hbase.{TableName, HBaseConfiguration}
+import org.apache.hadoop.hbase.client.{Get, ConnectionFactory, Result}
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.util.Bytes
@@ -153,11 +153,17 @@ object HBaseUtil {
     }
   }
 
-
-  def getHBaseConfStartStampStopStamp(sc: SparkContext, confDir: String, tableName: String, startTimeStamp:Long, stopTimeStamp: Long) : RDD[(ImmutableBytesWritable, Result)] = {
-
-    val configFile = HBaseUtil.readConfigFile(confDir)
-    val configuration = HBaseUtil.setHBaseConfigure(configFile)
+  /**
+    * 读取指定表中指定时间戳范围内的数据
+    * @param sc: SparkContext
+    * @param configuration: Configuration
+    * @param tableName: 表名
+    * @param startTimeStamp: 起始时间
+    * @param stopTimeStamp: 截止时间
+    */
+  def getHBaseConfStartStampStopStamp(sc: SparkContext, configuration: Configuration,
+                                      tableName: String, startTimeStamp:Long, stopTimeStamp: Long):
+  RDD[(ImmutableBytesWritable, Result)] = {
 
     configuration.set(TableInputFormat.INPUT_TABLE, tableName)
     configuration.set(TableInputFormat.SCAN_TIMERANGE_END, stopTimeStamp.toString)
@@ -172,12 +178,14 @@ object HBaseUtil {
     hBaseRDD
   }
 
-
-
-  def getHBaseConfWholeTable(sc: SparkContext, confDir: String, tableName: String) : RDD[(ImmutableBytesWritable, Result)] = {
-
-    val configFile = HBaseUtil.readConfigFile(confDir)
-    val configuration = HBaseUtil.setHBaseConfigure(configFile)
+  /**
+    * 读取指定整张表中的数据
+    * @param sc: SparkContext
+    * @param configuration: Configuration
+    * @param tableName: 表名
+    */
+  def getHBaseConfWholeTable(sc: SparkContext, configuration: Configuration, tableName: String):
+  RDD[(ImmutableBytesWritable, Result)] = {
 
     configuration.set(TableInputFormat.INPUT_TABLE, tableName)
 
@@ -191,8 +199,42 @@ object HBaseUtil {
   }
 
 
-  def getAssignedDataFromHBase: Unit = {
+  /**
+    * 获取指定的一条数据
+    *
+    * @param configuration
+    * @param rowKey: row key
+    */
+  def getAssignedDataFromHBase(configuration: Configuration, rowKey: String): Unit = {
 
+    val connection = ConnectionFactory.createConnection(configuration)
+
+    val table = connection.getTable(TableName.valueOf("news_detail"))
+
+    val get = new Get(rowKey.getBytes)
+
+    val result = table.get(get)
+
+    if(result.isEmpty) {
+
+      println("noting get")
+
+    } else {
+
+      val time = result.getValue(Bytes.toBytes("basic"), Bytes.toBytes("time"))
+      val platform = result.getValue(Bytes.toBytes("basic"), Bytes.toBytes("platform"))
+      val url = result.getRow
+
+      val platformFormat = HBaseUtil.judgeChaser(platform)
+      val urlFormat = HBaseUtil.judgeChaser(url)
+
+      println(Bytes.toLong(time))
+      println(new String(platform, platformFormat))
+      println(new String(url, urlFormat))
+
+    }
+
+    connection.close()
   }
 
 

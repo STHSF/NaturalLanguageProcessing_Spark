@@ -15,11 +15,11 @@ object regularExpression extends App{
 
   val data = sc.textFile("file:/Users/li/kunyan/111.txt")
 
+  def quotationMatch(sentence:String): Array[String] = {
 
-  def quotationMatch(sentence:String): Array[String]={
-
-    val regex = new Regex("\"([^\"]*)\"")
-    // val regex = new Regex("(?<=\").{1,}(?=\")")
+//    val regex = new Regex("\"([^\"]*)\"") //匹配双引号
+//    val regex = new Regex("(?<=\").{1,}(?=\")") //匹配双引号
+    val regex = new Regex("([-+]?\\d+(\\.\\d+)?%)|[-+]?\\d+(\\.\\d+)?")//匹配正(负)整数\浮点数\含有百分号的数
 
     // val regex = "\"([^\"]*)\"".r
     val num = regex.findAllIn(sentence)
@@ -39,5 +39,8 @@ object regularExpression extends App{
       res.foreach(println)
     }
   }
+
+
+
 
 }

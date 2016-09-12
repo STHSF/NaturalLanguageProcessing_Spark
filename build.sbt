@@ -1,4 +1,3 @@
-
 name := "NaturalLanguageProcessing"
 
 version := "1.0"

@@ -60,7 +60,7 @@ object AnsjAnalyzer {
     */
   def cutNoTag(sentence: String): Array[String] = {
 
-    val value = new Value("济南\tn")
+    val value = new Value("济南\t卸车")
 
     Library.insertWord(UserDefineLibrary.ambiguityForest, value)
 
@@ -89,6 +89,41 @@ object AnsjAnalyzer {
     val words = for(i <- Range(0, sent.size())) yield sent.get(i).next()
 
     words.toArray
+  }
+
+
+  /**
+    * 标准分词 ，无词性标注
+    *
+    * @param sentence  待分词语句
+    * @return 分词结果
+    */
+  def cutTag(sentence: String, option: Int): Array[String] = {
+
+    val value = new Value("济南\tn")
+
+    Library.insertWord(UserDefineLibrary.ambiguityForest, value)
+
+    //切词
+    val sent = ToAnalysis.parse(sentence)
+
+    option match {
+      case 0 => {
+
+        //提取分词结果，过滤词性
+        val words = for(i <- Range(0, sent.size())) yield sent.get(i).getName
+
+        words.toArray
+      }
+
+      case 1 => {
+
+        // 提取分词结果
+        val words = for(i <- Range(0, sent.size())) yield sent.get(i).getName
+
+        words.toArray
+      }
+    }
   }
 
 }
