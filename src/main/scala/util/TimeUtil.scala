@@ -10,11 +10,16 @@ import org.apache.hadoop.hbase.protobuf.generated.ClientProtos
 import org.apache.hadoop.hbase.util.Base64
 
 /**
-  * Created by C.J.YOU on 2016/1/13.
   * 格式化时间的工具类
   */
  object TimeUtil {
 
+
+  /**
+    * 获取时间戳对应的时间
+    * @param timeStamp 时间戳
+    * @return
+    */
   def getTime(timeStamp: String): String = {
     val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss")
     val bigInt: BigInteger = new BigInteger(timeStamp)
@@ -22,18 +27,30 @@ import org.apache.hadoop.hbase.util.Base64
     date
   }
 
+  /**
+    * 获取当前时间,并转换成制定的格式
+    * @return
+    */
   def getDay: String = {
     val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd")
     val date: String = sdf.format(new Date)
     date
   }
 
+  /**
+    * 获取当前小时
+    * @return
+    */
   def getCurrentHour: Int = {
     val calendar = Calendar.getInstance
     calendar.setTime(new Date)
     calendar.get(Calendar.HOUR_OF_DAY)
   }
 
+  /**
+    * 获取当前小时的前一个小时
+    * @return
+    */
   def getPreHourStr: String = {
     val date = new Date(new Date().getTime - 60 * 60 * 1000)
     val sdf: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH")
@@ -48,7 +65,7 @@ import org.apache.hadoop.hbase.util.Base64
   def getNowDate(): String = {
     val now: Date = new Date()
     val  dateFormat: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd")
-    val res = dateFormat.format( now )
+    val res = dateFormat.format(now)
     res
   }
 
@@ -92,7 +109,7 @@ import org.apache.hadoop.hbase.util.Base64
   }
 
   /**
-    * 设置制定的时间范围(一天)
+    * 设置指定的时间范围(一天)
     * @param time 指定的日期
     * @return 指定日期至前一天时间范围
     */

@@ -1,6 +1,7 @@
 [debug] Other repositories:
 [debug] Default repositories:
 [debug] Using inline dependencies specified in Scala.
+[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sbt_2.10;1.0
 [debug] 	confs: [default]
 [debug] 	validate = true
@@ -27,7 +28,6 @@
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#main;0.13.8
 [debug] 	found org.scala-sbt#main;0.13.8 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#main;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
-[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] == resolving dependencies org.scala-sbt#main;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#main;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->compile]
 [debug] == resolving dependencies org.scala-sbt#main;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->master]
@@ -1094,9 +1094,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 3775ms :: artifacts dl 73ms
+[debug] :: resolution report :: resolve 5552ms :: artifacts dl 76ms
 [debug] 	report for default#naturallanguageprocessing$sbt_2.10;1.0 default produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sbt_2.10-default.xml
-[debug] 	resolve done (3775ms resolve - 73ms download)
+[debug] 	resolve done (5552ms resolve - 76ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1638,6 +1638,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 383ms :: artifacts dl 81ms
+[debug] :: resolution report :: resolve 566ms :: artifacts dl 76ms
 [debug] 	report for default#naturallanguageprocessing$sources_2.10;1.0 default produced in /Users/li/Kunyan/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sources_2.10-default.xml
-[debug] 	resolve done (383ms resolve - 81ms download)
+[debug] 	resolve done (566ms resolve - 76ms download)

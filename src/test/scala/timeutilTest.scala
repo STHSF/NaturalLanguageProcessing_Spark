@@ -3,7 +3,7 @@ import util.TimeUtil
 /**
   * Created by li on 16/7/19.
   */
-object timeutilTest {
+object TimeUtilTest {
 
   def main(args: Array[String]) {
 

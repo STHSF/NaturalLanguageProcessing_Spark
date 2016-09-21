@@ -17,7 +17,7 @@ object RedisUtil {
     * @param confDir 配置文件对应的 xml 对象
     * @note rowNum: 10
     */
-  def initRedis(confDir: String):Unit = {
+  def initRedis(confDir: String): Jedis = {
 
     val configFile = XML.loadFile(confDir)
 
@@ -29,16 +29,18 @@ object RedisUtil {
     jedis = new Jedis(redisIp, redisPort)
     jedis.auth(redisAuth)
     jedis.select(redisDB)
+
+    jedis
   }
 
   /**
     * 将结果保存到redis
     *
-    * @param  resultData 需要保存的数据
+    * @param  resultData 需要保存的数据, hset格式
     * @author LiYu
     * @note rowNum: 12
     */
-  def write2Redis(resultData: Array[(String, String)], time: String, dataType: String): Unit = {
+  def write2RedisWithHset(resultData: Array[(String, String)], time: String, dataType: String): Unit = {
 
     val  resultDataMap = mutable.HashMap[String, String]()
 
@@ -55,6 +57,23 @@ object RedisUtil {
     }}
 
     pipeline.sync()
+  }
+
+  /**
+    * 将结果保存到redis
+    *
+    * @param  resultData 需要保存的数据,zet格式
+    * @author Li Yu
+    * @note rowNum: 12
+    */
+  def write2RedisWithZset(resultData: Array[(String, String)], time: String, dataType: String, jedis: Jedis): Unit = {
+
+    resultData.foreach{x => {
+
+      jedis.zadd(s"vipstockstatistic_$dataType" + s"_$time", x._2.toDouble, x._1)
+    }}
+
+    jedis.close()
   }
 
 
