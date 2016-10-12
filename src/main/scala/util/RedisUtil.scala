@@ -3,7 +3,7 @@ package util
 import redis.clients.jedis.Jedis
 
 import scala.collection.mutable
-import scala.xml.XML
+import scala.xml.Elem
 
 /**
   * Created by li on 16/7/8.
@@ -14,12 +14,10 @@ object RedisUtil {
   /**
     * 初始化 redis
     *
-    * @param confDir 配置文件对应的 xml 对象
+    * @param configFile 配置文件对应的 xml 对象
     * @note rowNum: 10
     */
-  def initRedis(confDir: String): Jedis = {
-
-    val configFile = XML.loadFile(confDir)
+  def initRedis(configFile: Elem): Jedis = {
 
     val redisIp = (configFile \ "redis" \ "ip").text
     val redisPort = (configFile \ "redis" \ "port").text.toInt
@@ -31,6 +29,13 @@ object RedisUtil {
     jedis.select(redisDB)
 
     jedis
+  }
+
+  /**
+    *
+    */
+  def readFromRedis: Unit ={
+
   }
 
   /**

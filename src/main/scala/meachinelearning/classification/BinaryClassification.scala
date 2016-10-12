@@ -37,7 +37,7 @@ object BinaryClassification extends App{
 
   //  //  平衡数据集获取
   case class RawDataRecord(labels: Double ,text: String)
-  val src = Source.fromFile("/Users/li/Downloads/trainingSets/保险").getLines().toArray.map{
+  val src = Source.fromFile("/Users/li/Kunyan/DataSet/trainingSets/保险").getLines().toArray.map{
     line =>
       val data = line.split("\t")
       RawDataRecord(data(0).toDouble, data(1))
@@ -58,7 +58,7 @@ object BinaryClassification extends App{
   // 去停用词
   // 读取停用词表
   //  val filter = Source.fromFile("/users/li/Intellij/Native-Byes/nativebyes/1.txt" ).getLines().toArray
-  val filter = Source.fromFile("/users/li/Intellij/Native-Byes/nativebyes/stop_words_CN" ).getLines().toArray
+  val filter = Source.fromFile("/Users/li/Kunyan/DataSet/stop_words_CN" ).getLines().toArray
 
   val remover = new StopWordsRemover()
     .setInputCol("words")
@@ -117,8 +117,10 @@ object BinaryClassification extends App{
 //  val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
 
   /** SVM训练模型 */
-     var numIterations = 100
-     val model = SVMWithSGD.train(trainDataRdd , numIterations)
+  var numIterations = 100
+  val model = SVMWithSGD.train(trainDataRdd , numIterations)
+
+  model.save(sc, "/Users/li/Kunyan/NaturalLanguageProcessing/src/main/scala/model")
 
   /** RandomForest训练模型 */
   //    val numClasses = 2
