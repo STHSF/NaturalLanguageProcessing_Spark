@@ -10,10 +10,14 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object textVectors {
 
-  val conf = new SparkConf().setAppName("findsynonym").setMaster("local")
-  val sc = new SparkContext(conf)
 
-  // 生成文本空间向量
+  /**
+    * 生成文本空间向量
+    * @param text 文本数组
+    * @param model Word2Vec模型
+    * @param size Word2Vec模型中词向量的长度
+    * @return
+    */
   def textVectors(text: Array[String], model: Word2VecModel, size: Int): Vector[Double] = {
 
     val wordVectors = Vector.zeros[Double](size)
@@ -45,9 +49,12 @@ object textVectors {
 
   def textVectorsTest(): Unit = {
 
+    val conf = new SparkConf().setAppName("textVectors").setMaster("local")
+    val sc = new SparkContext(conf)
+
     // 保存在hdfs上的模型的路径
-    val dir = "hdfs://slave:9000/home/word2vec/model-10-100-20/2016-08-16-word2VectorModel"
-    // val dir = "hdfs://slave:9000/home/word2vec/model20160830-10-100-20/2016-08-31-word2VectorModel"
+    val dir = "hdfs://master:9000/home/word2vec/model-10-100-20/2016-08-16-word2VectorModel"
+    // val dir = "hdfs://master:9000/home/word2vec/model20160830-10-100-20/2016-08-31-word2VectorModel"
 
     // 读取保存在hdfs上的模型
     val model = Word2VecModel.load(sc, dir)
@@ -59,7 +66,6 @@ object textVectors {
     //}
 
     val text = Array("大阴棒", "jijiji", "大阴")
-
     val res = textVectors(text, model, 100)
     println(res)
   }
