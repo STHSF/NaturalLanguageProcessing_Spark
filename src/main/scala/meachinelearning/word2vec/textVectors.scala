@@ -12,7 +12,7 @@ object textVectors {
 
 
   /**
-    * 生成文本空间向量
+    * 生成文本空间向量, 文本中每个单词的词向量的加权平均。
     * @param text 文本数组
     * @param model Word2Vec模型
     * @param size Word2Vec模型中词向量的长度
@@ -59,15 +59,15 @@ object textVectors {
     // 读取保存在hdfs上的模型
     val model = Word2VecModel.load(sc, dir)
 
-    // val synonyms = model.findSynonyms("大阴棒", 100)
-    // for((synonym, cosineSimilarity ) <- synonyms){
-    //   println(s"$synonym   $cosineSimilarity")  // AQSW
-    //   println(s"$synonym")
-    //}
+    val synonyms = model.findSynonyms("共产党", 100)
+    for((synonym, cosineSimilarity ) <- synonyms){
+    // println(s"$synonym   $cosineSimilarity")  // AQSW
+      println(s"$synonym")
+    }
 
-    val text = Array("大阴棒", "jijiji", "大阴")
-    val res = textVectors(text, model, 100)
-    println(res)
+    //    val text = Array("大阴棒", "jijiji", "大阴")
+    //    val res = textVectors(text, model, 100)
+    //    println(res)
   }
 
   def main(args: Array[String]) {
