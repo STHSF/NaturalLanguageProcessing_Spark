@@ -59,6 +59,7 @@ object textVectors {
     // 读取保存在hdfs上的模型
     val model = Word2VecModel.load(sc, dir)
 
+    // word2vec model test
     val synonyms = model.findSynonyms("共产党", 100)
     for((synonym, cosineSimilarity ) <- synonyms){
     // println(s"$synonym   $cosineSimilarity")  // AQSW

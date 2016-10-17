@@ -37,13 +37,15 @@ object BinaryClassification extends App{
 
   //  //  平衡数据集获取
   case class RawDataRecord(labels: Double ,text: String)
-  val src = Source.fromFile("/Users/li/Kunyan/DataSet/trainingSets/保险").getLines().toArray.map{
+  val src = Source.fromFile("/Users/li/workshop/DataSet/trainingSets/test").getLines().toArray.map{
     line =>
       val data = line.split("\t")
       RawDataRecord(data(0).toDouble, data(1))
   }
 
   val srcDF = sqlContext.createDataFrame(src)
+  srcDF.foreach(println)
+  println("dddd" + srcDF)
 
   // RDD type
   //    val srcRDD = sc.textFile("/users/li/Intellij/Native-Byes/nativebyes/wordseg_881156.txt").map {
@@ -54,11 +56,12 @@ object BinaryClassification extends App{
 
   var tokenizer = new Tokenizer().setInputCol("text").setOutputCol("words")
   var wordsData = tokenizer.transform(srcDF)
+  wordsData.show()
 
   // 去停用词
   // 读取停用词表
   //  val filter = Source.fromFile("/users/li/Intellij/Native-Byes/nativebyes/1.txt" ).getLines().toArray
-  val filter = Source.fromFile("/Users/li/Kunyan/DataSet/stop_words_CN" ).getLines().toArray
+  val filter = Source.fromFile("/Users/li/workshop/DataSet/stop_words_CN" ).getLines().toArray
 
   val remover = new StopWordsRemover()
     .setInputCol("words")
@@ -105,7 +108,7 @@ object BinaryClassification extends App{
   // rescaledData.select($"category", $"features").foreach(println)
   //  rescaledData.select($"labels",$"features").show()
 
-  // 转换成Bayes的输入格式
+  // 转换成labeledPoint的输入格式
   var trainDataRdd = rescaledData.select($"labels",$"features").map {
     case Row(label: Double, features: Vector) =>
       LabeledPoint(label , Vectors.dense(features.toArray))
@@ -120,7 +123,7 @@ object BinaryClassification extends App{
   var numIterations = 100
   val model = SVMWithSGD.train(trainDataRdd , numIterations)
 
-  model.save(sc, "/Users/li/Kunyan/NaturalLanguageProcessing/src/main/scala/model")
+  model.save(sc, "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/model")
 
   /** RandomForest训练模型 */
   //    val numClasses = 2
