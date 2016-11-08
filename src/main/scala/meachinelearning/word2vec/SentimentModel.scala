@@ -61,10 +61,10 @@ object SentimentModel {
     val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
     val trainSet = DataPrepare.readData(trainSetPath)
     val trainSetRdd = sc.parallelize(trainSet)
-    val trainSetVec = trainSetRdd.map(row => {
+    val trainSetVec = trainSetRdd.map( row => {
       val x = row.split("\t")
-      (x(0), x(1).split(","))})
-      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})
+      (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
+      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})   // 如果没有分词，就调用ansj进行分词
       .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
 
     val trainDataRdd = DataPrepare.tagAttacheBatch(trainSetVec)
