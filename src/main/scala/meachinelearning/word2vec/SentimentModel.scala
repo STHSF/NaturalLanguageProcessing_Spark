@@ -57,7 +57,7 @@ object SentimentModel {
     val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
     val w2vModel = Word2VecModel.load(sc, word2vecModelPath)
 
-    // 训练集labeledpoint准备
+    // 构建训练集的labeledpoint格式
     val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
     val trainSet = DataPrepare.readData(trainSetPath)
     val trainSetRdd = sc.parallelize(trainSet)
