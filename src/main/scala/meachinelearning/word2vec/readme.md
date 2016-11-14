@@ -1,6 +1,6 @@
 # Classification based on word2vec
 
-## textRank model
+## TextRank model
 
 Exact key words from news articles, instead of calculating whole words of word vectors.
 

@@ -1,0 +1,12 @@
+{
+  "kunyan": {
+    "ip": "61.147.114.88",
+    "port": "16003",
+    "stopwords": "16003"
+  },
+  "w2v": {
+    "w2vmodelPath": "hdfs://61.147.114.85:9000/home/word2vec/model-10-100-20/2016-08-16-word2VectorModel",
+    "w2vmodelSize": "100",
+    "isModel":"true"
+  }
+}
