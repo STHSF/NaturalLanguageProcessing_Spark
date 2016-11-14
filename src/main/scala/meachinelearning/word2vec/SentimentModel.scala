@@ -19,13 +19,12 @@ object SentimentModel {
     //  val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
 
     /** SVM训练模型 */
-    val numIterations = 100
-
+    val numIterations = 500
     val model = SVMWithSGD.train(trainDataRdd , numIterations)
 
     /** RandomForest训练模型 */
     //    val numClasses = 2
-    //      val categoricalFeaturesInfo = Map[Int, Int]()
+    //    val categoricalFeaturesInfo = Map[Int, Int]()
     //    val numTrees = 3
     //    val featureSubsetStrategy = "auto"
     //    val impurity = "gini"
@@ -54,7 +53,8 @@ object SentimentModel {
     val conf = new SparkConf().setAppName("textVectors").setMaster("local")
     val sc = new SparkContext(conf)
 
-    val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
+    // val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
+    val word2vecModelPath = "hdfs://master:9000/home/word2vec/classifyModel-10-100-20/2016-08-16-word2VectorModel"
     val w2vModel = Word2VecModel.load(sc, word2vecModelPath)
 
     // 构建训练集的labeledpoint格式
@@ -69,9 +69,9 @@ object SentimentModel {
 
     val trainDataRdd = DataPrepare.tagAttacheBatch(trainSetVec)
 
-    val model = classify(trainDataRdd)
-    val modelPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/model"
-    model.save(sc, modelPath)
+    val classifyModel = classify(trainDataRdd)
+    val classifyModelPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/model2"
+    classifyModel.save(sc, classifyModelPath)
 
   }
 }

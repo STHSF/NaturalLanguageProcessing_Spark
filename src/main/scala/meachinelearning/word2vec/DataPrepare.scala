@@ -51,7 +51,7 @@ object DataPrepare {
     */
   def docVec(word2vecModel: Word2VecModel, docSeg: Array[String]): Array[Double] = {
 
-    val docVectors = textVectors.textVectors(docSeg, word2vecModel, 100).toArray
+    val docVectors = textVectors.textVectorsWithModel(docSeg, word2vecModel, 100).toArray
 
     docVectors
   }

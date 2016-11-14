@@ -18,6 +18,7 @@ object SentimentRun {
 
     // load word2vec model
     val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
+    // val word2vecModelPath = "hdfs://master:9000/home/word2vec/20161008_10_200_2_1/2016-11-08-word2VectorModel"
     val w2vModel = Word2VecModel.load(sc, word2vecModelPath)
 
     // load classify model
@@ -25,7 +26,7 @@ object SentimentRun {
     val classifyModel = SVMModel.load(sc, classifyModelPath)
 
     // 构建测试集labeledpoint格式
-    val predictSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXG.txt"
+    val predictSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/GT.txt"
     val predictSet = DataPrepare.readData(predictSetPath)
     val predictSetRdd = sc.parallelize(predictSet)
     val predictSetVec = predictSetRdd.map(row => {
@@ -37,9 +38,9 @@ object SentimentRun {
     val predictDataRdd = DataPrepare.tagAttacheBatch(predictSetVec)
 
     /** 对测试数据集使用训练模型进行分类预测 */
-    classifyModel.clearThreshold()
+    // classifyModel.clearThreshold()
     // Compute raw scores on the test set.
-    val predictionAndLabel = predictDataRdd.map { point => {
+    val predictionAndLabel = predictDataRdd.map{ point => {
       val predictionFeature = classifyModel.predict(point.features)
       (predictionFeature, point.label)
     }}
@@ -47,8 +48,8 @@ object SentimentRun {
 
     /** 准确度统计分析 */
     //统计分类准确率
-    val testaccuracy = 1.0 * predictionAndLabel.filter(x => x._1 == x._2).count() / predictDataRdd.count()
-    println("testaccuracy：" + testaccuracy)
+    val testAccuracy = 1.0 * predictionAndLabel.filter(x => x._1 == x._2).count() / predictDataRdd.count()
+    println("testAccuracy：" + testAccuracy)
 
     val metrics = new MulticlassMetrics(predictionAndLabel)
     println("Confusion matrix:" + metrics.confusionMatrix)
