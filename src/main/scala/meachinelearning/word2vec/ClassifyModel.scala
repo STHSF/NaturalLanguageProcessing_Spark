@@ -1,6 +1,8 @@
 package meachinelearning.word2vec
 
-import util.JSONUtil
+import java.io.File
+
+import util.{DirectoryUtil, JSONUtil}
 import org.apache.spark.mllib.classification.{SVMModel, SVMWithSGD}
 import org.apache.spark.mllib.feature.Word2VecModel
 import org.apache.spark.mllib.regression.LabeledPoint
@@ -66,25 +68,28 @@ object ClassifyModel {
     val w2vModel = Word2VecModel.load(sc, word2vecModelPath)
 
     // 构建训练集的labeledpoint格式
-//    val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
-//    val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
-    val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/工程建筑"
+    // val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
+    // val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
+    val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/计算机"
 
     val trainSet = DataPrepare.readData(trainSetPath)
-    val trainSetRdd = sc.parallelize(trainSet)
-//    val trainSetVec = trainSetRdd.map( row => {
-//      val x = row.split("\t")
-//      (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
-//      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})   // 如果没有分词，就调用ansj进行分词
-//      .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
+    val trainSetRdd = sc.parallelize(trainSet).cache()
+    //val trainSetRdd = sc.textFile(trainSetPath)
 
-    val trainDataRdd = TextVectors.textVectorsWithWeight(trainSetRdd, w2vModel, modelSize, isModel)
+    // val trainSetVec = trainSetRdd.map( row => {
+    // val x = row.split("\t")
+    //  (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
+    //  //(x(0), AnsjAnalyzer.cutNoTag(x(1)})   // 如果没有分词，就调用ansj进行分词
+    //  .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
 
-//    val trainDataRdd = DataPrepare.tagAttacheBatchWhole(trainSetVec)
+    val trainDataRdd = TextVectors.textVectorsWithWeight(trainSetRdd, w2vModel, modelSize, isModel).cache()
 
     val classifyModel = classify(trainDataRdd)
-    val classifyModelPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/model2"
+
+    val classifyModelPath = JSONUtil.getValue("classify", "classifymodelpath")
+    DirectoryUtil.deleteDir(new File(classifyModelPath))
     classifyModel.save(sc, classifyModelPath)
+    println("分类模型保存完毕。")
 
   }
 }

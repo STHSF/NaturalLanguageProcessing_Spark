@@ -2,7 +2,7 @@
 
 ## TextRank model
 
-Exact key words from news articles, instead of calculating whole words of word vectors.
+Exact key words from news articles, instead of calculating whole words of wordVectors.
 
 ## Word2Vec model
 
@@ -15,6 +15,7 @@ Using SVM to classify.
 
 
 ## Test results
+testAccuracy =
 Precision(0.0) =
 Precision(1.0) =
 Recall(0.0) =

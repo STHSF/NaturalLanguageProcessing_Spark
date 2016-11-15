@@ -16,7 +16,7 @@ object DataPrepare {
 
   /**
     * 读文件
- *
+    *
     * @param filePath 文本保存的位置
     * @return
     */
@@ -30,7 +30,7 @@ object DataPrepare {
 
   /**
     * 分词
- *
+    *
     * @param doc
     * @return
     */
@@ -44,33 +44,32 @@ object DataPrepare {
 
   /**
     * 构建文本向量
- *
+    *
     * @param word2vecModel
     * @param docSeg
     * @return
     */
   def docVec(word2vecModel: Word2VecModel, docSeg: Array[String]): Array[Double] = {
 
-    val docVectors = textVectors.textVectorsWithModel(docSeg, word2vecModel, 100).toArray
+    val docVectors = TextVectors.textVectorsWithModel(docSeg, word2vecModel, 100).toArray
 
     docVectors
   }
 
-//
-//  /**
-//    * 打标签，文本集合构建labeledPoint
-//    *
-//    * @param label
-//    * @param docVec
-//    * @return
-//    */
-//  def tagAttacheBatch(label: Double, docVec: RDD[Array[Double]]): RDD[LabeledPoint] = {
-//
-//    docVec.map{
-//      row =>
-//        LabeledPoint(label , Vectors.dense(row))
-//    }
-//  }
+  /**
+    * 打标签，文本集合构建labeledPoint,集合中文章属于同一类
+    *
+    * @param label
+    * @param docVec
+    * @return
+    */
+  def tagAttacheBatchSingle(label: Double, docVec: RDD[Array[Double]]): RDD[LabeledPoint] = {
+
+    docVec.map{
+      row =>
+        LabeledPoint(label , Vectors.dense(row))
+    }
+  }
 
   /**
     * 打标签，文本集合构建labeledPoint
@@ -78,7 +77,7 @@ object DataPrepare {
     * @param docVec
     * @return
     */
-  def tagAttacheBatch(docVec: RDD[(Double, Array[Double])]): RDD[LabeledPoint] = {
+  def tagAttacheBatchWhole(docVec: RDD[(Double, Array[Double])]): RDD[LabeledPoint] = {
 
     docVec.map{
       row =>
@@ -89,7 +88,7 @@ object DataPrepare {
 
   /**
     * 打标签，单篇文本构建labeledPoint
- *
+    *
     * @param label
     * @param docVec
     * @return
@@ -108,7 +107,7 @@ object DataPrepare {
     val sc = new SparkContext(conf)
 
     val filePath = "/Users/li/workshop/DataSet/111.txt"
-//    val filePath = "/Users/li/workshop/DataSet/SogouC.reduced/Reduced/C000008/10.txt"
+    //    val filePath = "/Users/li/workshop/DataSet/SogouC.reduced/Reduced/C000008/10.txt"
 
     val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
     val model = Word2VecModel.load(sc, word2vecModelPath)
