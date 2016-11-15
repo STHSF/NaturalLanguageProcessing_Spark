@@ -17,7 +17,8 @@ object training {
 
     val conf = new SparkConf().setAppName("W2V").setMaster("local")
     val sc = new SparkContext(conf)
-    val jsonPath = "/home/zhangxin/work/workplace_scala/Sentiment/src/main/scala/classificationW2V/W2VJsonConf.json"
+//    val jsonPath = "/home/zhangxin/work/workplace_scala/Sentiment/src/main/scala/classificationW2V/W2VJsonConf.json"
+    val jsonPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/twc/W2VJsonConf.json"
 
     // 非平衡集
 //    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingsetUnbalance/JSJ.txt"
@@ -26,9 +27,10 @@ object training {
     // 平衡集
 //    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/房地产"
 //    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/有色金属"
-    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/保险"
+//    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/保险"
 //    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/医药"
 //    val docsPath = "/home/zhangxin/work/workplace_scala/Data/trainingSets/计算机"
+    val docsPath = "/Users/li/workshop/DataSet/trainingSets/工程建筑"
 
     val docs = sc.textFile(docsPath).collect()
 

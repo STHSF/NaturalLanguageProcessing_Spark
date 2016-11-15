@@ -112,7 +112,8 @@ object processing {
       })
 
       return result
-    }else{
+    } else {
+
       val model = new mutable.HashMap[String, Array[Double]]()
       sc.textFile(modelPath).map(line => {
         val temp = line.split("\t")
@@ -192,8 +193,7 @@ object processing {
 
   // 基于word2vec model 获取单文档词向量, 考虑关键词权重
   private def doc2vecWithModel_weight(doc: Array[(String, Float)], model:Word2VecModel, modelSize: Int): Array[Double] = {
-
-    var resultTemp = new Array[Double](modelSize)
+    val resultTemp = new Array[Double](modelSize)
     var wordTemp = new Array[Double](modelSize)
 
     doc.foreach(word => {
@@ -216,7 +216,7 @@ object processing {
   // 基于word2vec model 获取单文档词向量
   private def doc2vecWithModel(doc: Array[String], model:Word2VecModel, modelSize: Int): Array[Double] = {
 
-    var resultTemp = new Array[Double](modelSize)
+    val resultTemp = new Array[Double](modelSize)
     var wordTemp = new Array[Double](modelSize)
 
     doc.foreach(word => {
@@ -238,7 +238,7 @@ object processing {
 
   // 基于txt型文件获取单文档的词向量
   private def doc2vecWithHash(doc: Array[String], model:mutable.HashMap[String, Array[Double]], modelSize: Int) = {
-    var resultTemp = new Array[Double](modelSize)
+    val resultTemp = new Array[Double](modelSize)
     var wordTemp = new Array[Double](modelSize)
 
     doc.foreach(word => {

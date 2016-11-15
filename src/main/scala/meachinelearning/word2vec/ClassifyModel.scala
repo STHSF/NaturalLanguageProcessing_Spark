@@ -1,5 +1,6 @@
 package meachinelearning.word2vec
 
+import util.JSONUtil
 import org.apache.spark.mllib.classification.{SVMModel, SVMWithSGD}
 import org.apache.spark.mllib.feature.Word2VecModel
 import org.apache.spark.mllib.regression.LabeledPoint
@@ -10,7 +11,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   * Created by li on 2016/10/13.
   *
   */
-object SentimentModel {
+object ClassifyModel {
 
 
   def classify(trainDataRdd: RDD[LabeledPoint]): SVMModel = {
@@ -53,21 +54,33 @@ object SentimentModel {
     val conf = new SparkConf().setAppName("textVectors").setMaster("local")
     val sc = new SparkContext(conf)
 
-    // val word2vecModelPath = "/Users/li/workshop/DataSet/word2vec/result/2016-07-18-15-word2VectorModel"
-    val word2vecModelPath = "hdfs://master:9000/home/word2vec/classifyModel-10-100-20/2016-08-16-word2VectorModel"
+    val jsonPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/twc/W2VJsonConf.json"
+
+    JSONUtil.initConfig(jsonPath)
+
+    val word2vecModelPath = JSONUtil.getValue("w2v", "w2vmodelPath")
+    val modelSize = JSONUtil.getValue("w2v", "w2vmodelSize").toInt
+    val isModel = JSONUtil.getValue("w2v", "isModel").toBoolean
+
+    //  val word2vecModelPath = "hdfs://master:9000/home/word2vec/classifyModel-10-100-20/2016-08-16-word2VectorModel"
     val w2vModel = Word2VecModel.load(sc, word2vecModelPath)
 
     // 构建训练集的labeledpoint格式
-    val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
+//    val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
+//    val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
+    val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/工程建筑"
+
     val trainSet = DataPrepare.readData(trainSetPath)
     val trainSetRdd = sc.parallelize(trainSet)
-    val trainSetVec = trainSetRdd.map( row => {
-      val x = row.split("\t")
-      (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
-      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})   // 如果没有分词，就调用ansj进行分词
-      .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
+//    val trainSetVec = trainSetRdd.map( row => {
+//      val x = row.split("\t")
+//      (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
+//      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})   // 如果没有分词，就调用ansj进行分词
+//      .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
 
-    val trainDataRdd = DataPrepare.tagAttacheBatch(trainSetVec)
+    val trainDataRdd = TextVectors.textVectorsWithWeight(trainSetRdd, w2vModel, modelSize, isModel)
+
+//    val trainDataRdd = DataPrepare.tagAttacheBatchWhole(trainSetVec)
 
     val classifyModel = classify(trainDataRdd)
     val classifyModelPath = "/Users/li/workshop/NaturalLanguageProcessing/src/main/scala/meachinelearning/word2vec/model2"
