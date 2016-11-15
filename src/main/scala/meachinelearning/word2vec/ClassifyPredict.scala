@@ -8,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
   * Created by li on 2016/10/17.
   */
-object SentimentRun {
+object ClassifyPredict {
 
 
   def main(args: Array[String]) {
@@ -35,7 +35,7 @@ object SentimentRun {
       //(x(0), AnsjAnalyzer.cutNoTag(x(1)})  // 如果没有分词，就调用ansj进行分词
       .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2)))
 
-    val predictDataRdd = DataPrepare.tagAttacheBatch(predictSetVec)
+    val predictDataRdd = DataPrepare.tagAttacheBatchWhole(predictSetVec)
 
     /** 对测试数据集使用训练模型进行分类预测 */
     // classifyModel.clearThreshold()

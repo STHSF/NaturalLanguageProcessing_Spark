@@ -43,7 +43,7 @@ object training {
     val train = splits(0)
     val test = splits(1)
 
-    val model = SVMWithSGD.train(train, 1000)
+    val model = SVMWithSGD.train(train, 50)
 //    val model = LogisticRegressionWithSGD.train(train, 5000)
     println("[完成模型训练]>>>>>>>>>>>>>>>>>>>")
 
