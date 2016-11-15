@@ -99,9 +99,9 @@ object ClassifyPredict {
       (predictionFeature, point.label)
     }}
 
+    // 准确度统计分析
+    acc(predictionAndLabel, predictDataRdd)
     //predictionAndLabel.foreach(println)
-
-
     sc.stop()
   }
 }
