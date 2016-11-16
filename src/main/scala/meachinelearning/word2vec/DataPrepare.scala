@@ -49,9 +49,9 @@ object DataPrepare {
     * @param docSeg
     * @return
     */
-  def docVec(word2vecModel: Word2VecModel, docSeg: Array[String]): Array[Double] = {
+  def docVec(word2vecModel: Word2VecModel, docSeg: Array[String], modelSize: Int): Array[Double] = {
 
-    val docVectors = TextVectors.textVectorsWithModel(docSeg, word2vecModel, 100).toArray
+    val docVectors = TextVectors.textVectorsWithModel(docSeg, word2vecModel, modelSize).toArray
 
     docVectors
   }
@@ -116,7 +116,7 @@ object DataPrepare {
 
     val splitData = docCut(data)
 
-    val doVec = docVec(model, splitData)
+    val doVec = docVec(model, splitData, 100)
 
     val labeledP = tagAttacheSingle(1.0, doVec)
     println(labeledP)

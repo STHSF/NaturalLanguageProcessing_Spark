@@ -25,7 +25,9 @@ object TextVectors {
     * @param size Word2Vec模型中词向量的长度
     * @return
     */
-  def textVectorsWithLib(text: Array[String], vectorLib: RDD[(String, Array[Double])], size: Int): Vector[Double] = {
+  def textVectorsWithLib(text: Array[String],
+                         vectorLib: RDD[(String, Array[Double])],
+                         size: Int): Vector[Double] = {
 
     val wordVectors = Vector.zeros[Double](size)
     var docVectors = Vector.zeros[Double](size)
@@ -63,7 +65,9 @@ object TextVectors {
     * @param size Word2Vec模型中词向量的长度
     * @return
     */
-  def textVectorsWithModel(text: Array[String], model: Word2VecModel, size: Int): Vector[Double] = {
+  def textVectorsWithModel(text: Array[String],
+                           model: Word2VecModel,
+                           size: Int): Vector[Double] = {
 
     val wordVectors = Vector.zeros[Double](size)
     var docVectors = Vector.zeros[Double](size)
@@ -92,7 +96,6 @@ object TextVectors {
     docVectors
   }
 
-
   /**
     * 对已经分词的文档进行特征处理，并生成labelpoint的格式, 平衡集, 考虑关键词权重
     *
@@ -119,7 +122,7 @@ object TextVectors {
       //textRank, 使用textRank提取关键词（实体词抽取）
       val keywords = TextRank.run("exact", 10, seg.toList, 20, 50, 0.85f)
       val keywordsFilter = keywords.toArray.filter(word => word._1.length >= 2)
-      println(s"[$label] " + keywordsFilter.toList)
+//      println(s"[$label] " + keywordsFilter.toList)
 
       (label, keywordsFilter)
     })
@@ -143,7 +146,6 @@ object TextVectors {
       return null
     }
   }
-
 
   /**
     * 从word2vec model 中获取单文档词向量

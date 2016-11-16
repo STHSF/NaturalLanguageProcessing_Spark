@@ -7,6 +7,7 @@ import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import util.JSONUtil
+import wordSegmentation.AnsjAnalyzer
 
 /**
   * Created by li on 2016/10/17.
@@ -79,14 +80,14 @@ object ClassifyPredict {
     val classifyModel = SVMModel.load(sc, classifyModelPath)
 
     // 构建测试集labeledpoint格式
-    val predictSetPath = "/Users/li/workshop/DataSet/trainingSets/医药"
+    val predictSetPath = "/Users/li/workshop/DataSet/trainingSets/test"
     val predictSet = DataPrepare.readData(predictSetPath)
     val predictSetRdd = sc.parallelize(predictSet)
-//    val predictSetVec = predictSetRdd.map(row => {
-//      val x = row.split("\t")
-//      (x(0), x(1).split(","))})  // 在文章进行分词的情况下，用逗号隔开
-//      //(x(0), AnsjAnalyzer.cutNoTag(x(1)})  // 如果没有分词，就调用ansj进行分词
-//      .map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2))
+
+//    // 对于单篇没有分词的文章
+    val predictSetVec = predictSetRdd.map(row => {
+      (1, AnsjAnalyzer.cutNoTag(row))
+    }).map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2, modelSize)))
 //    val predictDataRdd = DataPrepare.tagAttacheBatchWhole(predictSetVec)
 
     val predictDataRdd = TextVectors.textVectorsWithWeight(predictSetRdd, w2vModel, modelSize, isModel).cache()

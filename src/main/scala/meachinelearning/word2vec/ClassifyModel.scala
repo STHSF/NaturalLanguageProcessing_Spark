@@ -22,7 +22,7 @@ object ClassifyModel {
     //  val model = NaiveBayes.train(trainDataRdd, lambda = 1.0, modelType = "multinomial")
 
     /** SVM训练模型 */
-    val numIterations = 500
+    val numIterations = 1000
     val model = SVMWithSGD.train(trainDataRdd , numIterations)
 
     /** RandomForest训练模型 */

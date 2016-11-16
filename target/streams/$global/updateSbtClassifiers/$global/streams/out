@@ -1,5 +1,6 @@
 [debug] Other repositories:
 [debug] Default repositories:
+[debug] no default cache defined: set to /Users/li/.ivy2/cache
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sbt_2.10;1.0
 [debug] 	confs: [default]
@@ -1093,9 +1094,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.jboss.interceptor#jboss-interceptor-api;1.1!jboss-interceptor-api.jar
-[debug] :: resolution report :: resolve 5862ms :: artifacts dl 243ms
+[debug] :: resolution report :: resolve 29591ms :: artifacts dl 3410ms
 [debug] 	report for default#naturallanguageprocessing$sbt_2.10;1.0 default produced in /Users/li/workshop/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sbt_2.10-default.xml
-[debug] 	resolve done (5862ms resolve - 243ms download)
+[debug] 	resolve done (29591ms resolve - 3410ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#naturallanguageprocessing$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1637,6 +1638,6 @@
 [debug] 	[NOT REQUIRED] org.eclipse.sisu#org.eclipse.sisu.inject;0.3.0!org.eclipse.sisu.inject.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-component-annotations;1.5.5!plexus-component-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.plexus#plexus-classworlds;2.5.2!plexus-classworlds.jar(src)
-[debug] :: resolution report :: resolve 1341ms :: artifacts dl 201ms
+[debug] :: resolution report :: resolve 3486ms :: artifacts dl 2176ms
 [debug] 	report for default#naturallanguageprocessing$sources_2.10;1.0 default produced in /Users/li/workshop/NaturalLanguageProcessing/target/resolution-cache/reports/default-naturallanguageprocessing$sources_2.10-default.xml
-[debug] 	resolve done (1341ms resolve - 201ms download)
+[debug] 	resolve done (3486ms resolve - 2176ms download)
