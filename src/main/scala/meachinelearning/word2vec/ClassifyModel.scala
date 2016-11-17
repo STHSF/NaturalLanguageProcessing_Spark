@@ -69,8 +69,8 @@ object ClassifyModel {
 
     // 构建训练集的labeledpoint格式
     // val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
-    // val trainSetPath = "/Users/li/workshop/DataSet/trainingsetUnbalance/BXX.txt"
-    val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/计算机"
+    // val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/计算机"
+    val trainSetPath = "/Users/li/workshop/DataSet/trainingSets/机械"
 
     val trainSet = DataPrepare.readData(trainSetPath)
     val trainSetRdd = sc.parallelize(trainSet).cache()

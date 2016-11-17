@@ -84,13 +84,13 @@ object ClassifyPredict {
     val predictSet = DataPrepare.readData(predictSetPath)
     val predictSetRdd = sc.parallelize(predictSet)
 
-//    // 对于单篇没有分词的文章
+    // 对于单篇没有分词的文章
     val predictSetVec = predictSetRdd.map(row => {
-      (1, AnsjAnalyzer.cutNoTag(row))
-    }).map(row => (row._1.toDouble, DataPrepare.docVec(w2vModel, row._2, modelSize)))
-//    val predictDataRdd = DataPrepare.tagAttacheBatchWhole(predictSetVec)
+      1.0 + "\t" + AnsjAnalyzer.cutNoTag(row)
+    })
+    val predictDataRdd = TextVectors.textVectorsWithWeight(predictSetVec, w2vModel, modelSize, isModel).cache()
 
-    val predictDataRdd = TextVectors.textVectorsWithWeight(predictSetRdd, w2vModel, modelSize, isModel).cache()
+    // val predictDataRdd = TextVectors.textVectorsWithWeight(predictSetRdd, w2vModel, modelSize, isModel).cache()
 
     /** 对测试数据集使用训练模型进行分类预测 */
     // classifyModel.clearThreshold()
