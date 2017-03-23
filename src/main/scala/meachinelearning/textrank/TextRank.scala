@@ -1,7 +1,5 @@
 package meachinelearning.textrank
 
-import scala.collection.mutable.ListBuffer
-
 /**
   * Created by li on 16/6/24.
   */
@@ -16,8 +14,8 @@ object TextRank {
     * @param df 阻尼系数
     * @return 关键词, 得分
     */
-  def run(graphName: String, window: Int, doc: ListBuffer[String],
-          keywordNum: Int, iterator: Int, df: Float): List[(String, Float)] = {
+  def run(graphName: String, window: Int, doc: List[String],
+          keywordNum: Int, iterator: Int, df: Double): List[(String, Double)] = {
 
     // 生成关键词图
     val constructTextGraph = new ConstructTextGraph(graphName, window, doc)

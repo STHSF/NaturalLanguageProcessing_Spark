@@ -26,10 +26,10 @@ class PropertyExtractor(val graph: SingleGraph, val keywordNum: Int) {
     * @return 关键词和得分
     */
   // 使用textRank提取关键词
-  def extractKeywords(iterator: Int, df: Float) = {
+  def extractKeywords(iterator: Int, df: Double) = {
 
     val nodes = graph.getNodeSet.toArray.map(_.asInstanceOf[Node])
-    val scoreMap = new mutable.HashMap[String, Float]
+    val scoreMap = new mutable.HashMap[String, Double]
 
     // 节点权重初始化
     nodes.foreach(node => scoreMap.put(node.getId, 1.0f))

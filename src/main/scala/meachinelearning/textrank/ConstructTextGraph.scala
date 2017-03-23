@@ -17,7 +17,7 @@ import scala.collection.mutable.ListBuffer
   * @return 候选关键词图
   * @author LiYu
   */
-class ConstructTextGraph(val graphName: String, val winSize: Int, val segWord: ListBuffer[String]) {
+class ConstructTextGraph(val graphName: String, val winSize: Int, val segWord: List[String]) {
 
   /**
     * 构建候选关键词图

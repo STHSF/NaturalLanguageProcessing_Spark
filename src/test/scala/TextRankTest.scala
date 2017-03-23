@@ -18,7 +18,7 @@ object TextRankTest {
 
 
     // 构建候选关键词图, 设置窗口大小5
-    val textGraph = new ConstructTextGraph("url", 10, doc).constructGraph
+    val textGraph = new ConstructTextGraph("url", 10, doc.toList).constructGraph
 
     // 输出构建的无向图的边和顶点
     //  textGraph.getEdgeSet.toArray.foreach(println)

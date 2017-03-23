@@ -12,6 +12,7 @@ import util.{HBaseUtil, LoggerUtil}
 
 /**
   * Created by li on 16/7/26.
+  * 电信数据处理
   */
 object TDP {
 

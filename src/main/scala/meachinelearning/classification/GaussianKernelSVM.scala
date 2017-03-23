@@ -80,6 +80,7 @@ object GaussianKernelSVM {
 
   // predict by SVM Model
   def predict(model: Model)(X: DenseMatrix[Double]): DenseVector[Double] = {
+
     val predictRes = DenseVector.zeros[Double](X.rows)
     val Xt = X.t
     val mxt = model.X.t
@@ -98,7 +99,7 @@ object GaussianKernelSVM {
   // This is a simplified version of the SMO algorithm for training SVMs.
   def trainSVM(X: DenseMatrix[Double], Y: DenseVector[Double], C: Double,
                kernel: (DenseVector[Double], DenseVector[Double]) => Double,
-               tol: Double = 1e-3, max_passes: Int = 5): Model = {
+               tol: Double = 1e-3, maxPasses: Int = 5): Model = {
     val m = X.rows
     val n = X.cols
     val Y2 = DenseVector.vertcat(Y)
@@ -124,8 +125,8 @@ object GaussianKernelSVM {
 
     print("Training(C=%f) (This takes a few minutes.)\n".format(C))
     var dots = 0
-    while (passes < max_passes) {
-      var num_alpha_changed = 0
+    while (passes < maxPasses) {
+      var numAlphaChanged = 0
       for (i <- 0 until m) {
         E(i) = b + sum(alphas :* (Y2 :* K(::, i))) - Y2(i)
         if ((Y2(i) * E(i) < -tol && alphas(i) < C) || (Y2(i) * E(i) > tol && alphas(i) > 0)) {
@@ -184,15 +185,17 @@ object GaussianKernelSVM {
                 b = (b1 + b2) / 2.0d
               }
 
-              num_alpha_changed += 1
+              numAlphaChanged += 1
             }
           }
         }
       }
 
-      if (num_alpha_changed == 0) {
+      if (numAlphaChanged == 0) {
+
         passes += 1
       } else {
+
         passes = 0
       }
 
@@ -211,7 +214,7 @@ object GaussianKernelSVM {
     val _kernel = kernel
     val _b = b
     val _alphas = alphas(_idx).toDenseVector
-//    val _w = ((alphas :* Y2).t :* X) apply(::, 0)
+    // val _w = ((alphas :* Y2).t :* X) apply(::, 0)
     val _w = (alphas :* Y2) :* X.toDenseVector
 
     Model(_X, _Y, _kernel, _b, _alphas, _w)
@@ -241,6 +244,7 @@ object GaussianKernelSVM {
     case 0 => Color.RED //rejected
     case _ => Color.BLACK //other
   }
+
   val y2Color: DenseVector[Double] => (Int => Paint) = y => {
     case i => i2color(y(i).toInt)
   }
@@ -256,7 +260,6 @@ object GaussianKernelSVM {
     }
     (x1Mesh, x2Mesh)
   }
-
 
   def computeDecisionBoundary(x1: DenseVector[Double], x2: DenseVector[Double], predict: DenseMatrix[Double] => DenseVector[Double]): (DenseVector[Double], DenseVector[Double]) = {
     val (x1Mesh, x2Mesh) = meshgrid(x1, x2)

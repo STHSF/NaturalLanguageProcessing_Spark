@@ -1,6 +1,5 @@
 package deeplearning.cnn
 
-import deeplearning.cnn._
 import org.apache.spark._
 import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.RDD
@@ -9,10 +8,9 @@ import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.linalg.distributed.RowMatrix
 
-import breeze.linalg.{ Matrix => BM, CSCMatrix => BSM, DenseMatrix => BDM, Vector => BV,
+import breeze.linalg.{Matrix => BM, CSCMatrix => BSM, DenseMatrix => BDM, Vector => BV,
 DenseVector => BDV, SparseVector => BSV, axpy => brzAxpy, svd => brzSvd,
-accumulate => Accumulate, rot90 => Rot90, sum => Bsum
-}
+accumulate => Accumulate, rot90 => Rot90, sum => Bsum}
 import breeze.numerics.{exp => Bexp, tanh => Btanh}
 
 import scala.collection.mutable.ArrayBuffer
@@ -23,20 +21,20 @@ import scala.math._
   * types：网络层类别
   * outputMaps：特征map数量
   * kernelSize：卷积核k大小
+  * scale: pooling大小
   * k: 卷积核
   * b: 偏置
   * dk: 卷积核的偏导
   * db: 偏置的偏导
-  * scale: pooling大小
   */
-case class CNNLayers( types: String,
-                      outputmaps: Double,
-                      kernelsize: Double,
-                      scale: Double,
-                      k: Array[Array[BDM[Double]]],
-                      b: Array[Double],
-                      dk: Array[Array[BDM[Double]]],
-                      db: Array[Double]) extends Serializable
+case class CNNLayers(types: String,
+                     outputMaps: Double,
+                     kernelSize: Double,
+                     scale: Double,
+                     k: Array[Array[BDM[Double]]],
+                     b: Array[Double],
+                     dk: Array[Array[BDM[Double]]],
+                     db: Array[Double]) extends Serializable
 
 /**
   * CNN(convolution neural network)卷积神经网络
@@ -394,8 +392,8 @@ object CNN extends Serializable {
       // for each layer
       for (l <- 1 to n - 1) {
         val type1 = bc_cnn_layers.value(l).types
-        val outputmap1 = bc_cnn_layers.value(l).outputmaps
-        val kernelsize1 = bc_cnn_layers.value(l).kernelsize
+        val outputmap1 = bc_cnn_layers.value(l).outputMaps
+        val kernelsize1 = bc_cnn_layers.value(l).kernelSize
         val scale1 = bc_cnn_layers.value(l).scale
         val k1 = bc_cnn_layers.value(l).k
         val b1 = bc_cnn_layers.value(l).b
@@ -581,7 +579,7 @@ object CNN extends Serializable {
           val db = db_j / count_db.toDouble
           nndb(j) = db
         }
-        layers(l) = new CNNLayers(layers(l).types, layers(l).outputmaps, layers(l).kernelsize, layers(l).scale, layers(l).k, layers(l).b, nndk, nndb)
+        layers(l) = new CNNLayers(layers(l).types, layers(l).outputMaps, layers(l).kernelSize, layers(l).scale, layers(l).k, layers(l).b, nndk, nndb)
       }
     }
 

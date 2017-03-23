@@ -1,6 +1,7 @@
 package meachinelearning.word2vec
 
 import java.io.{File, PrintWriter}
+//import java.util
 
 import org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}
 import org.apache.spark.rdd.RDD
@@ -154,7 +155,7 @@ object Word2Vec {
     * @note rowNum: 10
     */
   def readVocabularyVector(vectorLib: RDD[(String, Array[Double])],
-                           input: Array[String]): Array[(String, Array[Double])] = {
+                           input: Array[String]): Map[String, Array[Double]] = {
 
     val result = new mutable.HashMap[String, Array[Double]]
 
@@ -173,7 +174,24 @@ object Word2Vec {
       }
     })
 
-    result.toArray
+    result.toMap
+  }
+
+
+
+  def findVocabularyVector(vectorLib: RDD[(String, Array[Double])], word: String)
+  :Array[Double] = {
+
+
+    val temp = vectorLib.filter(x => x._1.contains(word))
+
+    if(temp != null) {
+
+      temp.first()._2
+    } else {
+
+      Array(0.0)
+    }
   }
 
   /**

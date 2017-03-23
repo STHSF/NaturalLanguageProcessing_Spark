@@ -17,7 +17,7 @@ object testRankTest {
     val text = Source.fromURL(getClass.getResource(s"/text/${2}.txt")).getLines().mkString("\n")
     text.split(",").foreach(x => doc.+=(x))
 
-    val keyWordList = TextRank.run("url", 5, doc, 3, 100, 0.85f)
+    val keyWordList = TextRank.run("url", 5, doc.toList, 3, 100, 0.85f)
 
     keyWordList.foreach {
       word => {

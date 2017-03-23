@@ -2,26 +2,13 @@ package util
 
 import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet}
 
-import scala.xml.{XML, Elem}
+import scala.collection.mutable.ArrayBuffer
+import scala.xml.Elem
 
 /**
   * Created by li on 16/7/12.
   */
 object MySQLUtil {
-
-
-  /**
-    * 获取xml格式的配置文件
-    * @param dir 配置文件所在的文件目录
-    * @return
-    */
-  def readConfigFile(dir: String): Elem = {
-
-    val configFile = XML.loadFile(dir)
-
-    configFile
-  }
-
 
   /**
     * 读取配置文件中的内容,并建立连接
@@ -29,7 +16,7 @@ object MySQLUtil {
     * @param configFile 配置文件
     * @return
     */
-  def getConnect(configFile: Elem): Connection ={
+  def getConnect(configFile: Elem): Connection = {
 
     //写在配置文件中
     val url = (configFile \ "mysql" \ "url" ).text
@@ -62,19 +49,19 @@ object MySQLUtil {
       // 读取配置文件并建立连接
       conn = getConnect(configFile)
 
-      // data 需要写入的内容
+      /** 对需要写入的内容(data)的每一行进行操作 */
       data.foreach{ line => {
 
-        // 对data的每一行进行操作
         val temp = line.split(",")
 
+        /** sql插入语句: */
         prep = conn.prepareStatement(sql)
         prep.setString(1, temp(0))
         prep.setString(2, temp(1))
 
         prep.executeUpdate()
       }}
-    } catch{
+    } catch {
 
       case e: Exception => println("Mysql Exception")
     } finally {
@@ -97,7 +84,7 @@ object MySQLUtil {
     * @param configFile 配置文件
     * @param sql mysql查询语句
     */
-  def readFromMysql(configFile: Elem, sql: String): Unit = {
+  def readFromMysql(configFile: Elem, sql: String): Array[(String, String)] = {
 
     var conn: Connection = null
 
@@ -108,26 +95,26 @@ object MySQLUtil {
 
       val statement = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)
       // 通过sql查询语句查询的结果
+      // val sql = "select symbol, sename from bt_stcode where (EXCHANGE = '001002' or EXCHANGE = '001003') and SETYPE = '101' and CUR = 'CNY' and ISVALID = 1 and LISTSTATUS <> '2'"
       val result = statement.executeQuery(sql)
 
+      val stocks = ArrayBuffer[(String, String)]()
       while(result.next()) {
 
-        /**
-          * todo 对查询的结果进行操作
-          */
-        result.getString("quote") //table name
-
+        /** todo 对查询的结果进行操作 */
+        val stockID = result.getString("symbol") // symbol: row name
+        val stock = stockID + "," + result.getString("sename") // sename: row name
+        stocks +=((stockID, stock))
       }
 
+      stocks.toArray
     } catch {
 
-      case e: Exception => println("Mysql Read Fault")
+      case e: Exception => Array(("error", "error"))
     } finally {
 
       conn.close()
     }
   }
-
-
 
 }
