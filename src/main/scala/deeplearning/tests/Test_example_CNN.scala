@@ -14,7 +14,7 @@ object Test_example_CNN {
 
     //2 测试数据
     Logger.getRootLogger.setLevel(Level.WARN)
-    val data_path = "/Users/li/Kunyan/DataSet/deeplearning/train_d3.txt"
+    val data_path = "/Users/li/workshop/DataSet/deeplearning/train_d3.txt"
     val examples = sc.textFile(data_path).cache()
     val train_d1 = examples.map { line =>
       val f1 = line.split("\t")

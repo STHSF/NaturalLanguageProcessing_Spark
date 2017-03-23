@@ -61,7 +61,7 @@ object AnsjAnalyzer {
   def cutNoTag(sentence: String): Array[String] = {
 
     // 添加词典，这边有问题，还需继续研究
-    val value = new Value("济南\t卸车")
+    val value = new Value("济南 \tn")
 
     Library.insertWord(UserDefineLibrary.ambiguityForest, value)
 

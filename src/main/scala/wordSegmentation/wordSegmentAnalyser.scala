@@ -9,9 +9,7 @@ object wordSegmentAnalyser {
 
   val content = "我是中国人,我经济南下车到广州。中国经济南下势头迅猛!"
 
-  val candidateDic = "11, 11, 11"
-
-  def sentenceSegment(content: String): Array[Array[String]] = {
+     def sentenceSegment(content: String): Array[Array[String]] = {
 
     // 文章切分为句子
     val sentenceArr = content.split(",|。|\t|\n|，|：")

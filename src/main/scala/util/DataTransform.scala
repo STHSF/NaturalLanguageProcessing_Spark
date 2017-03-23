@@ -257,7 +257,8 @@ object DataTransform {
     println("第31个文件保存完毕--------")
 
     val catagory32 = "外贸"
-    val datafile32 = "/Users/li/Downloads/traningset/WM.txt"
+    val datafile32 = "/U" +
+      "sers/li/Downloads/traningset/WM.txt"
     getTrainingSet(urlCatagory, urlContent, catagory32, datafile32)
     println("第32个文件保存完毕--------")
 
